@@ -6,47 +6,25 @@
         xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid Background ="#000C3B">
+    <Grid Background ="#000C3B" OpacityMask="#FF000C3B">
         <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3"/>
-        <Rectangle HorizontalAlignment="Left" Height="118" Margin="29,291,0,0" Fill="#EFF2FC" Stroke="#98A8E5" Opacity="0.9" VerticalAlignment="Top" Width="411" RadiusX="30" RadiusY="30" RenderTransformOrigin="0.513,0.496"/>
-        <Image Margin="10,0,733,398" Source="/BMW.png" Stretch="Fill"/>
+        <Rectangle HorizontalAlignment="Left" Height="118" Margin="29,281,0,0" Fill="#EFF2FC" Stroke="#98A8E5" Opacity="0.9" VerticalAlignment="Top" Width="411" RadiusX="30" RadiusY="30" RenderTransformOrigin="0.513,0.496"/>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
         <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Button HorizontalAlignment="Left" Margin="676,4,0,0" VerticalAlignment="Top" Width="88" RenderTransformOrigin="0.371,0.453" Click="Button_Click" FontFamily="Book Antiqua" Height="28" BorderBrush="{x:Null}" >
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="130,295,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="208" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF000C3B" FontSize="15"><Run Language="ru-ru" Text="Записаться на консультацию"/></TextBlock>
+        <TextBox HorizontalAlignment="Left" Margin="65,329,0,0" TextWrapping="Wrap" Text="Введите имя"  VerticalAlignment="Top" Width="196" TextChanged="TextBox_TextChanged" HorizontalContentAlignment="Center" FontSize="9" Height="22" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="#FF000C3B" Foreground="#FF000C3B"/>
+        <TextBox HorizontalAlignment="Left" Margin="65,356,0,0" TextWrapping="Wrap" Text="Введите номер"  VerticalAlignment="Top" Width="196" TextChanged="TextBox_TextChanged" HorizontalContentAlignment="Center" FontSize="9" Height="22" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="#FF000C3B" Foreground="#FF000C3B"/>
+        <Button HorizontalAlignment="Left" Margin="760,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush/>
             </Button.Background>
-            <Image Height="28" Source="/Group 4 (1).png" Stretch="Fill" Width="78"/>
+            <Image Height="26" Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399"/>
         </Button>
-        <Image Margin="465,294,34,22" Source="/Group 8.png" Stretch="Fill"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="130,305,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="208" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF000C3B" FontSize="15"><Run Language="ru-ru" Text="Записаться на консультацию"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Margin="65,339,0,0" TextWrapping="Wrap" Text="Введите имя"  VerticalAlignment="Top" Width="196" TextChanged="TextBox_TextChanged" HorizontalContentAlignment="Center" FontSize="9" Height="22" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="#FF000C3B" Foreground="#FF000C3B"/>
-        <TextBox HorizontalAlignment="Left" Margin="65,366,0,0" TextWrapping="Wrap" Text="Введите номер"  VerticalAlignment="Top" Width="196" TextChanged="TextBox_TextChanged" HorizontalContentAlignment="Center" FontSize="9" Height="22" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="#FF000C3B" Foreground="#FF000C3B"/>
-        <Button HorizontalAlignment="Left" Margin="293,343,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.371,0.453" Click="Button_Click" FontFamily="Book Antiqua" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="36" >
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-            <Image Height="34" Source="/Rectangle 15.png" Stretch="Fill" Width="121" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-0.226"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="0.246"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-           
-        </Button>
-        <TextBlock HorizontalAlignment="Left" Height="13" Margin="333,353,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"><Run Language="ru-ru" Text="Отправить"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <Button HorizontalAlignment="Left" Margin="764,6,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-            <Image Height="21" Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="22"/>
-        </Button>
-        <Image Margin="2,41,0,149" Source="/clouds-e92-bmw 1.png" Stretch="Fill"/>
-
+        <Button Content="Отправить" HorizontalAlignment="Left" Margin="303,340,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="114" Height="25" Background="#FF000C3B" BorderBrush="#FF8998D4" Foreground="#FFD7DAE8" FontSize="11"/>
+        <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
+        <Image Margin="0,41,0,166" Source="/clouds-e92-bmw 1.png" Stretch="Fill" HorizontalAlignment="Center" Width="800"/>
+        <Image Margin="454,291,23,20" Source="/Group 8 (1).png" Stretch="Fill"/>
+        <Image Margin="10,0,733,398" Source="/BMW.png" Stretch="Fill"/>
     </Grid>
 </Window>
