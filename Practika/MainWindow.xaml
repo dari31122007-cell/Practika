@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="KJBkjb" Height="200" Width="100"/>
+    <Grid Background ="#000C3B">
+        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3"/>
+        <Image Height="100" Width="100" RenderTransformOrigin="1,1" Margin="350,167,350,167"/>
+        <Image Margin="10,41,10,169" Source="/car1.png" Stretch="Fill"/>
+        <Rectangle HorizontalAlignment="Left" Height="118" Margin="32,294,0,0" Stroke="Black" VerticalAlignment="Top" Width="314"/>
+
     </Grid>
 </Window>
