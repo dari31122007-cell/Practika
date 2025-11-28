@@ -16,19 +16,28 @@
     </Window.Background>
     <Grid Background="#FF19244E">
         <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3"/>
-        <Button HorizontalAlignment="Left" Margin="760,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush/>
-            </Button.Background>
-            <Image Height="26" Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399"/>
+        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}">
+            <Image Height="26" Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="/bitcoin-icons_menu-filled.png"/>
+                </Image.OpacityMask>
+            </Image>
         </Button>
-        <Image Margin="10,0,733,398" Source="/BMW.png" Stretch="Fill"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40"  Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/BMW.png"/>
+            </Button.Background>
+        </Button>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
         <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
+        <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top" Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
         <Rectangle HorizontalAlignment="Center" Height="351" Margin="0,61,0,0" Stroke="Black" VerticalAlignment="Top" Width="766" Fill="#FFEFF2FC" Opacity="0.95"/>
-        <Image Margin="46,83,387,76" Source="/0 9 (1).png" Stretch="Fill"/>
+        <Rectangle HorizontalAlignment="Left" Height="275" Margin="46,83,0,0" VerticalAlignment="Top" Width="367">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/0 9 (1).png"/>
+            </Rectangle.Fill>
+        </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="197" Margin="438,107,0,0" Stroke="#FF19244E" VerticalAlignment="Top" Width="324" RadiusX="15" RadiusY="15"/>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="458,124,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW 3 серии  GT 320i xDrive" VerticalAlignment="Top" Width="229" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="#FF19244E" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Height="10" Margin="696,130,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2014" VerticalAlignment="Top" Width="20" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="#FF19244E" FontSize="9" Opacity="0.507"/>
@@ -47,13 +56,13 @@
         <Image Margin="481,254,308,169" Source="/Ellipse 31.png" Stretch="Fill"/>
         <Image Margin="481,275,308,148" Source="/Ellipse 32.png" Stretch="Fill"/>
         <TextBlock HorizontalAlignment="Left" Height="18" Margin="470,312,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="1 699 000 P" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="#FF19244E" FontSize="16"/>
-        <Button HorizontalAlignment="Left" Margin="591,312,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
+        <Button HorizontalAlignment="Left" Margin="591,312,0,0" VerticalAlignment="Top" Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
             <Image Height="21" Source="/Group 9.png" Stretch="Fill" Width="70"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="670,312,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
+        <Button HorizontalAlignment="Left" Margin="670,312,0,0" VerticalAlignment="Top" Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
             <Image Height="21" Source="/Group 10.png" Stretch="Fill" Width="71"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="670,331,0,0" VerticalAlignment="Top" Click="Button_Click_1" Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
+        <Button HorizontalAlignment="Left" Margin="670,331,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
             <Image Height="22" Source="/Group 11.png" Stretch="Fill" Width="71"/>
         </Button>
     </Grid>
