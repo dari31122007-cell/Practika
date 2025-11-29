@@ -15,7 +15,18 @@ using System.Windows.Shapes;
 namespace Practika
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Window11.xaml
     /// </summary>
+    public partial class Window11 : Window
+    {
+        public Window11()
+        {
+            InitializeComponent();
+        }
 
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+    }
 }

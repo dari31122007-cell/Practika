@@ -15,7 +15,18 @@ using System.Windows.Shapes;
 namespace Practika
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Window8.xaml
     /// </summary>
+    public partial class Window8 : Window
+    {
+        public Window8()
+        {
+            InitializeComponent();
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }

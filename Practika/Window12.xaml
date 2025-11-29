@@ -1,0 +1,39 @@
+﻿<Window x:Class="Practika.Window12"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practika"
+        mc:Ignorable="d"
+        Title="Window12" Height="450" Width="800">
+    <Grid Background="#FFE0E4F0">
+        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9"/>
+        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/BMW.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="131" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
+        <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
+        <Button HorizontalAlignment="Left" Margin="653,0,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Rectangle HorizontalAlignment="Left" Height="236" Fill="White" VerticalAlignment="Top" Width="651" Opacity="0.5" Margin="63,133,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="63,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"><Run Language="ru-ru" Text="Избранное"/></TextBlock>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="397,314,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="31" Width="36" RenderTransformOrigin="1.219,0.49">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.367"/>
+                    <TranslateTransform X="-0.003" Y="-0.161"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Профиль" HorizontalAlignment="Left" Margin="694,6,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="246,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Opacity="0.5"><Run Text="Избранное"/><Run Text=" пуст"/><Run Language="ru-ru" Text="о"/></TextBlock>
+        <Button HorizontalAlignment="Left" Margin="655,2,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Height="27" Source="/akar-icons_basket.png" Stretch="Fill" Width="29"/>
+        </Button>
+    </Grid>
+</Window>

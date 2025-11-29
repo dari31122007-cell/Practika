@@ -15,7 +15,13 @@ using System.Windows.Shapes;
 namespace Practika
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Window12.xaml
     /// </summary>
-
+    public partial class Window12 : Window
+    {
+        public Window12()
+        {
+            InitializeComponent();
+        }
+    }
 }

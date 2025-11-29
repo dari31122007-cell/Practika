@@ -23,17 +23,16 @@ namespace Practika
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            Window1 window1 = new Window1();
+            window1.Show();
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Window5 window5 = new Window5();
+            window5.Show();
+            this .Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

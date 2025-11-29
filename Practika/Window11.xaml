@@ -1,0 +1,48 @@
+﻿<Window x:Class="Practika.Window11"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practika"
+        mc:Ignorable="d"
+        Title="Window11" Height="450" Width="800">
+    <Grid Background="#FFE0E4F0">
+        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9"/>
+        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/BMW.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="131" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="671,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="118" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.545"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Фамилия "/><Run Language="ru-ru" Text="И"/><Run Text="мя "/><Run Language="ru-ru" Text="О"/><Run Text="тчество"/></TextBlock>
+        <Button HorizontalAlignment="Left" Margin="653,0,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="752,17,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="34" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10" Text="id_sotr">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.545"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
+        <Button HorizontalAlignment="Left" Content="Настройки" Margin="546,5,0,0" VerticalAlignment="Top" Height="25" Width="96" Background="WhiteSmoke" BorderBrush="Black" OpacityMask="Black" RenderTransformOrigin="0.518,0.402"/>
+        <Button HorizontalAlignment="Left" Content="Клиенты" Margin="90,69,0,0" VerticalAlignment="Top" Height="25" Width="96" Background="#FFBFBFBF" BorderBrush="Black" OpacityMask="Black" RenderTransformOrigin="0.518,0.402"/>
+        <Button HorizontalAlignment="Left" Content="Авто в наличии" Margin="205,69,0,0" VerticalAlignment="Top" Height="25" Width="96" Background="WhiteSmoke" BorderBrush="Black" OpacityMask="Black" RenderTransformOrigin="0.518,0.402"/>
+        <Button HorizontalAlignment="Left" Content="Подарки" Margin="322,69,0,0" VerticalAlignment="Top" Height="25" Width="96" Background="WhiteSmoke" BorderBrush="Black" OpacityMask="Black" RenderTransformOrigin="0.518,0.402"/>
+        <Button HorizontalAlignment="Left" Content="Сотрудники" Margin="445,69,0,0" VerticalAlignment="Top" Height="25" Width="96" Background="WhiteSmoke" BorderBrush="Black" OpacityMask="Black" RenderTransformOrigin="0.518,0.402"/>
+        <Button HorizontalAlignment="Left" Content="Сообщения" Margin="572,69,0,0" VerticalAlignment="Top" Height="25" Width="96" Background="WhiteSmoke" BorderBrush="Black" OpacityMask="Black" RenderTransformOrigin="0.518,0.402"/>
+        <Button HorizontalAlignment="Center" Content="Редактировать" Margin="0,307,0,0" VerticalAlignment="Top" Height="25" Width="156" Background="WhiteSmoke" BorderBrush="Black" OpacityMask="Black" RenderTransformOrigin="0.518,0.402"/>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="106,118,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="64" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="Black" FontSize="13"><Run Language="ru-ru" Text="Клиенты"/></TextBlock>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="91,155,91,155" SelectionChanged="DataGrid_SelectionChanged"/>
+    </Grid>
+</Window>

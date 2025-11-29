@@ -23,5 +23,20 @@ namespace Practika
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window6 window6 = new Window6();
+            window6.Show();
+            this .Close();
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window7 window7 = new Window7();
+            window7.Show();
+            this .Close();
+        }
     }
 }

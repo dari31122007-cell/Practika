@@ -123,11 +123,11 @@
             Foreground="#FFD7DAE8" 
             FontSize="11"/>
         <Rectangle 
-            HorizontalAlignment="Center" 
+            HorizontalAlignment="Center"
             Height="227" 
-            Margin="0,41,0,0" 
+            Margin="0,41,0,0"
             VerticalAlignment="Top" 
-            Width="800">
+            Width="780">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/clouds-e92-bmw 1.png"/>
             </Rectangle.Fill>
@@ -162,137 +162,21 @@
             HorizontalAlignment="Left" 
             Height="398" 
             VerticalAlignment="Top" 
-            Width="584" 
+            Width="556" 
             Fill="#FFD7DAE8" 
             Opacity="0.5" 
             Margin="0,36,0,0"/>
-        <Button 
-            Content="X" 
-            HorizontalAlignment="Left" 
-            Margin="596,58,0,0" 
-            VerticalAlignment="Top" 
-            Width="96"
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White" 
-            Click="Button_Click"/>
-        <Button 
-            Content="2" 
-            HorizontalAlignment="Left" 
-            Margin="697,58,0,0" 
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White"/>
-        <Button 
-            Content="3" 
-            HorizontalAlignment="Left" 
-            Margin="596,78,0,0" 
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White" 
-            Click="Button_Click"/>
-        <Button 
-            Content="5" 
-            HorizontalAlignment="Left" 
-            Margin="596,98,0,0" 
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White" 
-            Click="Button_Click" 
-            RenderTransformOrigin="0.5,0.5"/>
-        <Button 
-            Content="7" 
-            HorizontalAlignment="Left" 
-            Margin="596,118,0,0"
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White" 
-            Click="Button_Click"/>
-        <Button 
-            Content="Z" 
-            HorizontalAlignment="Left" 
-            Margin="596,138,0,0" 
-            VerticalAlignment="Top"
-            Width="96" 
-            Background="#FF000C3B"
-            BorderBrush="White" 
-            Foreground="White" 
-            Click="Button_Click" 
-            RenderTransformOrigin="1.034,0.703"/>
-        <Button 
-            Content="4" 
-            HorizontalAlignment="Left" 
-            Margin="697,78,0,0" 
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White"/>
-        <Button 
-            Content="6" 
-            HorizontalAlignment="Left" 
-            Margin="697,98,0,0" 
-            VerticalAlignment="Top"
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White"/>
-        <Button 
-            Content="8" 
-            HorizontalAlignment="Left" 
-            Margin="697,118,0,0" 
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White"/>
-        <Button 
-            Content="I" 
-            HorizontalAlignment="Left" 
-            Margin="596,158,0,0" 
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White" 
-            Click="Button_Click"/>
-        <Button 
-            Content="M" 
-            HorizontalAlignment="Left" 
-            Margin="697,138,0,0" 
-            VerticalAlignment="Top" 
-            Width="96" 
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White"/>
-        <Button 
-            Content="Все модели" 
-            HorizontalAlignment="Left" 
-            Margin="697,158,0,0" 
-            VerticalAlignment="Top" 
-            Width="96"
-            Background="#FF000C3B" 
-            BorderBrush="White" 
-            Foreground="White"/>
         <Rectangle 
             HorizontalAlignment="Left" 
-            Height="434" 
-            VerticalAlignment="Center" 
-            Width="218" 
+            Height="435" 
+            VerticalAlignment="Center"
+            Width="244" 
             Fill="#FFD7DAE8" 
-            Margin="582,0,0,0"/>
+            Margin="556,0,0,0"/>
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="596,67,0,0" 
+            Margin="575,66,0,0"
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="X"
@@ -302,7 +186,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="697,67,0,0" 
+            Margin="678,66,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="2"
@@ -310,16 +194,16 @@
             Background="#FF000C3B"/>
         <Rectangle
     VerticalAlignment="Top" 
-            Margin="590,35,0,0" 
+            Margin="564,35,0,0" 
             Stroke="#FF000C3B" 
-            Width="200" 
-            Height="167" 
+            Width="212" 
+            Height="168" 
             HorizontalAlignment="Left" 
             RadiusX="15" 
             RadiusY="15"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="605,46,0,0" 
+            Margin="578,47,0,0"
             TextWrapping="Wrap" 
             Text="BMW" 
             VerticalAlignment="Top" 
@@ -327,22 +211,22 @@
         <Rectangle 
             HorizontalAlignment="Left" 
             Height="1" 
-            Margin="596,61,0,0" 
+            Margin="569,61,0,0"
             Stroke="Black" 
             VerticalAlignment="Top" 
             Width="74"/>
         <Rectangle
             VerticalAlignment="Top" 
-            Margin="592,217,0,0"
+            Margin="564,217,0,0"
             Stroke="#FF000C3B"
-            Width="200" 
-            Height="136"
+            Width="212" 
+            Height="189"
             HorizontalAlignment="Left"
             RadiusX="15"
             RadiusY="15"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="606,230,0,0"
+            Margin="578,230,0,0"
             TextWrapping="Wrap"
             Text="MINI"
             VerticalAlignment="Top"
@@ -350,14 +234,14 @@
         <Rectangle 
             HorizontalAlignment="Left"
             Height="1"
-            Margin="596,245,0,0"
+            Margin="575,245,0,0"
             Stroke="Black"
             VerticalAlignment="Top"
             Width="74"/>
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="599,253,0,0"
+            Margin="577,253,0,0"
             HorizontalAlignment="Left" 
             Foreground="White"
             Content="Электромобили"
@@ -369,7 +253,7 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="599,276,0,0"
+            Margin="577,276,0,0"
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="Автомобили с ДВС"
@@ -381,7 +265,7 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="599,301,0,0"
+            Margin="578,302,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Предыдущее поколение"
@@ -393,7 +277,7 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="599,324,0,0"
+            Margin="578,325,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Все модели"
@@ -405,7 +289,7 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="597,363,0,0"
+            Margin="578,360,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Доступные авто для покупки"
@@ -414,68 +298,56 @@
             Background="#FF000C3B"
             Height="36" 
             FontSize="10"/>
-        <Button 
-            HorizontalAlignment="Left"
-            Margin="767,6,0,0" 
-            VerticalAlignment="Top" 
-            RenderTransformOrigin="2.208,0.253" 
-            Background="{x:Null}" 
-            BorderBrush="{x:Null}"
-            Foreground="{x:Null}"
-            Height="28" 
-            Width="28">
-            <Image 
-                Height="20" 
-                Source="/material-symbols_close.png" 
-                Stretch="Fill" 
-                Width="20"/>
+
+        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="Button_Click">
+            <Image Height="26" Source="/material-symbols_close.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399">
+                <Image.OpacityMask>
+                    <ImageBrush ImageSource="/material-symbols_close.png"/>
+                </Image.OpacityMask>
+            </Image>
         </Button>
         <Button
     Width="90" 
             VerticalAlignment="Top"
-            Margin="596,88,0,0" 
+            Margin="575,88,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="3" 
-            Click="Button_Click" 
             BorderBrush="White"
             Background="#FF000C3B"/>
         <Button
     Width="90" 
             VerticalAlignment="Top" 
             RenderTransformOrigin="0.5,0.5" 
-            Margin="596,109,0,0" 
+            Margin="575,110,0,0"
             HorizontalAlignment="Left" 
             Foreground="White"
             Content="5" 
-            Click="Button_Click"
             BorderBrush="White" 
             Background="#FF000C3B"/>
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="596,130,0,0" 
+            Margin="575,132,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="7" 
-            Click="Button_Click"
             BorderBrush="White"
             Background="#FF000C3B"/>
         <Button
     Width="90" 
             VerticalAlignment="Top" 
             RenderTransformOrigin="1.034,0.703"
-            Margin="596,151,0,0" 
+            Margin="575,154,0,0"
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="Z"
-            Click="Button_Click"
             BorderBrush="White"
             Background="#FF000C3B"/>
         <Button
     Width="90"
             VerticalAlignment="Top"
-            Margin="695,88,0,0"
+            Margin="678,88,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="4"
@@ -484,7 +356,7 @@
         <Button
     Width="90"
             VerticalAlignment="Top"
-            Margin="695,109,0,0"
+            Margin="678,110,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="6"
@@ -493,7 +365,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="695,130,0,0" 
+            Margin="678,132,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="8" 
@@ -502,17 +374,16 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="596,172,0,0" 
+            Margin="575,176,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="I" 
-            Click="Button_Click" 
             BorderBrush="White" 
             Background="#FF000C3B"/>
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="695,151,0,0" 
+            Margin="678,154,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="M" 
@@ -521,7 +392,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="695,172,0,0" 
+            Margin="678,176,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="Все модели"

@@ -1,0 +1,55 @@
+﻿<Window x:Class="Practika.Window9"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practika"
+        mc:Ignorable="d"
+        Title="Window9" Height="450" Width="800">
+    <Grid Background="#FFE0E4F0">
+        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9"/>
+        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Button.Background>
+                <ImageBrush ImageSource="/BMW.png"/>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="131" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
+        <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
+        <Button HorizontalAlignment="Left" Margin="653,0,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Rectangle HorizontalAlignment="Left" Height="162" Fill="White" VerticalAlignment="Top" Width="651" Opacity="0.5" Margin="63,133,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="63,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"><Run Language="ru-ru" Text="Корзина"/></TextBlock>
+        <Rectangle HorizontalAlignment="Left" Height="142" VerticalAlignment="Top" Width="194"  Margin="72,143,0,0" >
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/0 10 (1).png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Left" Height="14" Margin="297,152,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="84" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black"><Run Text="BMW "/><Run Language="ru-ru" Text="3 серии"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="14" Margin="297,167,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="9" Opacity="0.5"><Run Text="20"/><Run Language="ru-ru" Text="14"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="14" Margin="598,201,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="72" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="14"><Run Language="ru-ru" Text="1 699"/><Run Text=" 000 P"/></TextBlock>
+        <Button Content="Удалить из корзины" HorizontalAlignment="Left" Margin="594,258,0,0" VerticalAlignment="Top" Height="21" FontSize="6" Background="White" Width="92"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="75,142,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="135" Width="188" RenderTransformOrigin="0.003,0.505"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="397,314,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="31" Width="36" RenderTransformOrigin="1.219,0.49">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.367"/>
+                    <TranslateTransform X="-0.003" Y="-0.161"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Image Margin="670,147,96,253" Source="/mdi_heart (2).png" Stretch="Fill"/>
+        <Button Content="Профиль" HorizontalAlignment="Left" Margin="694,6,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
+        <TextBlock HorizontalAlignment="Left" Height="13" Margin="297,186,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2 л., 184 л.с., Бензин" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11"/>
+        <TextBlock HorizontalAlignment="Left" Height="11" Margin="297,201,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="36" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11"><Run Language="ru-ru" Text="АКПП"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="14" Margin="297,214,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="88" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11"><Run Language="ru-ru" Text="Полный привод"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="11" Margin="297,228,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Text="188 826 км"/>
+        <TextBlock HorizontalAlignment="Left" Height="14" Margin="297,241,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="62" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Text="2 владельца"/>
+        <Button Content="Забронировать" HorizontalAlignment="Center" Margin="0,343,0,0" VerticalAlignment="Top" Height="26" FontSize="11" Background="#FF2D375E" Width="112" Foreground="White"/>
+        <Button HorizontalAlignment="Left" Margin="657,0,0,0" VerticalAlignment="Top" Height="33" Width="32" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Height="27" Source="/mdi_heart (3).png" Stretch="Fill" Width="26"/>
+        </Button>
+    </Grid>
+</Window>
