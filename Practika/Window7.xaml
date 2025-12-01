@@ -3,91 +3,157 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="Window7" Height="450" Width="800">
     <Grid Background="#FFE0E4F0">
-        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9"/>
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <!-- Верхняя панель -->
+        <Rectangle Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9" HorizontalAlignment="Center"/>
+
+        <!-- Кнопка-заглушка в правом верхнем углу -->
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30"
+                Margin="0,3,10,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+
+        <!-- Логотип BMW -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Height="40"
+                Margin="10, -2, 0, 0" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="131" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
-        <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Button HorizontalAlignment="Left" Margin="720,2,0,0" VerticalAlignment="Top" Height="33" Width="32" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Height="27" Source="/mdi_heart (3).png" Stretch="Fill" Width="26"/>
+
+        <!-- Текст рядом с логотипом -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,6,0,0"
+                   FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
+                   FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+
+        <!-- Адрес по центру -->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,12,0,0"
+                   FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+
+        <!-- Иконки справа -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="33"
+                Margin="720,2,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1">
+            <Image Source="/mdi_heart (3).png" Stretch="Uniform"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="752,2,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Height="27" Source="/akar-icons_basket.png" Stretch="Fill" Width="29"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="752,2,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Source="/akar-icons_basket.png" Stretch="Uniform" Height="27" Width="29"/>
         </Button>
-        <Button HorizontalAlignment="Center" Content="Настройки" Margin="0,85,0,0" VerticalAlignment="Top" Height="28" Width="114" Background="WhiteSmoke" BorderBrush="Black" OpacityMask="Black"/>
-        <TextBlock HorizontalAlignment="Left" Margin="112,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Text="Фамилия им"/><Run Text="я отчество"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="112,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="ru-ru" Text="др/мр/гр"/></TextBlock>
-        <Rectangle HorizontalAlignment="Center" Height="204" Fill="White" VerticalAlignment="Top" Width="720" Opacity="0.5" Margin="0,146,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="57" VerticalAlignment="Top" Width="60" Margin="44,66,0,0" RadiusX="20" RadiusY="20">
+
+        <!-- Кнопка "Настройки" по центру -->
+        <Button Content="Настройки" HorizontalAlignment="Center" VerticalAlignment="Top"
+                Margin="0,85,0,0" Width="114" Height="28" Background="WhiteSmoke" BorderBrush="Black"/>
+
+        <!-- Имя пользователя -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,77,0,0"
+                   FontSize="16" FontWeight="Bold">Фамилия имя отчество</TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,97,0,0">др/мр/гр</TextBlock>
+
+        <!-- Аватар -->
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="57"
+                   Margin="44,66,0,0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/iconamoon_profile-circle-fill.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="150" Fill="White" VerticalAlignment="Top" Width="134" Opacity="0.5" Margin="51,183,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="150" Fill="White" VerticalAlignment="Top" Width="134" Opacity="0.5" Margin="203,183,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="150" Fill="White" VerticalAlignment="Top" Width="134" Opacity="0.5" Margin="356,183,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="63,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="ru-ru" Text="История просмотров"/></TextBlock>
-        <Rectangle HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="134" Margin="51,186,0,0">
+
+        <!-- Блок "История просмотров" -->
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="720" Height="204"
+                   Margin="0,146,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,154,0,0"
+                   FontSize="16" FontWeight="Bold">История просмотров</TextBlock>
+
+        <!-- Карточка 1 -->
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="150"
+                   Margin="51,183,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="100"
+                   Margin="51,186,0,0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/0 (3) 1 (1).png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle
-        Width="134" VerticalAlignment="Top" Margin="203,186,0,0" Height="100" HorizontalAlignment="Left">
-            <Rectangle.Fill
-        >
-                <ImageBrush
-        ImageSource="/0 (4) 1 (1).png"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,282,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">BMW 2 серии Gran Coupe</TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,291,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">2025</TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,301,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">6 390 000 P</TextBlock>
+        <Button Content="Добавить в корзину" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="70,311,0,0" Width="65" Height="15" FontSize="6" Background="White"/>
+
+        <!-- Карточка 2 -->
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="150"
+                   Margin="203,183,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="100"
+                   Margin="203,186,0,0">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="/0 (4) 1 (1).png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="134"  Margin="356,186,0,0" >
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="213,282,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">BMW X3</TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,291,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">2025</TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,301,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">7 590 000 P</TextBlock>
+        <Button Content="Добавить в корзину" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="226,311,0,0" Width="64" Height="15" FontSize="6" Background="White"/>
+
+        <!-- Карточка 3 -->
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="150"
+                   Margin="356,183,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="100"
+                   Margin="356,186,0,0">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/0 10 (1).png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="59,282,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW 2 серии Gran Coupe" VerticalAlignment="Top" Width="87" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="59,291,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2025" VerticalAlignment="Top" Width="15" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7" Opacity="0.5"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="59,301,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="6 390 000 P" VerticalAlignment="Top" Width="37" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="213,282,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW X3" VerticalAlignment="Top" Width="36" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="214,291,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2025" VerticalAlignment="Top" Width="15" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7" Opacity="0.5"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="214,301,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="7 590 000 P" VerticalAlignment="Top" Width="36" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="372,282,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="51" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7"><Run Text="BMW "/><Run Language="ru-ru" Text="3 серии"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="372,292,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="15" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7" Opacity="0.5"><Run Text="20"/><Run Language="ru-ru" Text="14"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="372,301,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="36" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7"><Run Language="ru-ru" Text="1 699"/><Run Text=" 000 P"/></TextBlock>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" Margin="70,311,0,0" VerticalAlignment="Top" Height="15" FontSize="6" Background="White" Width="65"/>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" Margin="226,311,0,0" VerticalAlignment="Top" Height="15" FontSize="6" Background="White" Width="64"/>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" Margin="384,311,0,0" VerticalAlignment="Top" Height="15" FontSize="6" Background="White" Width="64"/>
-        <Image Margin="302,308,478,105" Source="/mdi_heart (1).png" Stretch="Fill"/>
-        <Image Margin="146,308,634,105" Source="/mdi_heart (1).png" Stretch="Fill"/>
-        <Image Margin="458,308,322,105" Source="/mdi_heart (1).png" Stretch="Fill"/>
-        <Rectangle HorizontalAlignment="Center" Height="32" Fill="White" VerticalAlignment="Top" Width="720" Opacity="0.5" Margin="0,361,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="63,366,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"><Run Language="ru-ru" Text="Отзывы"/></TextBlock>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="358,183,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="123" Width="130"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="205,182,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="123" Width="130"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="53,182,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="123" Width="130"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="144,306,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="22" Width="24"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="300,306,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="22" Width="24"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="456,307,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="22" Width="24"/>
-        <Image Margin="736,319,52,96" Source="/Vector.png" Stretch="Fill"/>
-        <Image Margin="736,368,52,47" Source="/Vector.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,282,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">BMW 3 серии</TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,292,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">2014</TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,301,0,0"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">1 699 000 P</TextBlock>
+        <Button Content="Добавить в корзину" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="384,311,0,0" Width="64" Height="15" FontSize="6" Background="White"/>
+
+        <!-- Иконки сердец -->
+        <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,308,0,0"/>
+        <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="302,308,0,0"/>
+        <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
+               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="458,308,0,0"/>
+
+        <!-- Невидимые кнопки-триггеры -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="123"
+                Margin="53,182,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="123"
+                Margin="205,182,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="123"
+                Margin="358,183,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="22"
+                Margin="144,306,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="22"
+                Margin="300,306,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="22"
+                Margin="456,307,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+
+        <!-- Блок "Отзывы" -->
+        <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="720" Height="32"
+                   Margin="0,361,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,366,0,0"
+                   FontSize="16" FontWeight="Bold">Отзывы</TextBlock>
+
+        <!-- Иконки в отзывах -->
+        <Image Source="/Vector.png" Stretch="Uniform" Width="12" Height="12"
+               HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,319,52,0"/>
+        <Image Source="/Vector.png" Stretch="Uniform" Width="12" Height="12"
+               HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,368,52,0">
             <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="89.642"/>
-                    <TranslateTransform/>
-                </TransformGroup>
+                <RotateTransform Angle="90"/>
             </Image.RenderTransform>
         </Image>
-
     </Grid>
 </Window>

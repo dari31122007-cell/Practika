@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Practika
 {
-    /// <summary>
-    /// Логика взаимодействия для Window5.xaml
-    /// </summary>
     public partial class Window5 : Window
     {
         public Window5()
@@ -24,19 +21,49 @@ namespace Practika
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            Window6 window6 = new Window6();
-            window6.Show();
-            this .Close();
+            string name = NameBox.Text.Trim();
+            string contact = ContactBox.Text.Trim();
+            DateTime? birthDate = BirthDatePicker.SelectedDate;
+            string password = PasswordBox.Password;
 
+            if (string.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Пожалуйста, введите имя.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(contact))
+            {
+                MessageBox.Show("Пожалуйста, введите номер или почту.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!birthDate.HasValue)
+            {
+                MessageBox.Show("Пожалуйста, выберите дату рождения.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Пожалуйста, придумайте пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // ✅ Все данные получены — можно регистрировать
+            MessageBox.Show($"Регистрация успешна!\nИмя: {name}\nКонтакт: {contact}",
+                "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            Window7 window7 = new Window7();
-            window7.Show();
-            this .Close();
+            // Например, перейти на окно входа
+            MessageBox.Show("Переход на страницу входа...");
+            // var loginWindow = new Window6();
+            // loginWindow.Show();
+            // this.Close();
         }
     }
 }

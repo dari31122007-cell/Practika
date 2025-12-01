@@ -9,11 +9,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Practika
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -21,23 +19,36 @@ namespace Practika
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Window1 window1 = new Window1();
-            window1.Show();
-            this.Close();
-        }
-
+        // Кнопка "Профиль" → открывает регистрацию (Window5)
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Window5 window5 = new Window5();
-            window5.Show();
-            this .Close();
+            var registrationWindow = new Window5();
+            registrationWindow.Show();
         }
 
+        // Кнопка "Отправить" → отправка заявки (оставляем как есть)
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show(
+                "Спасибо! Ваша заявка на консультацию отправлена.",
+                "Заявка принята",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information
+            );
         }
+
+        // Кнопка "Меню" (бургер) → открывает каталог (Window1)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var catalogWindow = new Window1();
+            catalogWindow.Show();
+        }
+
+        // Логотип BMW → ничего не делает (можно оставить пустым)
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            // Опционально: можно добавить переход на главную или каталог
+        }
+    
     }
 }

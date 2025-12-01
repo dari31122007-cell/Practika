@@ -14,8 +14,5 @@ using System.Windows.Shapes;
 
 namespace Practika
 {
-    /// <summary>
-    /// Логика взаимодействия для Window1.xaml
-    /// </summary>
 
 }

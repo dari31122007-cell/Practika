@@ -19,13 +19,17 @@ namespace Practika
     /// </summary>
     public partial class Window7 : Window
     {
-        public Window7()
-        {
-            InitializeComponent();
-        }
-
+  
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Window8 window8 = new Window8();
+            window8.Show();
+            this.Close();
 
         }
     }

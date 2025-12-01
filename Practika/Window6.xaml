@@ -3,216 +3,85 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
-        Title="Window6" 
-        Height="450" 
-        Width="800">
+        Title="Window6" Height="450" Width="800">
+
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+        <!-- Фон -->
         <Grid.Background>
-            <LinearGradientBrush 
-                EndPoint="0.5,1" 
-                StartPoint="0.5,0">
-                <GradientStop 
-                    Color="#FF0D163C"/>
-                <GradientStop 
-                    Color="#FF323D6E" 
-                    Offset="0.33"/>
-                <GradientStop 
-                    Color="#FF6D77A0" 
-                    Offset="0.653"/>
-                <GradientStop 
-                    Color="#FFC5C8D5" 
-                    Offset="0.991"/>
-                <GradientStop 
-                    Color="#FF1F1F1F" 
-                    Offset="1"/>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0D163C"/>
+                <GradientStop Color="#FF323D6E" Offset="0.33"/>
+                <GradientStop Color="#FF6D77A0" Offset="0.653"/>
+                <GradientStop Color="#FFC5C8D5" Offset="0.991"/>
+                <GradientStop Color="#FF1F1F1F" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Rectangle 
-            HorizontalAlignment="Center" 
-            Height="36" 
-            Fill="#FFFFFF" 
-            VerticalAlignment="Top" 
-            Width="800" 
-            Opacity="0.3"/>
-        <Button 
-            HorizontalAlignment="Left" 
-            Margin="749,3,0,0" 
-            VerticalAlignment="Top" 
-            BorderBrush="{x:Null}" 
-            Foreground="{x:Null}" 
-            Background="{x:Null}"/>
-        <Button 
-            Content="" 
-            HorizontalAlignment="Left" 
-            Margin="10,-2,0,0" 
-            VerticalAlignment="Top" 
-            Height="40" 
-            Width="59" 
-            BorderBrush="{x:Null}" 
-            Foreground="{x:Null}">
+
+        <!-- Верхняя панель -->
+        <Rectangle Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3" HorizontalAlignment="Center"/>
+
+        <!-- Логотип BMW -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Height="40"
+                Margin="10,-2,0,0" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
-                <ImageBrush 
-                    ImageSource="/BMW.png"/>
+                <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
-        <TextBlock 
-            HorizontalAlignment="Left" 
-            Height="18" 
-            Margin="72,6,0,0" 
-            TextWrapping="Wrap" 
-            FontFamily="Book Antiqua" 
-            Text="BMW" 
-            VerticalAlignment="Top" 
-            Width="35" 
-            RenderTransformOrigin="-0.857,-2.498" 
-            FontWeight="Medium" 
-            Foreground="#FFD7DBE8" 
-            FontSize="13"/>
-        <TextBlock 
-            HorizontalAlignment="Left" 
-            Height="16" 
-            Margin="72,20,0,0" 
-            TextWrapping="Wrap" 
-            FontFamily="Book Antiqua"
-            Text="Официальный дилер в СПБ"
-            VerticalAlignment="Top" 
-            Width="164" 
-            RenderTransformOrigin="-0.857,-2.498"
-            FontWeight="Medium"
-            Foreground="#FFD7DBE8"
-            FontSize="9"/>
-        <TextBlock 
-            HorizontalAlignment="Left"
-            Height="16" 
-            Margin="684,10,0,0" 
-            TextWrapping="Wrap"
-            FontFamily="Book Antiqua"
-            Text="ул.Пушкина, 125"
-            VerticalAlignment="Top"
-            Width="80"
-            RenderTransformOrigin="-0.857,-2.498"
-            FontWeight="Medium"
-            Foreground="#FFD7DBE8" 
-            FontSize="10"/>
-        <Rectangle 
-            HorizontalAlignment="Center"
-            Height="199"
-            VerticalAlignment="Center"
-            Width="336"
-            Fill="#FFC3C6D4"
-            RadiusX="20"
-            RadiusY="20" 
-            StrokeThickness="2">
-            <Rectangle.Stroke>
-                <LinearGradientBrush 
-                    EndPoint="0.5,1" 
-                    StartPoint="0.5,0">
-                    <GradientStop 
-                        Color="#FF1C2651" 
-                        Offset="1"/>
-                    <GradientStop 
-                        Color="#FFAAAFC5" 
-                        Offset="1"/>
-                    <GradientStop 
-                        Color="#FF9399B3" 
-                        Offset="0.03"/>
-                </LinearGradientBrush>
-            </Rectangle.Stroke>
-        </Rectangle>
-        <TextBox 
-            HorizontalAlignment="Left"
-            Margin="359,177,0,0" 
-            TextWrapping="Wrap"
-            VerticalAlignment="Top"
-            Width="186" 
-            Height="26"/>
-        <PasswordBox 
-            HorizontalAlignment="Left" 
-            Margin="359,213,0,0" 
-            VerticalAlignment="Top"
-            Width="186" 
-            Height="26"
-            Password=""/>
-        <Button 
-            Content="Войти" 
-            HorizontalAlignment="Center"
-            Margin="0,260,0,0" 
-            VerticalAlignment="Top"
-            Background="White" 
-            Foreground="#FF1B244F"
-            Width="83" 
-            Click="Button_Click_1">
-            <Button.BorderBrush>
-                <LinearGradientBrush 
-                    EndPoint="0.5,1"
-                    StartPoint="0.5,0">
-                    <GradientStop 
-                        Color="#FF1B244F"/>
-                    <GradientStop 
-                        Color="White" 
-                        Offset="1"/>
-                </LinearGradientBrush>
-            </Button.BorderBrush>
-        </Button>
-        <Button 
-            Content="У вас нет аккаунта?"
-            HorizontalAlignment="Center"
-            Margin="0,285,0,0"
-            VerticalAlignment="Top" 
-            Foreground="#FF1A244E"
-            BorderBrush="{x:Null}"
-            Background="{x:Null}" 
-            FontSize="6" 
-            Click="Button_Click"/>
-        <TextBlock 
-            HorizontalAlignment="Left" 
-            Margin="246,183,0,0" 
-            TextWrapping="Wrap" 
-            VerticalAlignment="Top"
-            FontSize="10" 
-            RenderTransformOrigin="0.592,0.588">
-            <Run 
-                Text="Введите номер"/>
-            <Run 
-                Language="ru-ru" 
-                 Text="/"/>
-            <Run 
-                Text="почту"/>
-            <Run 
-                Text=" "/>
-        </TextBlock>
-        <TextBlock 
-            HorizontalAlignment="Left"
-            Margin="246,219,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top"
-            FontSize="10"
-            RenderTransformOrigin="0.539,0.56">
-            <Run 
-                Language="ru-ru" 
-                 Text="Введите"/>
-            <Run 
-                Text=" пароль"/>
-        </TextBlock>
-        <TextBlock 
-            HorizontalAlignment="Center"
-            Margin="0,137,0,0"
-            TextWrapping="Wrap"
-            VerticalAlignment="Top"
-            FontSize="14"
-            Foreground="#FF19234D">
-            <Run 
-                Language="ru-ru" 
-                 Text="Вход"/>
-        </TextBlock>
 
+        <!-- Текст рядом с логотипом -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,6,0,0"
+                   FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
+                   FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+
+        <!-- Адрес (выровнен по правому краю) -->
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,36,0"
+                   FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+
+        <!-- Пустая кнопка в правом верхнем углу -->
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30"
+                Margin="0,3,10,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+
+        <!-- Центральная форма входа -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="336" Height="199">
+            <Rectangle Fill="#FFC3C6D4" RadiusX="20" RadiusY="20" StrokeThickness="2" Margin="0,-4,0,4">
+                <Rectangle.Stroke>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1C2651" Offset="1"/>
+                        <GradientStop Color="#FFAAAFC5" Offset="1"/>
+                        <GradientStop Color="#FF9399B3" Offset="0.03"/>
+                    </LinearGradientBrush>
+                </Rectangle.Stroke>
+            </Rectangle>
+
+            <!-- Заголовок -->
+            <TextBlock Text="Вход" HorizontalAlignment="Center" VerticalAlignment="Top"
+                       Margin="0,1,0,0" FontSize="14" Foreground="#FF19234D"/>
+
+            <!-- Поля ввода -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="186">
+                <TextBlock Text="Введите номер/почту" FontSize="10" Margin="0,0,0,4" HorizontalAlignment="Left"/>
+                <TextBox Height="26" TextChanged="TextBox_TextChanged" />
+
+                <TextBlock Text="Введите пароль" FontSize="10" Margin="0,8,0,4" HorizontalAlignment="Left"/>
+                <PasswordBox Height="26" />
+
+                <!-- Кнопка входа -->
+                <Button Content="Войти" Height="26" Margin="0,12,0,6" Background="White" Foreground="#FF1B244F" Click="Button_Click_1">
+                    <Button.BorderBrush>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF1B244F"/>
+                            <GradientStop Color="White" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.BorderBrush>
+                </Button>
+
+                <!-- Ссылка на регистрацию -->
+                <Button Content="У вас нет аккаунта?" FontSize="6" Foreground="#FF1A244E"
+                        Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center"
+                        Click="Button_Click"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

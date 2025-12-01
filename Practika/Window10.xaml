@@ -7,20 +7,66 @@
         mc:Ignorable="d"
         Title="Window10" Height="450" Width="800">
     <Grid Background="#FFE0E4F0">
-        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9"/>
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <!-- Верхняя панель -->
+        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="36" 
+                   Fill="#FF19234D" Opacity="0.9"/>
+
+        <!-- Логотип BMW -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,-2,0,0"
+                Width="59" Height="40" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="131" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
-        <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Button HorizontalAlignment="Left" Margin="653,0,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}"/>
-        <Rectangle HorizontalAlignment="Left" Height="236" Fill="White" VerticalAlignment="Top" Width="651" Opacity="0.5" Margin="63,133,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="63,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"><Run Language="ru-ru" Text="Корзина"/></TextBlock>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="397,314,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="31" Width="36" RenderTransformOrigin="1.219,0.49">
+
+        <!-- Текст "BMW" -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,6,0,0"
+                   FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" 
+                   Foreground="#FFD7DBE8"/>
+
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
+                   FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" 
+                   FontWeight="Medium" Foreground="#FFD7DBE8"/>
+
+        <!-- Адрес по центру -->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,12,0,0"
+                   FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" 
+                   FontWeight="Medium" Foreground="#FFD7DBE8"/>
+
+        <!-- Кнопка "Профиль" -->
+        <Button Content="Профиль" HorizontalAlignment="Right" VerticalAlignment="Top" 
+                Margin="0,6,15,0" Width="92" Height="24" 
+                BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
+
+        <!-- Иконка избранного (сердечко) -->
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,120,0" 
+                Width="32" Height="33" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Source="/mdi_heart (3).png" Stretch="Uniform" Width="26" Height="27"/>
+        </Button>
+
+        <!-- Пустая кнопка в углу (закрытие?) -->
+        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,3,7,0" 
+                Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
+
+        <!-- Заголовок "Корзина" -->
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,76,0,0"
+                   FontSize="18" FontWeight="Bold" Text="Корзина"/>
+
+        <!-- Фон карточки (даже если пусто) -->
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Margin="63,133,0,0" Width="651" Height="236" 
+                   Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+
+        <!-- Надпись "Корзина пуста" — по центру карточки -->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" 
+                   Margin="0,227,0,0" FontSize="36" Opacity="0.5" 
+                   Text="Корзина пуста"/>
+
+        <!-- Невидимая кнопка (возможно, для будущего функционала) -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Margin="397,314,0,0" Width="36" Height="31" 
+                BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}"
+                RenderTransformOrigin="1.219,0.49">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,10 +76,5 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Профиль" HorizontalAlignment="Left" Margin="694,6,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
-        <Button HorizontalAlignment="Left" Margin="657,0,0,0" VerticalAlignment="Top" Height="33" Width="32" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Height="27" Source="/mdi_heart (3).png" Stretch="Fill" Width="26"/>
-        </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="270,227,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" Opacity="0.5"><Run Text="Корзина"/><Run Language="ru-ru" Text=" пуста"/></TextBlock>
     </Grid>
 </Window>

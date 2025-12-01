@@ -6,45 +6,86 @@
         xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="Window8" Height="450" Width="800">
-    <Grid Background="#FFE0E4F0">
-        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9"/>
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+    <Canvas Background="#FFE0E4F0">
+        <!-- Верхняя панель -->
+        <Rectangle Canvas.Left="0" Canvas.Top="0" Width="800" Height="36" Fill="#FF19234D" Opacity="0.9"/>
+
+        <!-- Кнопка корзины (справа вверху) -->
+        <Button Canvas.Left="653" Canvas.Top="0" Background="{x:Null}" BorderBrush="{x:Null}">
+            <Image Height="27" Source="/akar-icons_basket.png" Stretch="Fill" Width="29"/>
+        </Button>
+
+        <!-- Логотип BMW -->
+        <Button Canvas.Left="10" Canvas.Top="-2" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="131" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
-        <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Button HorizontalAlignment="Left" Margin="653,0,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}">
-            <Image Height="27" Source="/akar-icons_basket.png" Stretch="Fill" Width="29"/>
-        </Button>
-        <Rectangle HorizontalAlignment="Left" Height="215" Fill="White" VerticalAlignment="Top" Width="192" Opacity="0.5" Margin="52,134,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="216" Fill="White" VerticalAlignment="Top" Width="194" Opacity="0.5" Margin="260,133,0,0" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="63,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"><Run Language="ru-ru" Text="Избранное"/></TextBlock>
-        <Rectangle HorizontalAlignment="Left" Height="143" VerticalAlignment="Top" Width="192" Margin="52,139,0,0">
+
+        <!-- Текст "BMW" -->
+        <TextBlock Canvas.Left="72" Canvas.Top="6" Height="18" Width="35"
+                   FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+        <TextBlock Canvas.Left="72" Canvas.Top="20" Height="16" Width="131"
+                   FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+        <TextBlock Canvas.Left="360" Canvas.Top="12" Height="16" Width="80" 
+                   FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" FontWeight="Medium" Foreground="#FFD7DBE8"/>
+
+        <!-- Профиль -->
+        <Button Content="Профиль" Canvas.Left="691" Canvas.Top="6" Width="92" Height="24"
+                BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}" Click="Button_Click"/>
+
+        <!-- Заголовок "Избранное" -->
+        <TextBlock Canvas.Left="63" Canvas.Top="76" FontSize="18" FontWeight="Bold">
+            <Run Language="ru-ru" Text="Избранное"/>
+        </TextBlock>
+
+        <!-- Карточка 1: фон -->
+        <Rectangle Canvas.Left="52" Canvas.Top="134" Width="192" Height="215" Fill="White" Opacity="0.5"
+                   Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <!-- Изображение 1 -->
+        <Rectangle Canvas.Left="52" Canvas.Top="139" Width="192" Height="143">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/0 (3) 1 (1).png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="142" VerticalAlignment="Top" Width="194"  Margin="260,137,0,0" >
+        <!-- Текст 1 -->
+        <TextBlock Canvas.Left="63" Canvas.Top="276" Height="14" Width="109"
+                   FontFamily="Book Antiqua" Text="BMW 2 серии Gran Coupe" FontSize="9" FontWeight="Medium" Foreground="Black"/>
+        <TextBlock Canvas.Left="63" Canvas.Top="289" Height="14" Width="22"
+                   FontFamily="Book Antiqua" Text="2025" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5"/>
+        <TextBlock Canvas.Left="63" Canvas.Top="300" Height="15" Width="44"
+                   FontFamily="Book Antiqua" Text="6 390 000 P" FontSize="8" FontWeight="Medium" Foreground="Black"/>
+        <!-- Кнопка "в корзину" 1 -->
+        <Button Content="Добавить в корзину" Canvas.Left="79" Canvas.Top="318" Width="93" Height="21" FontSize="6" Background="White"/>
+        <!-- Прозрачные кнопки для кликов -->
+        <Button Canvas.Left="55" Canvas.Top="133" Width="186" Height="135" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Click="Button_Click"/>
+        <Button Canvas.Left="190" Canvas.Top="314" Width="35" Height="32" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}"/>
+        <Image Canvas.Left="190" Canvas.Top="314" Width="34" Height="29" Source="/mdi_heart (2).png" Stretch="Fill"/>
+
+        <!-- Карточка 2 -->
+        <Rectangle Canvas.Left="260" Canvas.Top="133" Width="194" Height="216" Fill="White" Opacity="0.5"
+                   Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <Rectangle Canvas.Left="260" Canvas.Top="137" Width="194" Height="142">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/0 10 (1).png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock HorizontalAlignment="Left" Height="14" Margin="63,276,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW 2 серии Gran Coupe" VerticalAlignment="Top" Width="109" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="9"/>
-        <TextBlock HorizontalAlignment="Left" Height="14" Margin="63,289,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2025" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7" Opacity="0.5"/>
-        <TextBlock HorizontalAlignment="Left" Height="15" Margin="63,300,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="6 390 000 P" VerticalAlignment="Top" Width="44" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="8"/>
-        <TextBlock HorizontalAlignment="Left" Height="14" Margin="278,273,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="62" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="9"><Run Text="BMW "/><Run Language="ru-ru" Text="3 серии"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="14" Margin="278,287,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="22" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="7" Opacity="0.5"><Run Text="20"/><Run Language="ru-ru" Text="14"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="14" Margin="278,300,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="52" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="Black" FontSize="8"><Run Language="ru-ru" Text="1 699"/><Run Text=" 000 P"/></TextBlock>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" Margin="79,318,0,0" VerticalAlignment="Top" Height="21" FontSize="6" Background="White" Width="93"/>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" Margin="289,318,0,0" VerticalAlignment="Top" Height="21" FontSize="6" Background="White" Width="92"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="263,133,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="135" Width="188"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="55,133,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="135" Width="186" Click="Button_Click"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="190,314,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="32" Width="35"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="397,314,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}" Height="31" Width="36" RenderTransformOrigin="1.219,0.49">
+        <TextBlock Canvas.Left="278" Canvas.Top="273" Height="14" Width="62"
+                   FontFamily="Book Antiqua" FontSize="9" FontWeight="Medium" Foreground="Black">
+            <Run Text="BMW "/><Run Language="ru-ru" Text="3 серии"/>
+        </TextBlock>
+        <TextBlock Canvas.Left="278" Canvas.Top="287" Height="14" Width="22"
+                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">
+            <Run Text="20"/><Run Language="ru-ru" Text="14"/>
+        </TextBlock>
+        <TextBlock Canvas.Left="278" Canvas.Top="300" Height="14" Width="52"
+                   FontFamily="Book Antiqua" FontSize="8" FontWeight="Medium" Foreground="Black">
+            <Run Language="ru-ru" Text="1 699"/><Run Text=" 000 P"/>
+        </TextBlock>
+        <Button Content="Добавить в корзину" Canvas.Left="289" Canvas.Top="318" Width="92" Height="21" FontSize="6" Background="White"/>
+        <Button Canvas.Left="263" Canvas.Top="133" Width="188" Height="135" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}"/>
+        <Button Canvas.Left="397" Canvas.Top="314" Width="36" Height="31" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}"
+                RenderTransformOrigin="1.219,0.49">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -54,8 +95,9 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Image Margin="190,314,576,87" Source="/mdi_heart (2).png" Stretch="Fill"/>
-        <Image Margin="400,315,366,85" Source="/mdi_heart (2).png" Stretch="Fill"/>
-        <Button Content="Профиль" HorizontalAlignment="Left" Margin="691,6,0,0" VerticalAlignment="Top" Click="Button_Click" Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
-    </Grid>
+        <Image Canvas.Left="400" Canvas.Top="315" Width="34" Height="30" Source="/mdi_heart (2).png" Stretch="Fill"/>
+
+        <!-- Пустая кнопка в правом верхнем углу (возможно, закрытие) -->
+        <Button Canvas.Left="749" Canvas.Top="3" Width="30" Height="30" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
+    </Canvas>
 </Window>

@@ -3,17 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="Window5" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.Background>
+
+    <Canvas>
+        <!-- Фон -->
+        <Canvas.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF0D163C"/>
                 <GradientStop Color="#FF323D6E" Offset="0.33"/>
@@ -21,18 +16,36 @@
                 <GradientStop Color="#FFC5C8D5" Offset="0.991"/>
                 <GradientStop Color="#FF1F1F1F" Offset="1"/>
             </LinearGradientBrush>
-        </Grid.Background>
-        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3"/>
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        </Canvas.Background>
+
+        <!-- Верхняя панель -->
+        <Rectangle Width="800" Height="36" Fill="#FFFFFF" Opacity="0.3" Canvas.Left="0" Canvas.Top="0"/>
+
+        <!-- Логотип BMW -->
+        <Button Width="59" Height="40" Canvas.Left="10" Canvas.Top="-2" 
+              BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="693,10,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Rectangle HorizontalAlignment="Center" Height="219" VerticalAlignment="Top" Width="336" Fill="#FFC3C6D4" RadiusX="20" RadiusY="20" StrokeThickness="2" Margin="0,114,0,0">
+
+        <!-- Текст рядом с логотипом -->
+        <TextBlock FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" 
+                   Foreground="#FFD7DBE8" Width="35" Height="18" Canvas.Left="72" Canvas.Top="6"/>
+        <TextBlock FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" FontWeight="Medium" 
+                   Foreground="#FFD7DBE8" Width="164" Height="16" Canvas.Left="72" Canvas.Top="20"/>
+
+        <!-- Адрес -->
+        <TextBlock FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" FontWeight="Medium" 
+                   Foreground="#FFD7DBE8" Width="80" Height="16" Canvas.Left="693" Canvas.Top="10"/>
+
+        <!-- Пустая кнопка в углу -->
+        <Button Width="30" Height="30" Canvas.Left="749" Canvas.Top="3" 
+                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
+
+        <!-- Фон формы регистрации -->
+        <Rectangle Width="336" Height="219" Fill="#FFC3C6D4" RadiusX="20" RadiusY="20" StrokeThickness="2" 
+                   Canvas.Left="232" Canvas.Top="114">
             <Rectangle.Stroke>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1C2651" Offset="1"/>
@@ -41,11 +54,26 @@
                 </LinearGradientBrush>
             </Rectangle.Stroke>
         </Rectangle>
-        <TextBox HorizontalAlignment="Left" Margin="372,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" Height="20"/>
-        <TextBox HorizontalAlignment="Left" Margin="372,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" Height="20"/>
-        <DatePicker HorizontalAlignment="Left" Margin="372,217,0,0" VerticalAlignment="Top" Width="152" BorderBrush="{x:Null}" Height="26"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="372,248,0,0" VerticalAlignment="Top" Width="152" Height="17" Password=""/>
-        <Button Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,282,0,0" VerticalAlignment="Top" Background="White" Foreground="#FF1B244F" Width="137" Click="Button_Click_1">
+
+        <!-- Поля ввода с ИМЕНАМИ -->
+        <TextBox x:Name="NameBox" Width="171" Height="20" Canvas.Left="372" Canvas.Top="161"/>
+        <TextBox x:Name="ContactBox" Width="171" Height="20" Canvas.Left="372" Canvas.Top="191"/>
+        <DatePicker x:Name="BirthDatePicker" Width="171" Height="26" Canvas.Left="372" Canvas.Top="217" BorderBrush="{x:Null}"/>
+        <PasswordBox x:Name="PasswordBox" Width="171" Height="17" Canvas.Left="372" Canvas.Top="248"/>
+
+        <!-- Надписи -->
+        <TextBlock Text="Введите ваше имя" FontSize="9" Canvas.Left="246" Canvas.Top="165"/>
+        <TextBlock Text="Введите ваш номер/почту" FontSize="9" Canvas.Left="246" Canvas.Top="195"/>
+        <TextBlock Text="Введите вашу дату рождения" FontSize="9" Canvas.Left="246" Canvas.Top="224"/>
+        <TextBlock Text="Придумайте пароль" FontSize="9" Canvas.Left="246" Canvas.Top="251"/>
+
+        <!-- Заголовок -->
+        <TextBlock Text="Регистрация" FontSize="14" Foreground="#FF19234D" 
+                   Canvas.Left="360" Canvas.Top="128"/>
+
+        <!-- Кнопки с обработчиками -->
+        <Button Content="Зарегистрироваться" Width="136" Height="24" Background="White" Foreground="#FF1B244F" 
+                Canvas.Left="332" Canvas.Top="282" Click="RegisterButton_Click">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1B244F"/>
@@ -53,11 +81,8 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        <Button Content="У вас уже есть аккаунт?" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Foreground="#FF1A244E" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="6" Click="Button_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="246,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9"><Run Text="Введите ваше"/><Run Language="ru-ru" Text=" "/><Run Text="имя"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="246,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" RenderTransformOrigin="0.592,0.588"><Run Text="Введите"/><Run Language="ru-ru" Text=" ваш номер/почту"/><Run Text=" "/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="246,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9"><Run Text="Введите ваш"/><Run Language="ru-ru" Text="у дату рождения"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="246,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="9" RenderTransformOrigin="0.539,0.56"><Run Language="ru-ru" Text="Придумайте пароль"/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" Margin="0,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Foreground="#FF19234D"><Run Language="ru-ru" Text="Регистрация"/></TextBlock>
-    </Grid>
+        <Button Content="У вас уже есть аккаунт?" FontSize="6" Foreground="#FF1A244E" 
+                Background="{x:Null}" BorderBrush="{x:Null}" 
+                Canvas.Left="365" Canvas.Top="311" Click="LoginButton_Click"/>
+    </Canvas>
 </Window>

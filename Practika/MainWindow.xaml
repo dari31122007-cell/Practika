@@ -3,116 +3,188 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="450" 
-        Width="800">
-    <Grid Background ="#000C3B" 
-          OpacityMask="#FF000C3B">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid Background="#000C3B">
+        <!-- Верхняя панель -->
         <Rectangle 
-            HorizontalAlignment="Center" 
-            Height="36" 
-            Fill="#FFFFFF" 
-            VerticalAlignment="Top" 
-            Width="800" 
+            HorizontalAlignment="Center"
+            Height="36"
+            Fill="#FFFFFF"
+            VerticalAlignment="Top"
+            Width="800"
             Opacity="0.3"/>
-        <Rectangle 
+
+        <!-- Логотип BMW -->
+        <Button HorizontalAlignment="Left"
+                Margin="10,-2,0,0"
+                VerticalAlignment="Top"
+                Height="40"
+                Width="59"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}" Click="Button_Click_3">
+            <Button.Background>
+                <ImageBrush 
+                    ImageSource="/BMW.png"/>
+            </Button.Background>
+        </Button>
+
+        <!-- Текст рядом с логотипом -->
+        <TextBlock 
             HorizontalAlignment="Left" 
-            Height="118" 
+            Margin="72,6,0,0"
+            VerticalAlignment="Top"
+            FontFamily="Book Antiqua"
+            Text="BMW"
+            FontSize="13"
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8"
+            Height="18" Width="35"/>
+        <TextBlock
+            HorizontalAlignment="Left"
+            Margin="72,20,0,0"
+            VerticalAlignment="Top"
+            FontFamily="Book Antiqua"
+            Text="Официальный дилер в СПБ"
+            FontSize="9" 
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8"
+            Height="16"
+            Width="164"/>
+
+        <!-- Адрес по центру -->
+        <TextBlock 
+            HorizontalAlignment="Center"
+            Margin="0,12,0,0"
+            VerticalAlignment="Top"
+            FontFamily="Book Antiqua"
+            Text="ул.Пушкина, 125"
+            FontSize="10"
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8"
+            Height="16" 
+            Width="80"/>
+
+        <!-- Кнопка "Профиль" -->
+        <Button 
+            Content="Профиль"
+            HorizontalAlignment="Left"
+            Margin="650,6,0,0"
+            VerticalAlignment="Top"
+            Width="92"
+            Height="24"
+            FontSize="11" 
+            BorderBrush="White"
+            Foreground="#FFD7DAE8"
+            Background="{x:Null}"
+            Click="Button_Click_1"/>
+
+        <!-- Кнопка меню (бургер) -->
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="749,3,0,0" 
+            VerticalAlignment="Top"
+            Background="{x:Null}"
+            BorderBrush="{x:Null}"
+            Foreground="{x:Null}"
+            Click="Button_Click">
+            <Image 
+                Source="/bitcoin-icons_menu-filled.png" 
+                Stretch="Fill" 
+                Width="28" 
+                Height="26"/>
+        </Button>
+
+        <!-- Фоновое изображение -->
+        <Rectangle 
+            HorizontalAlignment="Center"
+            Height="227" 
+            Margin="0,41,0,0"
+            VerticalAlignment="Top" 
+            Width="780">
+            <Rectangle.Fill>
+                <ImageBrush 
+                    ImageSource="/clouds-e92-bmw 1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!-- Блок "Записаться на консультацию" -->
+        <Rectangle 
+            HorizontalAlignment="Left"
+            Height="118"
             Margin="29,281,0,0" 
+            VerticalAlignment="Top"
+            Width="411"
             Fill="#EFF2FC" 
             Stroke="#98A8E5" 
             Opacity="0.9" 
-            VerticalAlignment="Top" 
-            Width="411" 
             RadiusX="30" 
-            RadiusY="30" 
-            RenderTransformOrigin="0.513,0.496" 
-            Grid.RowSpan="2"/>
+            RadiusY="30"/>
         <TextBlock 
-            HorizontalAlignment="Left" 
-            Height="18" 
-            Margin="72,6,0,0" 
-            TextWrapping="Wrap" 
-            FontFamily="Book Antiqua" 
-            Text="BMW" 
-            VerticalAlignment="Top" 
-            Width="35"
-            RenderTransformOrigin="-0.857,-2.498" 
-            FontWeight="Medium" 
-            Foreground="#FFD7DBE8" 
-            FontSize="13"/>
-        <TextBlock 
-            HorizontalAlignment="Left" 
-            Height="16" 
-            Margin="72,20,0,0" 
-            TextWrapping="Wrap" 
-            FontFamily="Book Antiqua" 
-            Text="Официальный дилер в СПБ" 
-            VerticalAlignment="Top" 
-            Width="164" 
-            RenderTransformOrigin="-0.857,-2.498" 
-            FontWeight="Medium" 
-            Foreground="#FFD7DBE8" 
-            FontSize="9"/>
-        <TextBlock 
-            HorizontalAlignment="Center" 
-            Height="16" 
-            Margin="0,12,0,0" 
-            TextWrapping="Wrap" 
-            FontFamily="Book Antiqua" 
-            Text="ул.Пушкина, 125" 
-            VerticalAlignment="Top" 
-            Width="80" 
-            RenderTransformOrigin="-0.857,-2.498" 
-            FontWeight="Medium" 
-            Foreground="#FFD7DBE8" 
-            FontSize="10"/>
-        <TextBlock 
-            HorizontalAlignment="Left" 
-            Height="16" 
+            HorizontalAlignment="Left"
             Margin="130,295,0,0" 
-            TextWrapping="Wrap" 
-            FontFamily="Book Antiqua" 
-            VerticalAlignment="Top" 
-            Width="208" 
-            RenderTransformOrigin="-0.857,-2.498" 
-            FontWeight="Medium" 
-            Foreground="#FF000C3B" 
-            FontSize="15">
-            <Run Language="ru-ru" 
-                 Text="Записаться на консультацию"/>
-        </TextBlock>
-        <TextBox HorizontalAlignment="Left" Margin="65,328,0,0" TextWrapping="Wrap" Text="Введите имя"  VerticalAlignment="Top" Width="196" TextChanged="TextBox_TextChanged" HorizontalContentAlignment="Center" FontSize="9" Height="22" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="#FF000C3B" Foreground="#FF000C3B" SelectionTextBrush="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Margin="65,355,0,0" TextWrapping="Wrap" Text="Введите номер"  VerticalAlignment="Top" Width="196" TextChanged="TextBox_TextChanged" HorizontalContentAlignment="Center" FontSize="9" Height="22" VerticalContentAlignment="Center" Background="{x:Null}" BorderBrush="#FF000C3B" Foreground="#FF000C3B"/>
-        <Button Content="Отправить" HorizontalAlignment="Left" Margin="303,339,0,0" VerticalAlignment="Top"  Width="114" Height="25" Background="#FF000C3B" BorderBrush="#FF8998D4" Foreground="#FFD7DAE8" FontSize="11"/>
-        <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top" Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}" Click="Button_Click_1"/>
-        <Rectangle HorizontalAlignment="Center" Height="227" Margin="0,41,0,0" VerticalAlignment="Top" Width="780">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/clouds-e92-bmw 1.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="133" Margin="445,281,0,0" VerticalAlignment="Top" Width="324">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/Group 8 (1).png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Button.Background>
-                <ImageBrush ImageSource="/BMW.png"/>
-            </Button.Background>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="Button_Click">
-            <Image Height="26" Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399">
-                <Image.OpacityMask>
-                    <ImageBrush ImageSource="/bitcoin-icons_menu-filled.png"/>
-                </Image.OpacityMask>
-            </Image>
-        </Button>
+            VerticalAlignment="Top"
+            FontFamily="Book Antiqua"
+            Text="Записаться на консультацию"
+            FontSize="15" 
+            FontWeight="Medium"
+            Foreground="#FF000C3B"
+            Height="16"
+            Width="208"/>
 
+        <!-- Поля ввода -->
+        <TextBox 
+            HorizontalAlignment="Left"
+            Margin="65,328,0,0"
+            VerticalAlignment="Top" 
+            Width="196" 
+            Height="22"
+            Text="Введите имя" 
+            FontSize="9"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Background="{x:Null}"
+            BorderBrush="#FF000C3B" 
+            Foreground="#FF000C3B"/>
+        <TextBox 
+            HorizontalAlignment="Left"
+            Margin="65,355,0,0" 
+            VerticalAlignment="Top"
+            Width="196" 
+            Height="22"
+            Text="Введите номер" 
+            FontSize="9"
+            HorizontalContentAlignment="Center" 
+            VerticalContentAlignment="Center"
+            Background="{x:Null}"
+            BorderBrush="#FF000C3B"
+            Foreground="#FF000C3B"/>
+
+
+        <Button 
+            Content="Отправить"
+            HorizontalAlignment="Left" 
+            Margin="303,339,0,0"
+            VerticalAlignment="Top"
+            Width="114"
+            Height="25"
+            Background="#FF000C3B"
+            BorderBrush="#FF8998D4" 
+            Foreground="#FFD7DAE8"
+            FontSize="11" Click="Button_Click_2"/>
+
+        <!-- Изображение справа -->
+        <Rectangle
+            HorizontalAlignment="Left" 
+            Height="133"
+            Margin="445,281,0,0" 
+            VerticalAlignment="Top"
+            Width="324">
+            <Rectangle.Fill>
+                <ImageBrush 
+                    ImageSource="/Group 8 (1).png"/>
+            </Rectangle.Fill>
+        </Rectangle>
     </Grid>
 </Window>

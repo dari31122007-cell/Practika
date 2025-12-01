@@ -3,51 +3,99 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="Window3" Height="450" Width="800">
+
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF19244E"/>
-            <GradientStop Color="White" Offset="1"/>
-            <GradientStop Color="White" Offset="1"/>
+            <GradientStop Color="#FFEFF2FC" Offset="0.7"/>
             <GradientStop Color="#FF0C0C0C" Offset="1"/>
         </LinearGradientBrush>
     </Window.Background>
+
     <Grid Background="#FF19244E">
+        <!-- Верхняя панель -->
         <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3"/>
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}">
-            <Image Height="26" Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399">
-                <Image.OpacityMask>
-                    <ImageBrush ImageSource="/bitcoin-icons_menu-filled.png"/>
-                </Image.OpacityMask>
-            </Image>
+
+        <!-- Кнопка меню -->
+        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" 
+                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" Height="26"/>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40"  Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+
+        <!-- Логотип BMW -->
+        <Button HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" 
+                Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
-        <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top" Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
-        <Rectangle HorizontalAlignment="Center" Height="351" Margin="0,61,0,0" Stroke="Black" VerticalAlignment="Top" Width="766" Fill="#FFEFF2FC" Opacity="0.95"/>
-        <Rectangle HorizontalAlignment="Left" Height="275" Margin="46,83,0,0" VerticalAlignment="Top" Width="367">
+
+        <!-- Текст логотипа -->
+        <TextBlock HorizontalAlignment="Left" Margin="72,6,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" 
+                   Foreground="#FFD7DBE8" Height="18" Width="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="72,20,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" 
+                   FontWeight="Medium" Foreground="#FFD7DBE8" Height="16" Width="164"/>
+
+        <!-- Адрес -->
+        <TextBlock HorizontalAlignment="Center" Margin="0,12,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" 
+                   FontWeight="Medium" Foreground="#FFD7DBE8" Height="16" Width="80"/>
+
+        <!-- Кнопка "Профиль" -->
+        <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top" 
+                Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" 
+                Background="{x:Null}"/>
+
+        <!-- Фон карточки -->
+        <Rectangle HorizontalAlignment="Center" Height="351" Margin="0,61,0,0" 
+                   VerticalAlignment="Top" Width="766" Fill="#FFEFF2FC" Opacity="0.95" Stroke="Black"/>
+
+        <!-- Изображение авто -->
+        <Rectangle HorizontalAlignment="Left" Height="275" Margin="46,83,0,0" 
+                   VerticalAlignment="Top" Width="367">
             <Rectangle.Fill>
                 <ImageBrush ImageSource="/0 9 (1).png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="197" Margin="438,107,0,0" Stroke="#FF19244E" VerticalAlignment="Top" Width="324" RadiusX="15" RadiusY="15"/>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="458,124,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW 3 серии  GT 320i xDrive" VerticalAlignment="Top" Width="229" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="#FF19244E" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="696,130,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2014" VerticalAlignment="Top" Width="20" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="#FF19244E" FontSize="9" Opacity="0.507"/>
-        <TextBlock HorizontalAlignment="Left" Height="13" Margin="500,149,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2 л., 184 л.с., Бензин" VerticalAlignment="Top" Width="104" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11"/>
-        <TextBlock HorizontalAlignment="Left" Height="11" Margin="500,169,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11"><Run Language="ru-ru" Text="АКПП"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="14" Margin="500,187,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="88" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11"><Run Language="ru-ru" Text="Полный привод"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="11" Margin="500,208,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="54" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Text="188 826 км"/>
-        <TextBlock HorizontalAlignment="Left" Height="14" Margin="500,230,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="62" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Text="2 владельца"/>
-        <TextBlock HorizontalAlignment="Left" Height="12" Margin="500,252,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="72" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Text="Синий цвет"/>
-        <TextBlock HorizontalAlignment="Left" Height="12" Margin="500,273,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="126" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Text="Черный кожаный салон"/>
+
+        <!-- Правая панель характеристик -->
+        <Rectangle HorizontalAlignment="Left" Height="197" Margin="438,107,0,0" 
+                   VerticalAlignment="Top" Width="324" Stroke="#FF19244E" RadiusX="15" RadiusY="15"/>
+
+        <!-- Текстовые блоки -->
+        <TextBlock HorizontalAlignment="Left" Margin="458,124,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="BMW 3 серии  GT 320i xDrive" 
+                   FontWeight="Bold" Foreground="#FF19244E" FontSize="16" Height="18" Width="229"/>
+        <TextBlock HorizontalAlignment="Left" Margin="696,130,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="2014" FontWeight="Bold" 
+                   Foreground="#FF19244E" FontSize="9" Opacity="0.507" Height="10" Width="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,149,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="2 л., 184 л.с., Бензин" 
+                   FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Height="13" Width="104"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,169,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="АКПП" 
+                   FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Height="11" Width="35"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,187,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="Полный привод" 
+                   FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Height="14" Width="88"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,208,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="188 826 км" 
+                   FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Height="11" Width="54"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,230,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="2 владельца" 
+                   FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Height="14" Width="62"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,252,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="Синий цвет" 
+                   FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Height="12" Width="72"/>
+        <TextBlock HorizontalAlignment="Left" Margin="500,273,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="Черный кожаный салон" 
+                   FontWeight="Medium" Foreground="#FF19244E" FontSize="11" Height="12" Width="126"/>
+
+        <!-- Иконки -->
         <Image Margin="480,150,309,272" Source="/hugeicons_fuel.png" Stretch="Fill"/>
         <Image Margin="481,170,309,254" Source="/solar_transmission-bold.png" Stretch="Fill"/>
         <Image Margin="480,187,308,235" Source="/fluent_drive-train-20-filled.png" Stretch="Fill"/>
@@ -55,15 +103,22 @@
         <Image Margin="480,229,308,192" Source="/mdi_user.png" Stretch="Fill"/>
         <Image Margin="481,254,308,169" Source="/Ellipse 31.png" Stretch="Fill"/>
         <Image Margin="481,275,308,148" Source="/Ellipse 32.png" Stretch="Fill"/>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="470,312,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="1 699 000 P" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="#FF19244E" FontSize="16"/>
-        <Button HorizontalAlignment="Left" Margin="591,312,0,0" VerticalAlignment="Top" Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
-            <Image Height="21" Source="/Group 9.png" Stretch="Fill" Width="70"/>
+
+        <!-- Цена и кнопки -->
+        <TextBlock HorizontalAlignment="Left" Margin="470,312,0,0" VerticalAlignment="Top" 
+                   FontFamily="Book Antiqua" Text="1 699 000 P" 
+                   FontWeight="Bold" Foreground="#FF19244E" FontSize="16" Height="18" Width="85"/>
+        <Button HorizontalAlignment="Left" Margin="591,312,0,0" VerticalAlignment="Top" 
+                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Source="/Group 9.png" Stretch="Fill" Width="70" Height="21"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="670,312,0,0" VerticalAlignment="Top" Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
-            <Image Height="21" Source="/Group 10.png" Stretch="Fill" Width="71"/>
+        <Button HorizontalAlignment="Left" Margin="670,312,0,0" VerticalAlignment="Top" 
+                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Source="/Group 10.png" Stretch="Fill" Width="71" Height="21"/>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="670,331,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
-            <Image Height="22" Source="/Group 11.png" Stretch="Fill" Width="71"/>
+        <Button HorizontalAlignment="Left" Margin="670,331,0,0" VerticalAlignment="Top" 
+                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+            <Image Source="/Group 11.png" Stretch="Fill" Width="71" Height="22"/>
         </Button>
     </Grid>
 </Window>

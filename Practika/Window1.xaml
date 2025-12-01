@@ -88,7 +88,6 @@
             Text="Введите имя"  
             VerticalAlignment="Top" 
             Width="196" 
-            TextChanged="TextBox_TextChanged" 
             HorizontalContentAlignment="Center" 
             FontSize="9" 
             Height="22" 
@@ -103,7 +102,6 @@
             Text="Введите номер"  
             VerticalAlignment="Top" 
             Width="196" 
-            TextChanged="TextBox_TextChanged" 
             HorizontalContentAlignment="Center" 
             FontSize="9" Height="22" 
             VerticalContentAlignment="Center" 
@@ -114,8 +112,7 @@
             Content="Отправить" 
             HorizontalAlignment="Left" 
             Margin="303,340,0,0" 
-            VerticalAlignment="Top" 
-            Click="Button_Click" 
+            VerticalAlignment="Top"  
             Width="114" 
             Height="25" 
             Background="#FF000C3B" 
@@ -180,7 +177,6 @@
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="X"
-            Click="Button_Click" 
             BorderBrush="White" 
             Background="#FF000C3B"/>
         <Button
@@ -220,7 +216,7 @@
             Margin="564,217,0,0"
             Stroke="#FF000C3B"
             Width="212" 
-            Height="189"
+            Height="138"
             HorizontalAlignment="Left"
             RadiusX="15"
             RadiusY="15"/>
@@ -245,7 +241,6 @@
             HorizontalAlignment="Left" 
             Foreground="White"
             Content="Электромобили"
-            Click="Button_Click"
             BorderBrush="White"
             Background="#FF000C3B"
             FontSize="10"
@@ -257,7 +252,6 @@
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="Автомобили с ДВС"
-            Click="Button_Click" 
             BorderBrush="White"
             Background="#FF000C3B"
             FontSize="10" 
@@ -269,7 +263,6 @@
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Предыдущее поколение"
-            Click="Button_Click"
             BorderBrush="White"
             Background="#FF000C3B"
             FontSize="10"
@@ -281,7 +274,6 @@
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Все модели"
-            Click="Button_Click"
             BorderBrush="White"
             Background="#FF000C3B"
             FontSize="10"
@@ -289,20 +281,31 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="578,360,0,0"
+            Margin="578,377,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Доступные авто для покупки"
-            Click="Button_Click"
             BorderBrush="White"
             Background="#FF000C3B"
             Height="36" 
             FontSize="10"/>
 
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}" Click="Button_Click">
-            <Image Height="26" Source="/material-symbols_close.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399">
+        <Button
+            HorizontalAlignment="Left" 
+            Margin="749,3,0,0" 
+            VerticalAlignment="Top"
+            BorderBrush="{x:Null}"
+            Foreground="{x:Null}" 
+            Background="{x:Null}">
+            <Image 
+                Height="26" 
+                Source="/material-symbols_close.png" 
+                Stretch="Fill" 
+                Width="28"
+                RenderTransformOrigin="0.446,0.399">
                 <Image.OpacityMask>
-                    <ImageBrush ImageSource="/material-symbols_close.png"/>
+                    <ImageBrush 
+                        ImageSource="/material-symbols_close.png"/>
                 </Image.OpacityMask>
             </Image>
         </Button>
