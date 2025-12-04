@@ -52,18 +52,16 @@ namespace Practika
                 return;
             }
 
-            // ✅ Все данные получены — можно регистрировать
-            MessageBox.Show($"Регистрация успешна!\nИмя: {name}\nКонтакт: {contact}",
-                "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+            Window7 window7 = new Window7();
+            window7.Show();
+            this.Close();
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            // Например, перейти на окно входа
-            MessageBox.Show("Переход на страницу входа...");
-            // var loginWindow = new Window6();
-            // loginWindow.Show();
-            // this.Close();
+            var window6 = new Window6();
+            window6.Show();
+            this.Close();
         }
     }
 }

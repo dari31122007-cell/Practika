@@ -7,7 +7,6 @@
         Title="Window6" Height="450" Width="800">
 
     <Grid>
-        <!-- Фон -->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF0D163C"/>
@@ -18,10 +17,9 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!-- Верхняя панель -->
+
         <Rectangle Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3" HorizontalAlignment="Center"/>
 
-        <!-- Логотип BMW -->
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Height="40"
                 Margin="10,-2,0,0" BorderBrush="{x:Null}" Foreground="{x:Null}">
             <Button.Background>
@@ -29,21 +27,17 @@
             </Button.Background>
         </Button>
 
-        <!-- Текст рядом с логотипом -->
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,6,0,0"
                    FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" Foreground="#FFD7DBE8"/>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
                    FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" FontWeight="Medium" Foreground="#FFD7DBE8"/>
 
-        <!-- Адрес (выровнен по правому краю) -->
         <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,10,36,0"
                    FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" FontWeight="Medium" Foreground="#FFD7DBE8"/>
 
-        <!-- Пустая кнопка в правом верхнем углу -->
         <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30"
                 Margin="0,3,10,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
 
-        <!-- Центральная форма входа -->
         <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="336" Height="199">
             <Rectangle Fill="#FFC3C6D4" RadiusX="20" RadiusY="20" StrokeThickness="2" Margin="0,-4,0,4">
                 <Rectangle.Stroke>
@@ -54,12 +48,10 @@
                     </LinearGradientBrush>
                 </Rectangle.Stroke>
             </Rectangle>
-
-            <!-- Заголовок -->
+            
             <TextBlock Text="Вход" HorizontalAlignment="Center" VerticalAlignment="Top"
                        Margin="0,1,0,0" FontSize="14" Foreground="#FF19234D"/>
 
-            <!-- Поля ввода -->
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="186">
                 <TextBlock Text="Введите номер/почту" FontSize="10" Margin="0,0,0,4" HorizontalAlignment="Left"/>
                 <TextBox Height="26" TextChanged="TextBox_TextChanged" />
@@ -67,7 +59,6 @@
                 <TextBlock Text="Введите пароль" FontSize="10" Margin="0,8,0,4" HorizontalAlignment="Left"/>
                 <PasswordBox Height="26" />
 
-                <!-- Кнопка входа -->
                 <Button Content="Войти" Height="26" Margin="0,12,0,6" Background="White" Foreground="#FF1B244F" Click="Button_Click_1">
                     <Button.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -77,7 +68,7 @@
                     </Button.BorderBrush>
                 </Button>
 
-                <!-- Ссылка на регистрацию -->
+
                 <Button Content="У вас нет аккаунта?" FontSize="6" Foreground="#FF1A244E"
                         Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Center"
                         Click="Button_Click"/>

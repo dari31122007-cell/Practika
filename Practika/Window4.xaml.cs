@@ -17,6 +17,7 @@ namespace Practika
     /// <summary>
     /// Логика взаимодействия для Window4.xaml
     /// </summary>
+    /// 
     public partial class Window4 : Window
     {
         public Window4()
@@ -32,8 +33,10 @@ namespace Practika
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window4 window4 = new Window4();
-            window4.Show();
+            window4 .Show();
             this .Close();
+
         }
+
     }
 }

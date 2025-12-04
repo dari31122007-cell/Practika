@@ -5,65 +5,145 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
-        Title="Window12" Height="450" Width="800">
-    <Grid Background="#FFE0E4F0">
+        Title="Window12" 
+        Height="450" 
+        Width="800">
+    <Grid 
+        Background="#FFE0E4F0">
         <!-- Верхняя панель -->
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="36"
-                   Fill="#FF19234D" Opacity="0.9"/>
+        <Rectangle 
+            HorizontalAlignment="Stretch" 
+            VerticalAlignment="Top"
+            Height="36"
+            Fill="#FF19234D"
+            Opacity="0.9"/>
 
         <!-- Логотип BMW -->
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,-2,0,0"
-                Width="59" Height="40" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="10,-2,0,0"
+            Width="59" 
+            Height="40" 
+            BorderBrush="{x:Null}" 
+            Foreground="{x:Null}">
             <Button.Background>
-                <ImageBrush ImageSource="/BMW.png"/>
+                <ImageBrush 
+                    ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
 
         <!-- Текст "BMW" -->
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,6,0,0"
-                   FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium"
-                   Foreground="#FFD7DBE8"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="72,6,0,0"
+            FontFamily="Book Antiqua" 
+            Text="BMW" 
+            FontSize="13" 
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8"/>
 
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
-                   FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9"
-                   FontWeight="Medium" Foreground="#FFD7DBE8"/>
+        <TextBlock 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="72,20,0,0"
+            FontFamily="Book Antiqua" 
+            Text="Официальный дилер в СПБ"
+            FontSize="9"
+            FontWeight="Medium" 
+            Foreground="#FFD7DBE8"/>
 
         <!-- Адрес по центру -->
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,12,0,0"
-                   FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10"
-                   FontWeight="Medium" Foreground="#FFD7DBE8"/>
+        <TextBlock 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,12,0,0"
+            FontFamily="Book Antiqua"
+            Text="ул.Пушкина, 125"
+            FontSize="10"
+            FontWeight="Medium" 
+            Foreground="#FFD7DBE8"/>
 
         <!-- Кнопка "Профиль" -->
-        <Button Content="Профиль" HorizontalAlignment="Right" VerticalAlignment="Top"
-                Margin="0,6,15,0" Width="92" Height="24"
-                BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
+        <Button
+            Content="Профиль"
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top"
+            Margin="0,6,15,0"
+            Width="92" 
+            Height="24"
+            BorderBrush="White"
+            Foreground="#FFD7DAE8" 
+            FontSize="11"
+            Background="{x:Null}"/>
 
         <!-- Иконка корзины -->
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,123,0"
-                Width="32" Height="32" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click">
-            <Image Source="/akar-icons_basket.png" Stretch="Uniform"/>
+        <Button 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top"
+            Margin="0,2,123,0"
+            Width="32"
+            Height="32"
+            Background="{x:Null}"
+            BorderBrush="{x:Null}"
+            Click="Button_Click">
+            <Image 
+                Source="/akar-icons_basket.png" 
+                Stretch="Uniform"/>
         </Button>
 
         <!-- Пустая кнопка в правом верхнем углу (закрытие/доп. действия) -->
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,3,7,0"
-                Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,3,7,0"
+            Width="20"
+            Height="20" 
+            BorderBrush="{x:Null}" 
+            Foreground="{x:Null}"
+            Background="{x:Null}"/>
 
         <!-- Заголовок "Избранное" -->
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,76,0,0"
-                   FontSize="18" FontWeight="Bold" Text="Избранное"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top" 
+            Margin="63,76,0,0"
+            FontSize="18" 
+            FontWeight="Bold" 
+            Text="Избранное"/>
 
         <!-- Фон карточки (даже если пусто) -->
-        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top"
-                   Margin="63,133,0,0" Width="651" Height="236"
-                   Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
+        <Rectangle 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            Margin="63,133,0,0"
+            Width="651" 
+            Height="236"
+            Fill="White"
+            Opacity="0.5"
+            Stroke="#FF2D375E"
+            RadiusX="20" 
+            RadiusY="20"/>
 
         <!-- Надпись "Избранное пусто" — по центру -->
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,227,0,0"
-                   FontSize="36" Opacity="0.5" Text="Избранное пусто"/>
+        <TextBlock 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Margin="0,227,0,0"
+            FontSize="36"
+            Opacity="0.5" 
+            Text="Избранное пусто"/>
 
         <!-- Невидимая кнопка (заглушка, возможно, для будущего функционала) -->
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top"
-                Margin="397,314,0,0" Width="36" Height="31"
-                BorderBrush="{x:Null}" Background="{x:Null}" Foreground="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            Margin="397,314,0,0"
+            Width="36"
+            Height="31"
+            BorderBrush="{x:Null}" 
+            Background="{x:Null}" 
+            Foreground="{x:Null}"/>
     </Grid>
 </Window>

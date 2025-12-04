@@ -20,7 +20,7 @@
 
         <!-- Кнопка меню -->
         <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" 
-                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_3">
             <Image Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" Height="26"/>
         </Button>
 
@@ -51,14 +51,14 @@
                 Background="{x:Null}"/>
 
         <!-- Фон карточки -->
-        <Rectangle HorizontalAlignment="Center" Height="351" Margin="0,61,0,0" 
+        <Rectangle HorizontalAlignment="Center" Height="360" Margin="0,45,0,0" 
                    VerticalAlignment="Top" Width="766" Fill="#FFEFF2FC" Opacity="0.95" Stroke="Black"/>
 
         <!-- Изображение авто -->
         <Rectangle HorizontalAlignment="Left" Height="275" Margin="46,83,0,0" 
                    VerticalAlignment="Top" Width="367">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/0 9 (1).png"/>
+                <ImageBrush ImageSource="/0 9.png"/>
             </Rectangle.Fill>
         </Rectangle>
 
@@ -117,8 +117,8 @@
             <Image Source="/Group 10.png" Stretch="Fill" Width="71" Height="21"/>
         </Button>
         <Button HorizontalAlignment="Left" Margin="670,331,0,0" VerticalAlignment="Top" 
-                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Image Source="/Group 11.png" Stretch="Fill" Width="71" Height="22"/>
+                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
+                <Image Source="/Group 11.png" Stretch="Fill" Width="71" Height="22"/>
         </Button>
     </Grid>
 </Window>

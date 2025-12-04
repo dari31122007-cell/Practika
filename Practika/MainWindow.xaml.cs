@@ -19,36 +19,51 @@ namespace Practika
             InitializeComponent();
         }
 
-        // Кнопка "Профиль" → открывает регистрацию (Window5)
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void InputBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            var registrationWindow = new Window5();
-            registrationWindow.Show();
+            var textBox = sender as TextBox;
+            if (textBox != null &&
+                (textBox.Text == "Введите имя" || textBox.Text == "Введите номер"))
+            {
+                textBox.Text = "";
+            }
         }
 
-        // Кнопка "Отправить" → отправка заявки (оставляем как есть)
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(
-                "Спасибо! Ваша заявка на консультацию отправлена.",
-                "Заявка принята",
-                MessageBoxButton.OK,
-                MessageBoxImage.Information
-            );
+            string name = NameTextBox.Text.Trim();
+            string phone = PhoneTextBox.Text.Trim();
+
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone) ||
+                name == "Введите имя" || phone == "Введите номер")
+            {
+                MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+            MessageBox.Show("Заявка принята!", "Успех",
+                MessageBoxButton.OK, MessageBoxImage.Information);
+
+
+            NameTextBox.Text = "Введите имя";
+            PhoneTextBox.Text = "Введите номер";
         }
 
-        // Кнопка "Меню" (бургер) → открывает каталог (Window1)
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+        private void BurgerButton_Click(object sender, RoutedEventArgs e)
         {
-            var catalogWindow = new Window1();
-            catalogWindow.Show();
+            var window1 = new Window1();
+            window1.Show();
+            this.Close();
         }
 
-        // Логотип BMW → ничего не делает (можно оставить пустым)
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            // Опционально: можно добавить переход на главную или каталог
+        private void Button_Click_1(object sender, RoutedEventArgs e) { 
+            var window5 = new Window5();
+            window5.Show();
+            this.Close();
         }
-    
     }
+
 }

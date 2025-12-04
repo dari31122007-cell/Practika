@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
-    <Grid Background="#000C3B" 
-          OpacityMask="#FF000C3B">
+    
+    <Grid Background="#000C3B">
         <Rectangle 
             HorizontalAlignment="Center" 
             Height="36" 
@@ -173,7 +173,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="575,66,0,0"
+            Margin="575,51,0,0"
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="X"
@@ -182,7 +182,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="678,66,0,0"
+            Margin="678,51,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="2"
@@ -190,7 +190,7 @@
             Background="#FF000C3B"/>
         <Rectangle
     VerticalAlignment="Top" 
-            Margin="564,35,0,0" 
+            Margin="564,18,0,0" 
             Stroke="#FF000C3B" 
             Width="212" 
             Height="168" 
@@ -199,7 +199,7 @@
             RadiusY="15"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="578,47,0,0"
+            Margin="578,29,0,0"
             TextWrapping="Wrap" 
             Text="BMW" 
             VerticalAlignment="Top" 
@@ -207,13 +207,13 @@
         <Rectangle 
             HorizontalAlignment="Left" 
             Height="1" 
-            Margin="569,61,0,0"
+            Margin="575,44,0,0"
             Stroke="Black" 
             VerticalAlignment="Top" 
             Width="74"/>
         <Rectangle
             VerticalAlignment="Top" 
-            Margin="564,217,0,0"
+            Margin="565,198,0,0"
             Stroke="#FF000C3B"
             Width="212" 
             Height="138"
@@ -222,7 +222,7 @@
             RadiusY="15"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="578,230,0,0"
+            Margin="578,211,0,0"
             TextWrapping="Wrap"
             Text="MINI"
             VerticalAlignment="Top"
@@ -230,14 +230,14 @@
         <Rectangle 
             HorizontalAlignment="Left"
             Height="1"
-            Margin="575,245,0,0"
+            Margin="575,229,0,0"
             Stroke="Black"
             VerticalAlignment="Top"
             Width="74"/>
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="577,253,0,0"
+            Margin="577,235,0,0"
             HorizontalAlignment="Left" 
             Foreground="White"
             Content="Электромобили"
@@ -248,7 +248,7 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="577,276,0,0"
+            Margin="577,258,0,0"
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="Автомобили с ДВС"
@@ -259,7 +259,7 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="578,302,0,0"
+            Margin="578,284,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Предыдущее поколение"
@@ -270,7 +270,7 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="578,325,0,0"
+            Margin="578,309,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Все модели"
@@ -281,18 +281,19 @@
         <Button
             Width="186"
             VerticalAlignment="Top"
-            Margin="578,377,0,0"
+            Margin="577,348,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="Доступные авто для покупки"
             BorderBrush="White"
             Background="#FF000C3B"
             Height="36" 
-            FontSize="10"/>
+            FontSize="10" 
+            Click="Button_Click_1"/>
 
         <Button
             HorizontalAlignment="Left" 
-            Margin="749,3,0,0" 
+            Margin="740,15,0,0" 
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
             Foreground="{x:Null}" 
@@ -303,16 +304,12 @@
                 Stretch="Fill" 
                 Width="28"
                 RenderTransformOrigin="0.446,0.399">
-                <Image.OpacityMask>
-                    <ImageBrush 
-                        ImageSource="/material-symbols_close.png"/>
-                </Image.OpacityMask>
             </Image>
         </Button>
         <Button
     Width="90" 
             VerticalAlignment="Top"
-            Margin="575,88,0,0"
+            Margin="575,73,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="3" 
@@ -322,7 +319,7 @@
     Width="90" 
             VerticalAlignment="Top" 
             RenderTransformOrigin="0.5,0.5" 
-            Margin="575,110,0,0"
+            Margin="575,95,0,0"
             HorizontalAlignment="Left" 
             Foreground="White"
             Content="5" 
@@ -331,7 +328,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="575,132,0,0"
+            Margin="575,117,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="7" 
@@ -341,7 +338,7 @@
     Width="90" 
             VerticalAlignment="Top" 
             RenderTransformOrigin="1.034,0.703"
-            Margin="575,154,0,0"
+            Margin="575,140,0,0"
             HorizontalAlignment="Left"
             Foreground="White" 
             Content="Z"
@@ -350,7 +347,7 @@
         <Button
     Width="90"
             VerticalAlignment="Top"
-            Margin="678,88,0,0"
+            Margin="678,73,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="4"
@@ -359,7 +356,7 @@
         <Button
     Width="90"
             VerticalAlignment="Top"
-            Margin="678,110,0,0"
+            Margin="678,95,0,0"
             HorizontalAlignment="Left"
             Foreground="White"
             Content="6"
@@ -368,7 +365,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="678,132,0,0"
+            Margin="678,117,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="8" 
@@ -377,7 +374,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="575,176,0,0"
+            Margin="575,163,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="I" 
@@ -386,7 +383,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="678,154,0,0"
+            Margin="678,140,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="M" 
@@ -395,7 +392,7 @@
         <Button
     Width="90" 
             VerticalAlignment="Top" 
-            Margin="678,176,0,0"
+            Margin="678,163,0,0"
             HorizontalAlignment="Left" 
             Foreground="White" 
             Content="Все модели"

@@ -8,77 +8,172 @@
         Title="Window11" Height="450" Width="800">
     <Grid Background="#FFE0E4F0">
         <!-- Верхняя панель -->
-        <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="36"
-                   Fill="#FF19234D" Opacity="0.9"/>
+        <Rectangle 
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Top"
+            Height="36"
+            Fill="#FF19234D" 
+            Opacity="0.9"/>
 
         <!-- Логотип BMW -->
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,-2,0,0"
-                Width="59" Height="40" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Button 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,-2,0,0"
+            Width="59"
+            Height="40"
+            BorderBrush="{x:Null}"
+            Foreground="{x:Null}">
             <Button.Background>
-                <ImageBrush ImageSource="/BMW.png"/>
+                <ImageBrush 
+                    ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
 
         <!-- Текст "BMW" -->
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,6,0,0"
-                   FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium"
-                   Foreground="#FFD7DBE8"/>
+        <TextBlock 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="72,6,0,0"
+            FontFamily="Book Antiqua"
+            Text="BMW" 
+            FontSize="13" 
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8"/>
 
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
-                   FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9"
-                   FontWeight="Medium" Foreground="#FFD7DBE8"/>
+        <TextBlock 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="72,20,0,0"
+            FontFamily="Book Antiqua"
+            Text="Официальный дилер в СПБ" 
+            FontSize="9"
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8"/>
 
         <!-- ФИО пользователя (справа) -->
-        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,6,30,0"
-                   FontFamily="Book Antiqua" FontSize="10" FontWeight="Medium"
-                   Foreground="#FFD7DBE8">
-            <Run Text="Фамилия "/><Run Language="ru-ru" Text="И"/><Run Text="мя "/>
-            <Run Language="ru-ru" Text="О"/><Run Text="тчество"/>
+        <TextBlock 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top"
+            Margin="0,6,30,0"
+            FontFamily="Book Antiqua" 
+            FontSize="10" 
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8">
+            <Run Text="Фамилия "/>
+            <Run Language="ru-ru" 
+            Text="И"/>
+            <Run Text="мя "/>
+            <Run 
+            Language="ru-ru" 
+            Text="О"/>
+            <Run 
+                Text="тчество"/>
         </TextBlock>
 
         <!-- ID сотрудника -->
-        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,17,30,0"
-                   FontFamily="Book Antiqua" FontSize="10" FontWeight="Medium"
-                   Foreground="#FFD7DBE8" Text="id_sotr"/>
+        <TextBlock 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top" 
+            Margin="0,17,30,0"
+            FontFamily="Book Antiqua"
+            FontSize="10"
+            FontWeight="Medium"
+            Foreground="#FFD7DBE8" 
+            Text="id_sotr"/>
 
         <!-- Кнопка "Настройки" -->
-        <Button Content="Настройки" HorizontalAlignment="Right" VerticalAlignment="Top"
-                Margin="0,4,173,0" Width="96" Height="25"
-                Background="WhiteSmoke" BorderBrush="Black"/>
+        <Button 
+            Content="Настройки"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,4,173,0" 
+            Width="96" 
+            Height="25"
+            Background="WhiteSmoke"
+            BorderBrush="Black"/>
 
         <!-- Кнопка "Профиль" заменена на "Настройки", остальные иконки убраны как дубли -->
 
         <!-- Пустая кнопка в углу (закрытие/доп. действия) -->
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,3,7,0"
-                Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,3,7,0"
+            Width="20" 
+            Height="20"
+            BorderBrush="{x:Null}"
+            Foreground="{x:Null}"
+            Background="{x:Null}"/>
 
         <!-- Основное меню: кнопки навигации -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,69,0,0">
-            <Button Content="Клиенты" Width="96" Height="25"
-                    Background="#FFBFBFBF" BorderBrush="Black" Margin="0,0,5,0"/>
-            <Button Content="Авто в наличии" Width="96" Height="25"
-                    Background="WhiteSmoke" BorderBrush="Black" Margin="0,0,5,0"/>
-            <Button Content="Подарки" Width="96" Height="25"
-                    Background="WhiteSmoke" BorderBrush="Black" Margin="0,0,5,0"/>
-            <Button Content="Сотрудники" Width="96" Height="25"
-                    Background="WhiteSmoke" BorderBrush="Black" Margin="0,0,5,0"/>
-            <Button Content="Сообщения" Width="96" Height="25"
-                    Background="WhiteSmoke" BorderBrush="Black"/>
+        <StackPanel 
+            Orientation="Horizontal" 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="90,69,0,0">
+            <Button 
+                Content="Клиенты" 
+                Width="96"
+                Height="25"
+                Background="#FFBFBFBF" 
+                BorderBrush="Black"
+                Margin="0,0,5,0"/>
+            <Button 
+                Content="Авто в наличии"
+                Width="96" 
+                Height="25"
+                Background="WhiteSmoke"
+                BorderBrush="Black"
+                Margin="0,0,5,0"/>
+            <Button 
+                Content="Подарки"
+                Width="96" 
+                Height="25"
+                Background="WhiteSmoke" 
+                BorderBrush="Black" 
+                Margin="0,0,5,0"/>
+            <Button 
+                Content="Сотрудники" 
+                Width="96" 
+                Height="25"
+                Background="WhiteSmoke"
+                BorderBrush="Black"
+                Margin="0,0,5,0"/>
+            <Button
+                Content="Сообщения"
+                Width="96"
+                Height="25"
+                Background="WhiteSmoke"
+                BorderBrush="Black"/>
         </StackPanel>
 
         <!-- Заголовок раздела -->
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="106,118,0,0"
-                   FontFamily="Book Antiqua" FontSize="13" FontWeight="Bold" Foreground="Black"
-                   Text="Клиенты"/>
+        <TextBlock 
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="106,118,0,0"
+            FontFamily="Book Antiqua" 
+            FontSize="13" 
+            FontWeight="Bold" 
+            Foreground="Black"
+            Text="Клиенты"/>
 
         <!-- Таблица данных -->
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}"
-                  Margin="91,155,91,100"
-                  SelectionChanged="DataGrid_SelectionChanged"/>
+        <DataGrid 
+            d:ItemsSource="{d:SampleData ItemCount=5}"
+            Margin="91,155,91,100"
+            SelectionChanged="DataGrid_SelectionChanged"/>
 
         <!-- Кнопка "Редактировать" по центру внизу -->
-        <Button Content="Редактировать" HorizontalAlignment="Center" VerticalAlignment="Bottom"
-                Margin="0,0,0,20" Width="156" Height="25"
-                Background="WhiteSmoke" BorderBrush="Black"/>
+        <Button 
+            Content="Редактировать" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Bottom"
+            Margin="0,0,0,20"
+            Width="156"
+            Height="25"
+            Background="WhiteSmoke" 
+            BorderBrush="Black"/>
     </Grid>
 </Window>

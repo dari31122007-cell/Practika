@@ -21,6 +21,56 @@
         </Grid.Background>
 
         <!-- Верхняя панель -->
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="223,59,0,0" 
+            VerticalAlignment="Top"
+            Height="150" 
+            Width="164"
+            Background="#FFEFF2FC"
+            BorderBrush="Black" Click="Button_Click" Foreground="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="411,59,0,0" 
+            VerticalAlignment="Top"
+            Height="150" 
+            Width="164"
+            Background="#FFEFF2FC"
+            BorderBrush="Black" Click="Button_Click" Foreground="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="601,59,0,0" 
+            VerticalAlignment="Top"
+            Height="150" 
+            Width="164"
+            Background="#FFEFF2FC"
+            BorderBrush="Black" Click="Button_Click" Foreground="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="601,217,0,0" 
+            VerticalAlignment="Top"
+            Height="150" 
+            Width="164"
+            Background="#FFEFF2FC"
+            BorderBrush="Black" Click="Button_Click" Foreground="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="411,217,0,0" 
+            VerticalAlignment="Top"
+            Height="150" 
+            Width="164"
+            Background="#FFEFF2FC"
+            BorderBrush="Black" Click="Button_Click" Foreground="{x:Null}"/>
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="223,217,0,0" 
+            VerticalAlignment="Top"
+            Height="150" 
+            Width="164"
+            Background="#FFEFF2FC"
+            BorderBrush="Black" Click="Button_Click" Foreground="{x:Null}"/>
+
+        <!-- Верхняя панель -->
         <Rectangle 
             HorizontalAlignment="Center"
             Height="36" Fill="#FFFFFF" 
@@ -106,7 +156,7 @@
             FontSize="11"
             BorderBrush="White"
             Foreground="#FFD7DAE8"
-            Background="{x:Null}"/>
+            Background="{x:Null}" Click="Button_Click_1"/>
 
         <!-- Левая панель с фильтрами -->
         <Rectangle 
@@ -118,7 +168,7 @@
 
         <!-- ComboBox'ы -->
         <ComboBox 
-            Name="Бренд"
+            x:Name="Бренд"
             HorizontalAlignment="Left"
             Margin="10,54,0,0"
             VerticalAlignment="Top"
@@ -155,73 +205,11 @@
             Width="158"
             SelectionChanged="ComboBox_SelectionChanged"/>
 
-        <!-- Карточки -->
-        <Rectangle 
-            HorizontalAlignment="Left" 
-            Height="150" 
-            Margin="212,85,0,0" 
-            VerticalAlignment="Top"
-            Width="164" 
-            RadiusX="15"
-            RadiusY="15"
-            Fill="#FFEFF2FC"
-            Stroke="#FF18234E"/>
-        <Rectangle 
-            HorizontalAlignment="Left" 
-            Height="150" 
-            Margin="212,243,0,0"
-            VerticalAlignment="Top"
-            Width="164"
-            RadiusX="15"
-            RadiusY="15" 
-            Fill="#FFEFF2FC" 
-            Stroke="#FF16214C"/>
-        <Rectangle 
-            HorizontalAlignment="Left" 
-            Height="147" 
-            Margin="590,85,0,0"
-            VerticalAlignment="Top"
-            Width="164"
-            RadiusX="15"
-            RadiusY="15"
-            Fill="#FFEFF2FC" 
-            Stroke="#FF16214C"/>
-        <Rectangle 
-            HorizontalAlignment="Left"
-            Height="150" 
-            Margin="400,85,0,0"
-            VerticalAlignment="Top"
-            Width="164" 
-            RadiusX="15" 
-            RadiusY="15" 
-            Fill="#FFEFF2FC"
-            Stroke="#FF15204B"/>
-        <Rectangle 
-            HorizontalAlignment="Left" 
-            Height="150"
-            Margin="400,243,0,0" 
-            VerticalAlignment="Top"
-            Width="164" 
-            RadiusX="15" 
-            RadiusY="15" 
-            Fill="#FFEFF2FC"
-            Stroke="#FF16214C"/>
-        <Rectangle 
-            HorizontalAlignment="Left" 
-            Height="150" 
-            Margin="590,243,0,0"
-            VerticalAlignment="Top"
-            Width="164" 
-            RadiusX="15" 
-            RadiusY="15" 
-            Fill="#FFEFF2FC"
-            Stroke="#FF16214C"/>
-
         <!-- Изображения в карточках -->
         <Rectangle 
             HorizontalAlignment="Left" 
             Height="111"
-            Margin="220,93,0,0" 
+            Margin="231,67,0,0" 
             VerticalAlignment="Top" 
             Width="148">
             <Rectangle.Fill>
@@ -232,7 +220,7 @@
         <Rectangle 
             HorizontalAlignment="Left" 
             Height="111" 
-            Margin="408,94,0,0" 
+            Margin="419,68,0,0" 
             VerticalAlignment="Top" 
             Width="148">
             <Rectangle.Fill>
@@ -243,7 +231,7 @@
         <Rectangle 
             HorizontalAlignment="Left" 
             Height="111" 
-            Margin="598,94,0,0" 
+            Margin="609,68,0,0" 
             VerticalAlignment="Top"
             Width="148">
             <Rectangle.Fill>
@@ -254,7 +242,7 @@
         <Rectangle 
             HorizontalAlignment="Left"
             Height="111" 
-            Margin="220,249,0,0"
+            Margin="231,223,0,0"
             VerticalAlignment="Top" 
             Width="148">
             <Rectangle.Fill>
@@ -265,7 +253,7 @@
         <Rectangle 
             HorizontalAlignment="Left"
             Height="111" 
-            Margin="408,250,0,0"
+            Margin="419,224,0,0"
             VerticalAlignment="Top"
             Width="148">
             <Rectangle.Fill>
@@ -276,7 +264,7 @@
         <Rectangle 
             HorizontalAlignment="Left" 
             Height="111" 
-            Margin="598,249,0,0" 
+            Margin="609,223,0,0" 
             VerticalAlignment="Top" 
             Width="148">
             <Rectangle.Fill>
@@ -288,7 +276,7 @@
         <!-- Текст под изображениями -->
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="228,209,0,0" 
+            Margin="239,183,0,0" 
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="BMW X6" 
@@ -299,7 +287,7 @@
             Width="42"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="228,219,0,0"
+            Margin="239,193,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="2025"
@@ -311,7 +299,7 @@
             Width="16"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="228,365,0,0"
+            Margin="239,339,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="BMW 3 серии" 
@@ -322,7 +310,7 @@
             Width="58"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="228,377,0,0"
+            Margin="239,351,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="GT 320i xDrive"
@@ -333,7 +321,7 @@
             Width="80"/>
         <TextBlock
             HorizontalAlignment="Left" 
-            Margin="424,210,0,0"
+            Margin="435,184,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="BMW X3" 
@@ -344,7 +332,7 @@
             Width="42"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="424,219,0,0"
+            Margin="435,193,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="2025"
@@ -356,7 +344,7 @@
             Width="14"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="424,365,0,0" 
+            Margin="435,339,0,0" 
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="MINI 3 Двери" 
@@ -367,7 +355,7 @@
             Width="58"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="424,377,0,0"
+            Margin="435,351,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="John Cooper Works"
@@ -379,7 +367,7 @@
 
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="610,210,0,0" 
+            Margin="621,184,0,0" 
             VerticalAlignment="Top"
             FontFamily="Book Antiqua" 
             Text="BMW X5" 
@@ -390,7 +378,7 @@
             Width="42"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="610,219,0,0"
+            Margin="621,193,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua" 
             Text="2017"
@@ -402,7 +390,7 @@
             Width="14"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="602,365,0,0"
+            Margin="613,339,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="MINI 3 Двери" 
@@ -413,7 +401,7 @@
             Width="58"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="602,377,0,0" 
+            Margin="613,351,0,0" 
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="Cooper S" 
@@ -426,8 +414,8 @@
         <!-- Цены -->
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="324,0,0,0"
-            VerticalAlignment="Center"
+            Margin="337,190,0,0"
+            VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="15 490 000 P" 
             FontSize="8" 
@@ -437,8 +425,8 @@
             Width="44"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="512,0,0,0"
-            VerticalAlignment="Center"
+            Margin="523,190,0,0"
+            VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="6 980 000 P" 
             FontSize="8"
@@ -448,8 +436,8 @@
             Width="44"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="702,0,0,0"
-            VerticalAlignment="Center"
+            Margin="713,190,0,0"
+            VerticalAlignment="Top"
             FontFamily="Book Antiqua" 
             Text="2 990 000 P"
             FontSize="8" 
@@ -460,7 +448,7 @@
 
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="324,369,0,0"
+            Margin="335,343,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="1 699 000 P"
@@ -471,7 +459,7 @@
             Width="40"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="512,369,0,0"
+            Margin="523,343,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="3 690 000 P" 
@@ -482,7 +470,7 @@
             Width="40"/>
         <TextBlock 
             HorizontalAlignment="Left" 
-            Margin="702,369,0,0"
+            Margin="713,343,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="6 980 000 P" 
@@ -494,7 +482,7 @@
 
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="348,377,0,0" 
+            Margin="359,351,0,0" 
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="2014" 
@@ -506,7 +494,7 @@
             Width="16"/>
         <TextBlock 
             HorizontalAlignment="Left"
-            Margin="536,377,0,0"
+            Margin="547,351,0,0"
             VerticalAlignment="Top"
             FontFamily="Book Antiqua"
             Text="2021"
@@ -518,7 +506,7 @@
             Width="16"/>
         <TextBlock  
             HorizontalAlignment="Left" 
-            Margin="726,377,0,0" 
+            Margin="737,351,0,0" 
             VerticalAlignment="Top"
             FontFamily="Book Antiqua" 
             Text="2024"
@@ -531,7 +519,7 @@
 
         <!-- Иконки (стрелки) -->
         <Image
-            Margin="774,228,14,185" 
+            Margin="785,202,3,211" 
             Source="/Vector (1).png"
             Stretch="Fill"
             RenderTransformOrigin="0.5,0.5">
@@ -545,79 +533,24 @@
             </Image.RenderTransform>
         </Image>
         <Image 
-            Margin="188,228,602,185"
+            Margin="199,202,591,211"
             Source="/Vector (1).png" 
             Stretch="Fill"/>
 
         <!-- Прозрачные кнопки-триггеры -->
         <Button 
             HorizontalAlignment="Left"
-            Margin="765,224,0,0" 
+            Margin="776,198,0,0" 
             VerticalAlignment="Top"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
             Foreground="{x:Null}"/>
         <Button 
             HorizontalAlignment="Left"
-            Margin="182,224,0,0" 
+            Margin="193,198,0,0" 
             VerticalAlignment="Top"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
-            Foreground="{x:Null}"/>
-
-        <Button 
-            HorizontalAlignment="Left" 
-            Margin="212,85,0,0" 
-            VerticalAlignment="Top"
-            Height="150" 
-            Width="164"
-            Background="{x:Null}"
-            BorderBrush="{x:Null}" 
-            Foreground="{x:Null}"/>
-        <Button 
-            HorizontalAlignment="Left"
-            Margin="400,85,0,0"
-            VerticalAlignment="Top"
-            Height="150"
-            Width="164"
-            Background="{x:Null}"
-            BorderBrush="{x:Null}"
-            Foreground="{x:Null}"/>
-        <Button 
-            HorizontalAlignment="Left"
-            Margin="590,84,0,0" 
-            VerticalAlignment="Top"
-            Height="150"
-            Width="164"
-            Background="{x:Null}" 
-            BorderBrush="{x:Null}" 
-            Foreground="{x:Null}"/>
-        <Button 
-            HorizontalAlignment="Left"
-            Margin="212,244,0,0" 
-            VerticalAlignment="Top"
-            Height="150" 
-            Width="164"
-            Background="{x:Null}"
-            BorderBrush="{x:Null}"
-            Foreground="{x:Null}"/>
-        <Button 
-            HorizontalAlignment="Left"
-            Margin="400,244,0,0" 
-            VerticalAlignment="Top"
-            Height="150"
-            Width="164"
-            Background="{x:Null}" 
-            BorderBrush="{x:Null}"
-            Foreground="{x:Null}"/>
-        <Button 
-            HorizontalAlignment="Left" 
-            Margin="590,243,0,0" 
-            VerticalAlignment="Top"
-            Height="150"
-            Width="164"
-            Background="{x:Null}"
-            BorderBrush="{x:Null}" 
             Foreground="{x:Null}"/>
     </Grid>
 </Window>

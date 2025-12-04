@@ -43,7 +43,7 @@
 
         <!-- Кнопка "Настройки" по центру -->
         <Button Content="Настройки" HorizontalAlignment="Center" VerticalAlignment="Top"
-                Margin="0,85,0,0" Width="114" Height="28" Background="WhiteSmoke" BorderBrush="Black"/>
+                Margin="0,85,0,0" Width="114" Height="28" Background="WhiteSmoke" BorderBrush="Black" Click="Button_Click_2"/>
 
         <!-- Имя пользователя -->
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,77,0,0"

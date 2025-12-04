@@ -14,5 +14,19 @@ using System.Windows.Shapes;
 
 namespace Practika
 {
+    public partial class Window1 : Window
+    {
+        public Window1()
+        {
+            InitializeComponent();
+        }
 
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var window2 = new Window2();
+            window2.Show();
+            this .Close();
+        }
+    }
 }

@@ -33,7 +33,7 @@ namespace Practika
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Window7 window7 = new Window7();
+            var window7 = new Window7();
             window7.Show();
             this.Close();
         }

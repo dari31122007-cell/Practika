@@ -81,6 +81,7 @@
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
+        
         <Button Content="У вас уже есть аккаунт?" FontSize="6" Foreground="#FF1A244E" 
                 Background="{x:Null}" BorderBrush="{x:Null}" 
                 Canvas.Left="365" Canvas.Top="311" Click="LoginButton_Click"/>
