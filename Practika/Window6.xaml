@@ -21,7 +21,7 @@
         <Rectangle Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3" HorizontalAlignment="Center"/>
 
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Height="40"
-                Margin="10,-2,0,0" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                Margin="10,-2,0,0" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_2">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
@@ -54,11 +54,11 @@
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Width="186">
                 <TextBlock Text="Введите номер/почту" FontSize="10" Margin="0,0,0,4" HorizontalAlignment="Left"/>
-                <TextBox Height="26" TextChanged="TextBox_TextChanged" />
-
+                <TextBox x:Name="LoginBox" Height="26" TextChanged="TextBox_TextChanged" />
                 <TextBlock Text="Введите пароль" FontSize="10" Margin="0,8,0,4" HorizontalAlignment="Left"/>
-                <PasswordBox Height="26" />
-
+                <PasswordBox x:Name="PasswordBox" Height="26" />
+                
+                
                 <Button Content="Войти" Height="26" Margin="0,12,0,6" Background="White" Foreground="#FF1B244F" Click="Button_Click_1">
                     <Button.BorderBrush>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

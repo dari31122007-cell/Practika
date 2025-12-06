@@ -33,15 +33,34 @@ namespace Practika
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var window7 = new Window7();
-            window7.Show();
-            this.Close();
+            string login = LoginBox.Text;
+            string password = PasswordBox.Password;
+
+            if (login == "Admin" && password == "admin")
+            {
+                Window11 window11 = new Window11();
+                window11.Show();
+                this.Close();
+            }
+            else
+            {
+                Window7 Window7 = new Window7();
+                Window7.Show();
+                this.Close();
+            }
         }
+        
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

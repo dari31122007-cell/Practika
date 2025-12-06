@@ -21,7 +21,7 @@ namespace Practika
 
         private void InputBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            var textBox = sender as TextBox;
+            var textBox = sender as System.Windows.Controls.TextBox;
             if (textBox != null &&
                 (textBox.Text == "Введите имя" || textBox.Text == "Введите номер"))
             {
@@ -37,13 +37,13 @@ namespace Practika
             if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(phone) ||
                 name == "Введите имя" || phone == "Введите номер")
             {
-                MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка",
+                System.Windows.MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка",
                     MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
 
-            MessageBox.Show("Заявка принята!", "Успех",
+            System.Windows.MessageBox.Show("Заявка принята!", "Успех",
                 MessageBoxButton.OK, MessageBoxImage.Information);
 
 
@@ -54,7 +54,7 @@ namespace Practika
 
         private void BurgerButton_Click(object sender, RoutedEventArgs e)
         {
-            var window1 = new Window1();
+            Window1 window1 = new Window1();
             window1.Show();
             this.Close();
         }

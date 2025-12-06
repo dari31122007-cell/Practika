@@ -85,13 +85,7 @@
             VerticalAlignment="Top"
             Background="{x:Null}" 
             BorderBrush="{x:Null}" 
-            Foreground="{x:Null}">
-            <Image 
-                Source="/bitcoin-icons_menu-filled.png" 
-                Stretch="Fill"
-                Width="28" 
-                Height="26"/>
-        </Button>
+            Foreground="{x:Null}"/>
 
         <!-- Логотип BMW -->
         <Button 
@@ -101,7 +95,7 @@
             Height="40" 
             Width="59" 
             BorderBrush="{x:Null}"
-            Foreground="{x:Null}">
+            Foreground="{x:Null}" Click="Button_Click_3">
             <Button.Background>
                 <ImageBrush 
                     ImageSource="/BMW.png"/>
@@ -149,7 +143,7 @@
         <Button 
             Content="Профиль"
             HorizontalAlignment="Left"
-            Margin="650,6,0,0"
+            Margin="673,6,0,0"
             VerticalAlignment="Top"
             Width="92"
             Height="24"

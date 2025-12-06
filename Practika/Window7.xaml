@@ -6,65 +6,53 @@
         mc:Ignorable="d"
         Title="Window7" Height="450" Width="800">
     <Grid Background="#FFE0E4F0">
-        <!-- Верхняя панель -->
+
         <Rectangle Height="36" Fill="#FF19234D" VerticalAlignment="Top" Width="800" Opacity="0.9" HorizontalAlignment="Center"/>
 
-        <!-- Кнопка-заглушка в правом верхнем углу -->
-        <Button HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30"
-                Margin="0,3,10,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-
-        <!-- Логотип BMW -->
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Height="40"
-                Margin="10, -2, 0, 0" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                Margin="10, -2, 0, 0" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="LogoButton_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
 
-        <!-- Текст рядом с логотипом -->
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,6,0,0"
                    FontFamily="Book Antiqua" Text="BMW" FontSize="13" FontWeight="Medium" Foreground="#FFD7DBE8"/>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
                    FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" FontWeight="Medium" Foreground="#FFD7DBE8"/>
 
-        <!-- Адрес по центру -->
         <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,12,0,0"
                    FontFamily="Book Antiqua" Text="ул.Пушкина, 125" FontSize="10" FontWeight="Medium" Foreground="#FFD7DBE8"/>
 
-        <!-- Иконки справа -->
         <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Height="33"
                 Margin="720,2,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1">
             <Image Source="/mdi_heart (3).png" Stretch="Uniform"/>
         </Button>
         <Button HorizontalAlignment="Left" VerticalAlignment="Top"
-                Margin="752,2,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                Margin="752,2,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_3" >
             <Image Source="/akar-icons_basket.png" Stretch="Uniform" Height="27" Width="29"/>
         </Button>
 
-        <!-- Кнопка "Настройки" по центру -->
         <Button Content="Настройки" HorizontalAlignment="Center" VerticalAlignment="Top"
                 Margin="0,85,0,0" Width="114" Height="28" Background="WhiteSmoke" BorderBrush="Black" Click="Button_Click_2"/>
 
-        <!-- Имя пользователя -->
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,77,0,0"
                    FontSize="16" FontWeight="Bold">Фамилия имя отчество</TextBlock>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,97,0,0">др/мр/гр</TextBlock>
 
-        <!-- Аватар -->
         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="57"
                    Margin="44,66,0,0" RadiusX="20" RadiusY="20">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/iconamoon_profile-circle-fill.png"/>
+                <ImageBrush ImageSource="/mdi_user.png"/>
             </Rectangle.Fill>
         </Rectangle>
 
-        <!-- Блок "История просмотров" -->
         <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="720" Height="204"
                    Margin="0,146,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,154,0,0"
                    FontSize="16" FontWeight="Bold">История просмотров</TextBlock>
 
-        <!-- Карточка 1 -->
+        <!-- === АВТОМОБИЛЬ 1 === -->
         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="150"
                    Margin="51,183,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="100"
@@ -79,10 +67,16 @@
                    FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">2025</TextBlock>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="59,301,0,0"
                    FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">6 390 000 P</TextBlock>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" VerticalAlignment="Top"
-                Margin="70,311,0,0" Width="65" Height="15" FontSize="6" Background="White"/>
+        <!-- Кликабельная невидимая кнопка -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Width="134" Height="150"
+                Margin="51,183,0,0"
+                Background="Transparent"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Click="CarButton_Click"/>
 
-        <!-- Карточка 2 -->
+        <!-- === АВТОМОБИЛЬ 2 === -->
         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="150"
                    Margin="203,183,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="100"
@@ -97,16 +91,22 @@
                    FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">2025</TextBlock>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,301,0,0"
                    FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">7 590 000 P</TextBlock>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" VerticalAlignment="Top"
-                Margin="226,311,0,0" Width="64" Height="15" FontSize="6" Background="White"/>
+        <!-- Кликабельная невидимая кнопка -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Width="134" Height="150"
+                Margin="203,183,0,0"
+                Background="Transparent"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Click="CarButton_Click"/>
 
-        <!-- Карточка 3 -->
+        <!-- === АВТОМОБИЛЬ 3 === -->
         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="150"
                    Margin="356,183,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="100"
-                   Margin="356,186,0,0">
+        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Height="88"
+                   Margin="361,192,0,0">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/0 10 (1).png"/>
+                <ImageBrush ImageSource="/0 10.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,282,0,0"
@@ -115,10 +115,15 @@
                    FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">2014</TextBlock>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,301,0,0"
                    FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">1 699 000 P</TextBlock>
-        <Button Content="Добавить в корзину" HorizontalAlignment="Left" VerticalAlignment="Top"
-                Margin="384,311,0,0" Width="64" Height="15" FontSize="6" Background="White"/>
+        <!-- Кликабельная невидимая кнопка -->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
+                Width="134" Height="150"
+                Margin="356,183,0,0"
+                Background="Transparent"
+                BorderBrush="{x:Null}"
+                Foreground="{x:Null}"
+                Click="CarButton_Click"/>
 
-        <!-- Иконки сердец -->
         <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,308,0,0"/>
         <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
@@ -126,27 +131,11 @@
         <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="458,308,0,0"/>
 
-        <!-- Невидимые кнопки-триггеры -->
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="123"
-                Margin="53,182,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="123"
-                Margin="205,182,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Height="123"
-                Margin="358,183,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="22"
-                Margin="144,306,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="22"
-                Margin="300,306,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="24" Height="22"
-                Margin="456,307,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
-
-        <!-- Блок "Отзывы" -->
         <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="720" Height="32"
                    Margin="0,361,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,366,0,0"
                    FontSize="16" FontWeight="Bold">Отзывы</TextBlock>
 
-        <!-- Иконки в отзывах -->
         <Image Source="/Vector.png" Stretch="Uniform" Width="12" Height="12"
                HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,319,52,0"/>
         <Image Source="/Vector.png" Stretch="Uniform" Width="12" Height="12"

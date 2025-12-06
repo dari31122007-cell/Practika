@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Practika"
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800">
-    
+
     <Grid Background="#000C3B">
         <Rectangle 
             HorizontalAlignment="Center" 
@@ -149,7 +149,7 @@
             Height="40" 
             Width="59" 
             BorderBrush="{x:Null}" 
-            Foreground="{x:Null}">
+            Foreground="{x:Null}" Click="Button_Click_2">
             <Button.Background>
                 <ImageBrush 
                     ImageSource="/BMW.png"/>
@@ -291,23 +291,10 @@
             FontSize="10" 
             Click="Button_Click_1"/>
 
+
+
         <Button
-            HorizontalAlignment="Left" 
-            Margin="740,15,0,0" 
-            VerticalAlignment="Top"
-            BorderBrush="{x:Null}"
-            Foreground="{x:Null}" 
-            Background="{x:Null}">
-            <Image 
-                Height="26" 
-                Source="/material-symbols_close.png" 
-                Stretch="Fill" 
-                Width="28"
-                RenderTransformOrigin="0.446,0.399">
-            </Image>
-        </Button>
-        <Button
-    Width="90" 
+            Width="90" 
             VerticalAlignment="Top"
             Margin="575,73,0,0"
             HorizontalAlignment="Left" 
@@ -316,7 +303,7 @@
             BorderBrush="White"
             Background="#FF000C3B"/>
         <Button
-    Width="90" 
+            Width="90" 
             VerticalAlignment="Top" 
             RenderTransformOrigin="0.5,0.5" 
             Margin="575,95,0,0"
@@ -399,5 +386,18 @@
             BorderBrush="White"
             Background="#FF000C3B" 
             FontSize="10" Height="20"/>
+        <Button
+            Width="23" 
+            VerticalAlignment="Top" 
+            Margin="745,27,0,0"
+            HorizontalAlignment="Left" 
+            Content="" 
+            FontSize="10" Height="20" BorderBrush="{x:Null}"
+            Click="Button_Click_2">
+            <Button.Background>
+                <ImageBrush ImageSource="/ri_add-large-fill.png"/>
+            </Button.Background>
+            
+        </Button>
     </Grid>
 </Window>

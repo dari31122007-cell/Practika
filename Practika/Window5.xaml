@@ -23,7 +23,7 @@
 
         <!-- Логотип BMW -->
         <Button Width="59" Height="40" Canvas.Left="10" Canvas.Top="-2" 
-              BorderBrush="{x:Null}" Foreground="{x:Null}">
+              BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
@@ -40,8 +40,6 @@
                    Foreground="#FFD7DBE8" Width="80" Height="16" Canvas.Left="693" Canvas.Top="10"/>
 
         <!-- Пустая кнопка в углу -->
-        <Button Width="30" Height="30" Canvas.Left="749" Canvas.Top="3" 
-                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}"/>
 
         <!-- Фон формы регистрации -->
         <Rectangle Width="336" Height="219" Fill="#FFC3C6D4" RadiusX="20" RadiusY="20" StrokeThickness="2" 
@@ -71,19 +69,17 @@
         <TextBlock Text="Регистрация" FontSize="14" Foreground="#FF19234D" 
                    Canvas.Left="360" Canvas.Top="128"/>
 
-        <!-- Кнопки с обработчиками -->
-        <Button Content="Зарегистрироваться" Width="136" Height="24" Background="White" Foreground="#FF1B244F" 
-                Canvas.Left="332" Canvas.Top="282" Click="RegisterButton_Click">
+
+        <Button Content="У вас уже есть аккаунт?" FontSize="6" Foreground="#FF1A244E" 
+                Background="{x:Null}" BorderBrush="{x:Null}" 
+                Canvas.Left="365" Canvas.Top="311" Click="LoginButton_Click"/>
+        <Button Width="128" Height="25" Canvas.Left="336" Canvas.Top="281" Content="Зарегистрироваться" Click="Button_Click_3" HorizontalAlignment="Left" VerticalAlignment="Center" Background="White">
             <Button.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF1B244F"/>
+                    <GradientStop Color="Black"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Button.BorderBrush>
         </Button>
-        
-        <Button Content="У вас уже есть аккаунт?" FontSize="6" Foreground="#FF1A244E" 
-                Background="{x:Null}" BorderBrush="{x:Null}" 
-                Canvas.Left="365" Canvas.Top="311" Click="LoginButton_Click"/>
     </Canvas>
 </Window>

@@ -15,59 +15,275 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid Background="#FF19244E">
-        <Rectangle HorizontalAlignment="Center" Height="36" Fill="#FFFFFF" VerticalAlignment="Top" Width="800" Opacity="0.3"/>
-        <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}">
-            <Image Height="26" Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" RenderTransformOrigin="0.446,0.399">
-                <Image.OpacityMask>
-                    <ImageBrush ImageSource="/bitcoin-icons_menu-filled.png"/>
-                </Image.OpacityMask>
-            </Image>
-        </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+        <Rectangle 
+            HorizontalAlignment="Center"
+            Height="36"
+            Fill="#FFFFFF" 
+            VerticalAlignment="Top" 
+            Width="800"
+            Opacity="0.3"/>
+        <Button 
+            Content=""
+            HorizontalAlignment="Left"
+            Margin="10,-2,0,0"
+            VerticalAlignment="Top"
+            Height="40"
+            Width="59"
+            BorderBrush="{x:Null}" 
+            Foreground="{x:Null}"
+            Click="Button_Click3">
             <Button.Background>
-                <ImageBrush ImageSource="/BMW.png"/>
+                <ImageBrush 
+                    ImageSource="/BMW.png"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="72,6,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="BMW" VerticalAlignment="Top" Width="35" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="13"/>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="72,20,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" VerticalAlignment="Top" Width="164" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="9"/>
-        <TextBlock HorizontalAlignment="Center" Height="16" Margin="0,12,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="ул.Пушкина, 125" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FFD7DBE8" FontSize="10"/>
-        <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" Background="{x:Null}"/>
-        <Rectangle HorizontalAlignment="Center" Height="351" Margin="0,61,0,0" Stroke="Black" VerticalAlignment="Top" Width="766" Fill="#FFEFF2FC" Opacity="0.95"/>
-        <Rectangle HorizontalAlignment="Left" Height="275" Margin="46,83,0,0" VerticalAlignment="Top" Width="367">
+        <TextBlock 
+            HorizontalAlignment="Left"
+            Height="18" 
+            Margin="72,6,0,0"
+            TextWrapping="Wrap"
+            FontFamily="Book Antiqua" 
+            Text="BMW" 
+            VerticalAlignment="Top"
+            Width="35"
+            RenderTransformOrigin="-0.857,-2.498" 
+            FontWeight="Medium" 
+            Foreground="#FFD7DBE8"
+            FontSize="13"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Height="16"
+            Margin="72,20,0,0" 
+            TextWrapping="Wrap"
+            FontFamily="Book Antiqua"
+            Text="Официальный дилер в СПБ"
+            VerticalAlignment="Top"
+            Width="164" 
+            RenderTransformOrigin="-0.857,-2.498" 
+            FontWeight="Medium" 
+            Foreground="#FFD7DBE8"
+            FontSize="9"/>
+        <TextBlock 
+            HorizontalAlignment="Center"
+            Height="16" Margin="0,12,0,0" 
+            TextWrapping="Wrap" 
+            FontFamily="Book Antiqua"
+            Text="ул.Пушкина, 125" 
+            VerticalAlignment="Top"
+            Width="80" 
+            RenderTransformOrigin="-0.857,-2.498"
+            FontWeight="Medium" 
+            Foreground="#FFD7DBE8"
+            FontSize="10"/>
+        <Button 
+            Content="Профиль"
+            HorizontalAlignment="Left" 
+            Margin="670,5,0,0"
+            VerticalAlignment="Top"
+            Width="92" 
+            Height="24"
+            BorderBrush="White"
+            Foreground="#FFD7DAE8" 
+            FontSize="11" 
+            Background="{x:Null}" 
+            Click="Button_Click_2"/>
+        <Rectangle 
+            HorizontalAlignment="Center" 
+            Height="351" 
+            Margin="0,61,0,0" 
+            Stroke="Black" 
+            VerticalAlignment="Top" 
+            Width="766" 
+            Fill="#FFEFF2FC" 
+            Opacity="0.95"/>
+        <Rectangle 
+            HorizontalAlignment="Left" 
+            Height="275" 
+            Margin="46,83,0,0" 
+            VerticalAlignment="Top"
+            Width="367">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/0 9.png"/>
+                <ImageBrush
+                    ImageSource="/0 9.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="197" Margin="438,107,0,0" Stroke="#FF19244E" VerticalAlignment="Top" Width="324" RadiusX="15" RadiusY="15"/>
-        <TextBlock HorizontalAlignment="Left" Height="18" Margin="470,312,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="1 699 000 P" VerticalAlignment="Top" Width="85" RenderTransformOrigin="-0.857,-2.498" FontWeight="Bold" Foreground="#FF19244E" FontSize="16"/>
-        <Button HorizontalAlignment="Left" Margin="591,312,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
-            <Image Height="21" Source="/Group 9.png" Stretch="Fill" Width="70"/>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="670,312,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
-            <Image Height="21" Source="/Group 10.png" Stretch="Fill" Width="71"/>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="670,331,0,0" VerticalAlignment="Top"  Width="92" Height="24" BorderBrush="{x:Null}" Foreground="{x:Null}" FontSize="11" Background="{x:Null}">
-            <Image Height="22" Source="/Group 11.png" Stretch="Fill" Width="71"/>
-        </Button>
-        <Rectangle HorizontalAlignment="Left" Height="396" Margin="0,36,0,0" VerticalAlignment="Top" Width="804" Fill="#FFEFF2FC" Opacity="0.7"/>
-        <Rectangle HorizontalAlignment="Center" Height="255" Stroke="Black" VerticalAlignment="Top" Width="452" Fill="#FFEFF2FC" Margin="4,93,0,0" RadiusX="15" RadiusY="15"/>
-        <Rectangle HorizontalAlignment="Left" Height="229" Stroke="Black" VerticalAlignment="Top" Width="236" Fill="White" Margin="380,107,0,0" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" Height="151" Margin="198,145,0,0" Stroke="#FF16214C" VerticalAlignment="Top" Width="164" RadiusX="15" RadiusY="15" Fill="#FFEFF2FC"/>
-        <TextBlock HorizontalAlignment="Left" Height="12" Margin="214,268,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="58" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="9"><Run Text="BMW 3 "/><Run Language="ru-ru" Text="серии"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="310,272,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="1 699 000 P" VerticalAlignment="Top" Width="40" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="8"/>
-        <TextBlock HorizontalAlignment="Left" Height="10" Margin="334,280,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" Text="2014" VerticalAlignment="Top" Width="16" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="7" Opacity="0.7"/>
-        <TextBlock HorizontalAlignment="Left" Height="12" Margin="214,280,0,0" TextWrapping="Wrap" FontFamily="Book Antiqua" VerticalAlignment="Top" Width="80" RenderTransformOrigin="-0.857,-2.498" FontWeight="Medium" Foreground="#FF19244E" FontSize="9" Text="GT 320i xDrive"/>
-        <Rectangle HorizontalAlignment="Left" Height="111" Margin="206,152,0,0" VerticalAlignment="Top" Width="148" RenderTransformOrigin="0.52,0.694">
+        <Rectangle 
+            HorizontalAlignment="Left"
+            Height="197" 
+            Margin="438,107,0,0"
+            Stroke="#FF19244E"
+            VerticalAlignment="Top"
+            Width="324"
+            RadiusX="15"
+            RadiusY="15"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Height="18" 
+            Margin="470,312,0,0" 
+            TextWrapping="Wrap"
+            FontFamily="Book Antiqua"
+            Text="1 699 000 P"
+            VerticalAlignment="Top"
+            Width="85" 
+            RenderTransformOrigin="-0.857,-2.498"
+            FontWeight="Bold" 
+            Foreground="#FF19244E"
+            FontSize="16"/>
+        
+        <Rectangle
+            HorizontalAlignment="Left" 
+            Height="396" 
+            Margin="0,36,0,0" 
+            VerticalAlignment="Top" 
+            Width="804" 
+            Fill="#FFEFF2FC" 
+            Opacity="0.7"/>
+        <Rectangle 
+            HorizontalAlignment="Center"
+            Height="255" 
+            Stroke="Black" 
+            VerticalAlignment="Top" 
+            Width="452"
+            Fill="#FFEFF2FC" 
+            Margin="4,93,0,0" 
+            RadiusX="15" 
+            RadiusY="15"/>
+        <Rectangle 
+            HorizontalAlignment="Left"
+            Height="229" 
+            Stroke="Black"
+            VerticalAlignment="Top" 
+            Width="236"
+            Fill="White" 
+            Margin="380,107,0,0" 
+            RadiusX="20"
+            RadiusY="20"/>
+        <Rectangle 
+            HorizontalAlignment="Left" 
+            Height="151" 
+            Margin="198,145,0,0" 
+            Stroke="#FF16214C" 
+            VerticalAlignment="Top" 
+            Width="164" 
+            RadiusX="15" 
+            RadiusY="15" 
+            Fill="#FFEFF2FC"/>
+        <TextBlock
+            HorizontalAlignment="Left"
+            Height="12" 
+            Margin="214,268,0,0" 
+            TextWrapping="Wrap" 
+            FontFamily="Book Antiqua"
+            VerticalAlignment="Top" 
+            Width="58" 
+            RenderTransformOrigin="-0.857,-2.498"
+            FontWeight="Medium"
+            Foreground="#FF19244E"
+            FontSize="9">
+            <Run Text="BMW 3 "/>
+            <Run Language="ru-ru"
+                 Text="серии"/>
+        </TextBlock>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Height="10" 
+            Margin="310,272,0,0"
+            TextWrapping="Wrap" 
+            FontFamily="Book Antiqua"
+            Text="1 699 000 P"
+            VerticalAlignment="Top" 
+            Width="40"
+            RenderTransformOrigin="-0.857,-2.498"
+            FontWeight="Medium" 
+            Foreground="#FF19244E"
+            FontSize="8"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Height="10" 
+            Margin="334,280,0,0" 
+            TextWrapping="Wrap" 
+            FontFamily="Book Antiqua"
+            Text="2014" 
+            VerticalAlignment="Top" 
+            Width="16" 
+            RenderTransformOrigin="-0.857,-2.498" 
+            FontWeight="Medium"
+            Foreground="#FF19244E"
+            FontSize="7"
+            Opacity="0.7"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Height="12" 
+            Margin="214,280,0,0" 
+            TextWrapping="Wrap"
+            FontFamily="Book Antiqua"
+            VerticalAlignment="Top"
+            Width="80" 
+            RenderTransformOrigin="-0.857,-2.498" 
+            FontWeight="Medium"
+            Foreground="#FF19244E"
+            FontSize="9" 
+            Text="GT 320i xDrive"/>
+        <Rectangle 
+            HorizontalAlignment="Left"
+            Height="111" 
+            Margin="206,152,0,0" 
+            VerticalAlignment="Top"
+            Width="148" 
+            RenderTransformOrigin="0.52,0.694">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="/0 9.png"/>
+                <ImageBrush
+                    ImageSource="/0 9.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <Button Content="" HorizontalAlignment="Left" Margin="198,146,0,0" VerticalAlignment="Top" Height="150" Width="164" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
-        <TextBox HorizontalAlignment="Left" Margin="402,309,0,0" TextWrapping="Wrap" Text="Задайте ваш вопрос" VerticalAlignment="Top" Width="164" FontSize="10"/>
-        <Button Content="Отправить" HorizontalAlignment="Left" Margin="566,309,0,0" VerticalAlignment="Top" Height="18" FontSize="7"/>
-        <TextBlock HorizontalAlignment="Left" Margin="413,197,0,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center"><Run Text="Напишите сюда свой вопрос"/><Run Text=","/><Run Text=" "/><LineBreak/><Run Text="мы ответим вам в течение "/><LineBreak/><Run Text="5ти минут!"/><Run Text=" "/></TextBlock>
-        <Button HorizontalAlignment="Left" Margin="582,120,0,0" VerticalAlignment="Top" Height="22" FontSize="7" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}">
-            <Image Height="18" Source="/ri_add-large-fill.png" Stretch="Fill" Width="18"/>
+        <TextBox x:Name="QuestionBox"
+         HorizontalAlignment="Left" 
+         Margin="402,309,0,0" 
+         TextWrapping="Wrap" 
+         Text="Задайте ваш вопрос" 
+         VerticalAlignment="Top" 
+         Width="164" 
+         FontSize="10"
+         Foreground="Gray"
+         GotFocus="QuestionBox_GotFocus"
+         LostFocus="QuestionBox_LostFocus"/>
+        <Button Content="Отправить" 
+        HorizontalAlignment="Left" 
+        Margin="566,309,0,0" 
+        VerticalAlignment="Top" 
+        Height="15" 
+        FontSize="7"
+        Click="SendButton_Click"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Margin="413,197,0,0" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            TextAlignment="Center">
+            <Run Text="Напишите сюда свой вопрос"/>
+            <Run Text=","/>
+            <Run Text=" "/>
+            <LineBreak/>
+            <Run Text="мы ответим вам в течение "/>
+            <LineBreak/>
+            <Run Text="5ти минут!"/>
+            <Run Text=" "/>
+        </TextBlock>
+        <Button 
+            HorizontalAlignment="Left" 
+            Margin="582,120,0,0" 
+            VerticalAlignment="Top" 
+            Height="22" 
+            FontSize="7"
+            BorderBrush="{x:Null}" 
+            Foreground="{x:Null}" 
+            Background="{x:Null}" 
+            Click="Button_Click_1">
+            <Image 
+                Height="18" 
+                Source="/ri_add-large-fill.png"
+                Stretch="Fill"
+                Width="18"/>
         </Button>
     </Grid>
 </Window>

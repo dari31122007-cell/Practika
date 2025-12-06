@@ -20,13 +20,11 @@
 
         <!-- Кнопка меню -->
         <Button HorizontalAlignment="Left" Margin="749,3,0,0" VerticalAlignment="Top" 
-                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_3">
-            <Image Source="/bitcoin-icons_menu-filled.png" Stretch="Fill" Width="28" Height="26"/>
-        </Button>
+                Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_3"/>
 
         <!-- Логотип BMW -->
         <Button HorizontalAlignment="Left" Margin="10,-2,0,0" VerticalAlignment="Top" 
-                Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}">
+                Height="40" Width="59" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click_5">
             <Button.Background>
                 <ImageBrush ImageSource="/BMW.png"/>
             </Button.Background>
@@ -48,7 +46,7 @@
         <!-- Кнопка "Профиль" -->
         <Button Content="Профиль" HorizontalAlignment="Left" Margin="650,6,0,0" VerticalAlignment="Top" 
                 Width="92" Height="24" BorderBrush="White" Foreground="#FFD7DAE8" FontSize="11" 
-                Background="{x:Null}"/>
+                Background="{x:Null}" Click="Button_Click"/>
 
         <!-- Фон карточки -->
         <Rectangle HorizontalAlignment="Center" Height="360" Margin="0,45,0,0" 
@@ -108,17 +106,25 @@
         <TextBlock HorizontalAlignment="Left" Margin="470,312,0,0" VerticalAlignment="Top" 
                    FontFamily="Book Antiqua" Text="1 699 000 P" 
                    FontWeight="Bold" Foreground="#FF19244E" FontSize="16" Height="18" Width="85"/>
-        <Button HorizontalAlignment="Left" Margin="591,312,0,0" VerticalAlignment="Top" 
-                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Image Source="/Group 9.png" Stretch="Fill" Width="70" Height="21"/>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="670,312,0,0" VerticalAlignment="Top" 
-                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
-            <Image Source="/Group 10.png" Stretch="Fill" Width="71" Height="21"/>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="670,331,0,0" VerticalAlignment="Top" 
-                Width="92" Height="24" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="Button_Click">
-                <Image Source="/Group 11.png" Stretch="Fill" Width="71" Height="22"/>
+
+        <Button Content="В избранное" HorizontalAlignment="Left" Margin="603,314,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button Content="В корзину" HorizontalAlignment="Left" Margin="682,314,0,0" VerticalAlignment="Top" Click="Button_Click_2"/>
+        <Button Content="Задать вопрос" HorizontalAlignment="Left" Margin="682,372,0,0" VerticalAlignment="Top" Click="Button_Click_3"/>
+
+        <Button
+            Width="35" 
+            VerticalAlignment="Top" 
+            Margin="730,59,0,0"
+            HorizontalAlignment="Left" 
+            Content="" 
+           FontSize="10" 
+            Height="29" 
+            BorderBrush="{x:Null}"
+            Click="Button_Click_4">
+            <Button.Background>
+                <ImageBrush ImageSource="/ri_add-large-fill.png"/>
+            </Button.Background>
+
         </Button>
     </Grid>
 </Window>
