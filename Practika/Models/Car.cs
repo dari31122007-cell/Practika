@@ -8,21 +8,20 @@ namespace Practika.Models
 {
     public class Car
     {
-        public int id { get; set; }
-        public int seller_id { get; set; }
-        public int category_id { get; set; }
-        public int brand_id { get; set; }
-        public int model_id { get; set; }
-        public int year { get; set; }
-        public int mileage { get; set; }
-        public string engine_Type { get; set; } = string.Empty;
-        public string transmission { get; set; } = string.Empty;
-        public int body_Type { get; set; }
-        public int color_id { get; set; }
-        public decimal price { get; set; }
-        public string description { get; set; } = string.Empty;
-        public DateTime created_at { get; set; }
-        public string status { get; set; } = string.Empty;
+        public int Id { get; set; }
+        public int SellerId { get; set; }
+        public int CategoryId { get; set; }
+        public int BrandId { get; set; }
+        public int ModelId { get; set; }
+        public int Year { get; set; }
+        public int Mileage { get; set; }
+        public int EngineTypeId { get; set; }
+        public int TransmissionId { get; set; }
+        public int? BodyTypeId { get; set; }
+        public int ColorId { get; set; }
+        public decimal Price { get; set; }
+        public string? Description { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public int StatusId { get; set; }
     }
-
 }

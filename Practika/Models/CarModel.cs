@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Practika.Models
 {
-    public class Model
+    public class CarModel
     {
         public int Id { get; set; }
         public int BrandId { get; set; }
         public string ModelName { get; set; } = string.Empty;
     }
-
 }

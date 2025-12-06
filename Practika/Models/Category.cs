@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-// Practika/Models/Category.cs
 namespace Practika.Models
 {
     public class Category

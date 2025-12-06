@@ -1,9 +1,14 @@
-﻿// Practika/Models/Role.cs
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Practika.Models
 {
     public class Role
     {
-        public int IdRoles { get; set; } // в БД: id_roles
-        public string EngineType { get; set; } = string.Empty; // в БД: engine_type
+        public int IdRoles { get; set; }
+        public string RoleName { get; set; } = string.Empty; // engine_type в таблице — на самом деле название роли
     }
 }

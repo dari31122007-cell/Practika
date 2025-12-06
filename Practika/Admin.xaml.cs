@@ -21,12 +21,10 @@ namespace Practika
     {
         public Admin()
         {
-        }
-
-        public Admin(user currentUser)
-        {
             InitializeComponent();
         }
+
+
 
         private void Button_Click1(object sender, RoutedEventArgs e)
         {

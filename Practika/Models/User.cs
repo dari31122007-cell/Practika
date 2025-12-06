@@ -1,4 +1,9 @@
-﻿// Practika/Models/User.cs
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 namespace Practika.Models
 {
     public class User
@@ -12,7 +17,7 @@ namespace Practika.Models
         public string Email { get; set; } = string.Empty;
         public string PasswordHash { get; set; } = string.Empty;
         public string? Phone { get; set; }
-        public DateTime? DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }
