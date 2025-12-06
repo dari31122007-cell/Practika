@@ -23,7 +23,7 @@ namespace Practika
         {
         }
 
-        public Admin(string v)
+        public Admin(user currentUser)
         {
             InitializeComponent();
         }

@@ -137,12 +137,25 @@
 
         <!-- Таблица -->
         <DataGrid 
-            x:Name="MainDataGrid"
-            Margin="91,155,91,100"
-            IsReadOnly="True"
-            AutoGenerateColumns="True"
-            SelectionUnit="FullRow"
-            CanUserAddRows="False"/>
+    x:Name="MainDataGrid"
+    Margin="91,155,100,100"
+    IsReadOnly="True"
+    AutoGenerateColumns="False"
+    SelectionUnit="FullRow"
+    CanUserAddRows="False"
+    ItemsSource="{Binding Users}">
+            <!-- Привязка к коллекции Users -->
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="Auto"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" Width="*"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Patronomic}" Width="*"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="2*"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}" Width="*"/>
+                <DataGridTextColumn Header="Роль" Binding="{Binding RoleId}" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <!-- Кнопка "Редактировать" -->
         <Button 
@@ -156,5 +169,9 @@
             Background="WhiteSmoke" 
             BorderBrush="Black"
             Click="EditButton_Click"/>
+        
     </Grid>
 </Window>
+
+
+

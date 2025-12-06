@@ -33,7 +33,7 @@ namespace Practika
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            string login = LoginBox.Text;
+            string login = LoginBox.Text.Trim();
             string password = PasswordBox.Password;
 
             if (login == "Admin" && password == "admin")
