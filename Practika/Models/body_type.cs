@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace Practika.Models
 {
-    public class EngineType
+    public class body_type
     {
-        public int Id { get; set; }
-        public string Type { get; set; } = string.Empty;
+        public int id { get; set; }
+        public string body { get; set; } = string.Empty;
     }
 }

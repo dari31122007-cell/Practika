@@ -69,5 +69,7 @@
                 Background="WhiteSmoke" 
                 BorderBrush="Black"
                 Click="EditButton_Click"/>
+        
+        
     </Grid>
 </Window>

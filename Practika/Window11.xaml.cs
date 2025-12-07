@@ -10,15 +10,15 @@ namespace Practika
 {
     public partial class Window11 : Window
     {
-        private List<User> allUsers = new List<User>();
-        private List<Car> allCars = new List<Car>();
-        private List<Brand> brands = new List<Brand>();
-        private List<CarModel> models = new List<CarModel>();
-        private List<Models.Color> colors = new List<Models.Color>(); 
-        private List<BodyType> bodyTypes = new List<BodyType>();
-        private List<EngineType> engineTypes = new List<EngineType>();
-        private List<Transmission> transmissions = new List<Transmission>();
-        private List<Status> statuses = new List<Status>();
+        private List<users> users = new List<users>();
+        private List<cars> cars = new List<cars>();
+        private List<brands> brands = new List<brands>();
+        private List<models> models = new List<models>();
+        private List<Models.color> color = new List<Models.color>(); 
+        private List<body_type> body_type = new List<body_type>();
+        private List<engine_type> engine_type = new List<engine_type>();
+        private List<transmission> transmissions = new List<transmission>();
+        private List<status> status = new List<status>();
 
         private string currentSection = "Clients";
 
@@ -34,85 +34,85 @@ namespace Practika
         private void LoadSampleData()
         {
             // Заполняем всех пользователей (включая клиентов, сотрудников, админов)
-            allUsers = new List<User>
+            users = new List<users>
             {
-                new User { Id = 1, RoleId = 1, Surname = "Иванов", Name = "Иван", Patronymic = "Иванович", Email = "ivan@example.com", Phone = "+79991112233", DateOfBirth = new DateTime(1990, 1, 1), CreatedAt = DateTime.Now },
-                new User { Id = 2, RoleId = 2, Surname = "Петров", Name = "Пётр", Patronymic = "Петрович", Email = "petr@example.com", Phone = "+79994445566", DateOfBirth = new DateTime(1985, 5, 10), CreatedAt = DateTime.Now },
-                new User { Id = 3, RoleId = 3, Surname = "Сидорова", Name = "Анна", Patronymic = "Сергеевна", Email = "anna@example.com", Phone = "+79997778899", DateOfBirth = new DateTime(1995, 3, 22), CreatedAt = DateTime.Now },
-                new User { Id = 4, RoleId = 1, Surname = "Козлов", Name = "Алексей", Patronymic = "Владимирович", Email = "alex@example.com", Phone = "+79110001122", DateOfBirth = new DateTime(1988, 7, 15), CreatedAt = DateTime.Now }
+                new users { id = 1, role_id = 1, surname = "Иванов", name = "Иван", patronymic = "Иванович", email = "ivan@example.com", phone = "+79991112233", Date_of_birth = new DateTime(1990, 1, 1), created_at = DateTime.Now },
+                new users { id = 2, role_id = 2, surname = "Петров", name = "Пётр", patronymic = "Петрович", email = "petr@example.com", phone = "+79994445566", Date_of_birth = new DateTime(1985, 5, 10), created_at = DateTime.Now },
+                new users { id = 3, role_id = 3, surname = "Сидорова", name = "Анна", patronymic = "Сергеевна", email = "anna@example.com", phone = "+79997778899", Date_of_birth = new DateTime(1995, 3, 22), created_at = DateTime.Now },
+                new users { id = 4, role_id = 1, surname = "Козлов", name = "Алексей", patronymic = "Владимирович", email = "alex@example.com", phone = "+79110001122", Date_of_birth = new DateTime(1988, 7, 15), created_at = DateTime.Now }
             };
         }
 
         private void LoadCarSampleData()
         {
-            brands = new List<Brand>
+            brands = new List<brands>
             {
-                new Brand { Id = 1, Name = "BMW" },
-                new Brand { Id = 2, Name = "Mini" }
+                new brands { id = 1, name = "BMW" },
+                new brands { id = 2, name = "Mini" }
             };
 
-            models = new List<CarModel>
+            models = new List<models>
             {
-                new CarModel { Id = 1, BrandId = 1, ModelName = "E32" },
-                new CarModel { Id = 2, BrandId = 1, ModelName = "X6" },
-                new CarModel { Id = 6, BrandId = 1, ModelName = "X5" },
-                new CarModel { Id = 10, BrandId = 2, ModelName = "Countryman" }
+                new models { id = 1, brand_id = 1, model_name = "E32" },
+                new models { id = 2, brand_id = 1, model_name = "X6" },
+                new models { id = 6, brand_id = 1, model_name = "X5" },
+                new models { id = 10, brand_id = 2, model_name = "Countryman" }
             };
 
-            colors = new List<Models.Color>
+            color = new List<Models.color>
             {
-                new Models.Color { Id = 1, ColorName = "Белый" },
-                new Models.Color { Id = 2, ColorName = "Черный" },
-                new Models.Color { Id = 4, ColorName = "Зеленый" }
+                new Models.color { id = 1, color_name = "Белый" },
+                new Models.color { id = 2, color_name = "Черный" },
+                new Models.color { id = 4, color_name = "Зеленый" }
             };
 
-            bodyTypes = new List<BodyType>
+            body_type = new List<body_type>
             {
-                new BodyType { Id = 1, TypeName = "седан" },
-                new BodyType { Id = 2, TypeName = "купе" },
-                new BodyType { Id = 4, TypeName = "хетчбэк" },
-                new BodyType { Id = 6, TypeName = "Полноразмерный" }
+                new body_type { id = 1, body = "седан" },
+                new body_type { id = 2, body = "купе" },
+                new body_type { id = 4, body = "хетчбэк" },
+                new body_type { id = 6, body = "Полноразмерный" }
             };
 
-            engineTypes = new List<EngineType>
+            engine_type = new List<engine_type>
             {
-                new EngineType { Id = 1, Type = "Бензин" },
-                new EngineType { Id = 2, Type = "Дизель" }
+                new engine_type { id = 1, type = "Бензин" },
+                new engine_type { id = 2, type = "Дизель" }
             };
 
-            transmissions = new List<Transmission>
+            transmissions = new List<transmission>
             {
-                new Transmission { Id = 1, TransmissionName = "Ручной" },
-                new Transmission { Id = 2, TransmissionName = "Автомат" }
+                new transmission { id = 1, transmission_name = "Ручной" },
+                new transmission { id = 2, transmission_name = "Автомат" }
             };
 
-            statuses = new List<Status>
+            status = new List<status>
             {
-                new Status { Id = 1, StatusName = "Активно" }
+                new status { id = 1, status_name = "Активно" }
             };
 
-            allCars = new List<Car>
+            cars = new List<cars>
             {
-                new Car {
-                    Id = 15, SellerId = 3, CategoryId = 1, BrandId = 1, ModelId = 1,
-                    Year = 1991, Mileage = 250000, EngineTypeId = 1, TransmissionId = 2,
-                    BodyTypeId = 1, ColorId = 2, Price = 1200000.00m,
-                    Description = "Флагман BMW 1980–90-х...",
-                    CreatedAt = DateTime.Now, StatusId = 1
+                new cars {
+                    id = 15, seller_id = 3, category_id = 1, brand_id = 1, model_id = 1,
+                    year = 1991, mileage = 250000, engine_type = 1, transmission_id = 2,
+                    body_type_id = 1, color_id = 2, price = 1200000.00m,
+                    description = "Флагман BMW 1980–90-х...",
+                    created_at = DateTime.Now, status_id = 1
                 },
-                new Car {
-                    Id = 20, SellerId = 3, CategoryId = 2, BrandId = 1, ModelId = 2,
-                    Year = 2021, Mileage = 45000, EngineTypeId = 1, TransmissionId = 1,
-                    BodyTypeId = 2, ColorId = 4, Price = 6150000.00m,
-                    Description = "Премиум-«купе-SUV»...",
-                    CreatedAt = DateTime.Now, StatusId = 1
+                new cars {
+                    id = 20, seller_id = 3, category_id = 2, brand_id = 1, model_id = 2,
+                    year = 2021, mileage = 45000, engine_type = 1, transmission_id = 1,
+                    body_type_id = 2, color_id = 4, price = 6150000.00m,
+                    description = "Премиум-«купе-SUV»...",
+                    created_at = DateTime.Now, status_id = 1
                 },
-                new Car {
-                    Id = 27, SellerId = 3, CategoryId = 3, BrandId = 2, ModelId = 10,
-                    Year = 2022, Mileage = 27000, EngineTypeId = 2, TransmissionId = 2,
-                    BodyTypeId = 4, ColorId = 1, Price = 3465000.00m,
-                    Description = "Самый практичный MINI...",
-                    CreatedAt = DateTime.Now, StatusId = 1
+                new cars {
+                    id = 27, seller_id = 3, category_id = 3, brand_id = 2, model_id = 10,
+                    year = 2022, mileage = 27000, engine_type = 2, transmission_id = 2,
+                    body_type_id = 4, color_id = 1, price = 3465000.00m,
+                    description = "Самый практичный MINI...",
+                    created_at = DateTime.Now, status_id = 1
                 }
             };
         }
@@ -120,7 +120,7 @@ namespace Practika
         private void SwitchToClients()
         {
             SetupUserColumns();
-            MainDataGrid.ItemsSource = allUsers.Where(u => u.RoleId == 1).ToList();
+            MainDataGrid.ItemsSource = users.Where(u => u.role_id == 1).ToList();
             MainDataGrid.IsReadOnly = false; // ← ДОБАВЛЕНО: разрешить редактирование
             SectionTitle.Text = "Клиенты";
             currentSection = "Clients";
@@ -130,7 +130,7 @@ namespace Practika
         private void SwitchToEmployees()
         {
             SetupUserColumns();
-            MainDataGrid.ItemsSource = allUsers.Where(u => u.RoleId == 2 || u.RoleId == 3).ToList();
+            MainDataGrid.ItemsSource = users.Where(u => u.role_id == 2 || u.role_id == 3).ToList();
             MainDataGrid.IsReadOnly = false; // ← ДОБАВЛЕНО: разрешить редактирование
             SectionTitle.Text = "Сотрудники";
             currentSection = "Employees";
@@ -175,7 +175,7 @@ namespace Practika
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Цвет ID", Binding = new System.Windows.Data.Binding("ColorId") });
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Цена", Binding = new System.Windows.Data.Binding("Price") });
 
-            MainDataGrid.ItemsSource = allCars; // ← привязка к реальным объектам
+            MainDataGrid.ItemsSource = cars; // ← привязка к реальным объектам
             SectionTitle.Text = "Авто в наличии";
             currentSection = "Cars";
             HighlightButton(BtnCars);
@@ -184,18 +184,18 @@ namespace Practika
         private void SwitchToMessages()
         {
             // Подготавливаем данные с развёрнутыми именами
-            var displayMessages = allMessages.Select(m => new
+            var displayMessages = messages.Select(m => new
             {
-                m.Id,
-                Sender = allUsers.FirstOrDefault(u => u.Id == m.SenderId)?.Name + " " + allUsers.FirstOrDefault(u => u.Id == m.SenderId)?.Surname ?? "—",
-                Receiver = allUsers.FirstOrDefault(u => u.Id == m.ReceiverId)?.Name + " " + allUsers.FirstOrDefault(u => u.Id == m.ReceiverId)?.Surname ?? "—",
-                Car = m.CarId.HasValue
-                    ? (brands.FirstOrDefault(b => b.Id == allCars.FirstOrDefault(c => c.Id == m.CarId)?.BrandId)?.Name ?? "") +
-                      " " + (models.FirstOrDefault(md => md.Id == allCars.FirstOrDefault(c => c.Id == m.CarId)?.ModelId)?.ModelName ?? "") +
-                      $" ({allCars.FirstOrDefault(c => c.Id == m.CarId)?.Year ?? 0})"
+                m.id,
+                Sender = users.FirstOrDefault(u => u.id == m.sender_id)?.name + " " + users.FirstOrDefault(u => u.id == m.sender_id)?.surname ?? "—",
+                Receiver = users.FirstOrDefault(u => u.id == m.receiver_id)?.name + " " + users.FirstOrDefault(u => u.id == m.receiver_id)?.surname ?? "—",
+                Car = m.car_id.HasValue
+                    ? (brands.FirstOrDefault(b => b.id == cars.FirstOrDefault(c => c.id == m.car_id)?.brand_id)?.name ?? "") +
+                      " " + (models.FirstOrDefault(md => md.id == cars.FirstOrDefault(c => c.id == m.car_id)?.model_id)?.model_name ?? "") +
+                      $" ({cars.FirstOrDefault(c => c.id == m.car_id)?.year ?? 0})"
                     : "—",
-                MessageText = m.MessageText,
-                SentAt = m.SentAt.ToString("dd.MM.yyyy HH:mm")
+                MessageText = m.message,
+                SentAt = m.sent_at.ToString("dd.MM.yyyy HH:mm")
             }).ToList();
 
             MainDataGrid.Columns.Clear();
@@ -244,7 +244,7 @@ namespace Practika
         {
             if (currentSection == "Clients" || currentSection == "Employees")
             {
-                if (MainDataGrid.SelectedItem is User selectedUser)
+                if (MainDataGrid.SelectedItem is user selectedUser)
                 {
                     System.Windows.MessageBox.Show(this, $"Данные пользователя {selectedUser.Name} обновлены.", "Успех");
                     return;
@@ -257,9 +257,9 @@ namespace Practika
             }
             else if (currentSection == "Cars")
             {
-                if (MainDataGrid.SelectedItem is Car selectedCar)
+                if (MainDataGrid.SelectedItem is cars selectedCar)
                 {
-                    System.Windows.MessageBox.Show(this, $"Данные авто ID={selectedCar.Id} обновлены.", "Успех");
+                    System.Windows.MessageBox.Show(this, $"Данные авто ID={selectedCar.id} обновлены.", "Успех");
                     return;
                 }
                 else
@@ -287,44 +287,44 @@ namespace Practika
             this.Close();
         }
 
-        private List<Practika.Models.Message> allMessages = new List<Practika.Models.Message>();
+        private List<Practika.Models.messages> messages = new List<Practika.Models.messages>();
         private void LoadMessagesData()
         {
             // Словарь пользователей: ID → "Имя Фамилия"
-            var userDict = allUsers.ToDictionary(u => u.Id, u => $"{u.Name} {u.Surname}");
+            var userDict = users.ToDictionary(u => u.id, u => $"{u.name} {u.surname}");
 
             // Словарь авто: ID → "Бренд Модель (Год)"
-            var carDict = allCars.ToDictionary(c => c.Id, c =>
-                brands.FirstOrDefault(b => b.Id == c.BrandId)?.Name +
-                " " + models.FirstOrDefault(m => m.Id == c.ModelId)?.ModelName +
-                $" ({c.Year})"
+            var carDict = cars.ToDictionary(c => c.id, c =>
+                brands.FirstOrDefault(b => b.id == c.brand_id)?.name +
+                " " + models.FirstOrDefault(m => m.id == c.model_id)?.model_name +
+                $" ({c.year})"
             );
 
-            allMessages = new List<Practika.Models.Message>
+            messages = new List<Practika.Models.messages>
     {
-        new Practika.Models.Message {
-            Id = 1,
-            SenderId = 3,
-            ReceiverId = 2,
-            CarId = 20,
-            MessageText = "Какой пробег у авто?",
-            SentAt = new DateTime(2025, 11, 18, 9, 13, 50)
+        new Practika.Models.messages {
+            id = 1,
+            sender_id = 3,
+            receiver_id = 2,
+            car_id = 20,
+            message = "Какой пробег у авто?",
+            sent_at = new DateTime(2025, 11, 18, 9, 13, 50)
         },
-        new Practika.Models.Message {
-            Id = 2,
-            SenderId = 4,
-            ReceiverId = 3,
-            CarId = 15,
-            MessageText = "Есть ли скидка для постоянных клиентов?",
-            SentAt = new DateTime(2025, 11, 19, 14, 22, 10)
+        new Practika.Models.messages {
+            id = 2,
+            sender_id = 4,
+            receiver_id = 3,
+            car_id = 15,
+            message = "Есть ли скидка для постоянных клиентов?",
+            sent_at = new DateTime(2025, 11, 19, 14, 22, 10)
         },
-        new Practika.Models.Message {
-            Id = 3,
-            SenderId = 1,
-            ReceiverId = 3,
-            CarId = null,
-            MessageText = "Спасибо за помощь!",
-            SentAt = new DateTime(2025, 11, 20, 10, 5, 30)
+        new Practika.Models.messages {
+            id = 3,
+            sender_id = 1,
+            receiver_id = 3,
+            car_id = null,
+            message = "Спасибо за помощь!",
+            sent_at = new DateTime(2025, 11, 20, 10, 5, 30)
         }
     };
         }

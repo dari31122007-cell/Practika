@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Practika.Models
 {
-    public class Category
+    public class categories
     {
-        public int Id { get; set; }
-        public string Name { get; set; } = string.Empty;
+        public int id { get; set; }
+        public string name { get; set; } = string.Empty;
     }
 }

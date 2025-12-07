@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Practika.Models
 {
-    public class Color
+    public class color
     {
-        public int Id { get; set; }
-        public string ColorName { get; set; } = string.Empty;
+        public int id { get; set; }
+        public string color_name { get; set; } = string.Empty;
     }
 }

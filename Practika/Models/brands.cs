@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Practika.Models
 {
-    public class BodyType
+    public class brands
     {
-        public int Id { get; set; }
-        public string TypeName { get; set; } = string.Empty;
+        public int id { get; set; }
+        public string name { get; set; } = string.Empty;
     }
 }
