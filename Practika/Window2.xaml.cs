@@ -1,4 +1,5 @@
 ﻿using Practika.Models;
+using Practika.Data; // ← ОБЯЗАТЕЛЬНО: чтобы видеть DbService
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace Practika
 {
     public partial class Window2 : Window
     {
-        private List<brands> _brands;
-        private List<models> _allModels;
-        private List<color> _colors;
-        private List<cars> _allCars;
-        private List<car_images> _carImages;
+        private List<brands> _brands = new();
+        private List<models> _allModels = new();
+        private List<color> _colors = new();
+        private List<cars> _allCars = new();
+        private List<car_images> _carImages = new();
+
         public Window2()
         {
             InitializeComponent();
@@ -25,7 +27,7 @@ namespace Practika
         {
             try
             {
-                using (var context = new AppDbContext())
+                using (var context = new DbService())
                 {
                     _brands = context.brands.ToList();
                     _allModels = context.models.ToList();
@@ -38,7 +40,7 @@ namespace Practika
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Ошибка загрузки фильтров: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ошибка загрузки фильтров: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -46,14 +48,14 @@ namespace Practika
         {
             try
             {
-                using (var context = new AppDbContext())
+                using (var context = new DbService()) // ← ИСПРАВЛЕНО
                 {
                     _allCars = context.cars.ToList();
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Ошибка загрузки автомобилей: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ошибка загрузки автомобилей: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -86,8 +88,8 @@ namespace Practika
                 filtered = filtered.Where(c => c.model_id == selectedModel.id);
 
             // 3. Цена
-            var priceItem = PriceRangeComboBox.SelectedItem as ComboBoxItem;
-            if (priceItem?.Content is string priceRange && priceRange != "Любая")
+            if (PriceRangeComboBox.SelectedItem is ComboBoxItem priceItem &&
+                priceItem.Content is string priceRange && priceRange != "Любая")
             {
                 (decimal min, decimal max) = ParsePriceRange(priceRange);
                 filtered = filtered.Where(c => c.price >= min && c.price <= max);
@@ -98,8 +100,8 @@ namespace Practika
                 filtered = filtered.Where(c => c.color_id == selectedColor.id);
 
             // 5. Пробег
-            var mileageItem = MileageComboBox.SelectedItem as ComboBoxItem;
-            if (mileageItem?.Content is string mileageOption && mileageOption != "Любой")
+            if (MileageComboBox.SelectedItem is ComboBoxItem mileageItem &&
+                mileageItem.Content is string mileageOption && mileageOption != "Любой")
             {
                 int maxMileage = mileageOption switch
                 {
@@ -114,8 +116,6 @@ namespace Practika
             }
 
             var filteredCars = filtered.ToList();
-
-            // Отображаем результат
             UpdateCarDisplay(filteredCars);
         }
 
@@ -134,8 +134,7 @@ namespace Practika
 
         private void UpdateCarDisplay(List<cars> cars)
         {
-            // Просто показываем количество найденных авто
-            System.Windows.MessageBox.Show($"Найдено {cars.Count} автомобилей, соответствующих фильтру.",
+            MessageBox.Show($"Найдено {cars.Count} автомобилей, соответствующих фильтру.",
                             "Результат фильтрации",
                             MessageBoxButton.OK,
                             MessageBoxImage.Information);
@@ -148,10 +147,10 @@ namespace Practika
             return $"{brand} {model}";
         }
 
-
+        // Эта функция объявлена, но не используется — можно удалить или использовать
         private void LoadAllData()
         {
-            using (var context = new AppDbContext())
+            using (var context = new DbService()) // ← ИСПРАВЛЕНО
             {
                 _brands = context.brands.ToList();
                 _allModels = context.models.ToList();
@@ -160,6 +159,7 @@ namespace Practika
             }
         }
 
+        // Кнопки навигации
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window3 window3 = new Window3();

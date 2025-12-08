@@ -1,5 +1,5 @@
-﻿using Practika.Models;
-using Practika.ViewModel;
+﻿using Practika.Data;
+using Practika.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +9,15 @@ using System.Windows.Media;
 
 namespace Practika
 {
-
     public partial class Window11 : Window
     {
+        private readonly int _currentUserRoleId; // роль текущего пользователя (того, кто вошёл)
 
         private List<users> users = new List<users>();
         private List<cars> cars = new List<cars>();
         private List<brands> brands = new List<brands>();
         private List<models> models = new List<models>();
-        private List<Models.color> color = new List<Models.color>(); 
+        private List<Models.color> color = new List<Models.color>();
         private List<body_type> body_type = new List<body_type>();
         private List<engine_type> engine_type = new List<engine_type>();
         private List<transmission> transmissions = new List<transmission>();
@@ -26,17 +26,19 @@ namespace Practika
 
         private string currentSection = "Clients";
 
-        public Window11()
+        // Основной конструктор — с ролью
+        public Window11(int currentUserRoleId)
         {
             InitializeComponent();
+            _currentUserRoleId = currentUserRoleId;
             LoadAllDataFromDb();
             SwitchToClients();
+            ApplyPermissions(); // ← применяем права сразу после загрузки
         }
-
 
         private void LoadAllDataFromDb()
         {
-            using var context = new AppDbContext();
+            using var context = new DbService();
             users = context.users.ToList();
             cars = context.cars.ToList();
             brands = context.brands.ToList();
@@ -49,11 +51,21 @@ namespace Practika
             messages = context.messages.ToList();
         }
 
+        private void ApplyPermissions()
+        {
+            // Если текущий пользователь — НЕ админ (role_id != 1), скрываем раздел "Сотрудники"
+            if (_currentUserRoleId != 1)
+            {
+                Employees.Visibility = Visibility.Collapsed;
+            }
+        }
+
         private void SwitchToClients()
         {
             SetupUserColumns();
-            MainDataGrid.ItemsSource = users.Where(u => u.role_id == 1).ToList();
-            MainDataGrid.IsReadOnly = false; // ← ДОБАВЛЕНО: разрешить редактирование
+            // Клиенты = role_id == 2
+            MainDataGrid.ItemsSource = users.Where(u => u.role_id == 2).ToList();
+            MainDataGrid.IsReadOnly = false;
             SectionTitle.Text = "Клиенты";
             currentSection = "Clients";
             HighlightButton(Clients);
@@ -61,9 +73,18 @@ namespace Practika
 
         private void SwitchToEmployees()
         {
+            // Только админ (role_id == 1) может заходить в этот раздел
+            if (_currentUserRoleId != 1)
+            {
+                MessageBox.Show("У вас нет прав для просмотра сотрудников.", "Доступ запрещён", MessageBoxButton.OK, MessageBoxImage.Warning);
+                SwitchToClients();
+                return;
+            }
+
             SetupUserColumns();
-            MainDataGrid.ItemsSource = users.Where(u => u.role_id == 2 || u.role_id == 3).ToList();
-            MainDataGrid.IsReadOnly = false; // ← ДОБАВЛЕНО: разрешить редактирование
+            // Сотрудники = role_id == 3
+            MainDataGrid.ItemsSource = users.Where(u => u.role_id == 3).ToList();
+            MainDataGrid.IsReadOnly = false;
             SectionTitle.Text = "Сотрудники";
             currentSection = "Employees";
             HighlightButton(Employees);
@@ -81,14 +102,13 @@ namespace Practika
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Отчество", Binding = new System.Windows.Data.Binding("patronymic") });
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Email", Binding = new System.Windows.Data.Binding("email") });
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Телефон", Binding = new System.Windows.Data.Binding("phone") });
-            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Роль (ID)", Binding = new System.Windows.Data.Binding("role_id") });
         }
 
         private void SwitchToCars()
         {
             MainDataGrid.Columns.Clear();
             MainDataGrid.AutoGenerateColumns = false;
-            MainDataGrid.IsReadOnly = false; // ← разрешено редактирование
+            MainDataGrid.IsReadOnly = false;
 
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("id"), IsReadOnly = true });
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Бренд ID", Binding = new System.Windows.Data.Binding("brand_id") });
@@ -100,8 +120,8 @@ namespace Practika
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Кузов ID", Binding = new System.Windows.Data.Binding("body_type_id") });
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Цвет ID", Binding = new System.Windows.Data.Binding("color_id") });
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Цена", Binding = new System.Windows.Data.Binding("price") });
-           
-        MainDataGrid.ItemsSource = cars; // ← привязка к реальным объектам
+
+            MainDataGrid.ItemsSource = cars;
             SectionTitle.Text = "Авто в наличии";
             currentSection = "Cars";
             HighlightButton(Cars);
@@ -109,12 +129,13 @@ namespace Practika
 
         private void SwitchToMessages()
         {
-            // Подготавливаем данные с развёрнутыми именами
             var displayMessages = messages.Select(m => new
             {
                 m.id,
-                Sender = users.FirstOrDefault(u => u.id == m.sender_id)?.name + " " + users.FirstOrDefault(u => u.id == m.sender_id)?.surname ?? "—",
-                Receiver = users.FirstOrDefault(u => u.id == m.receiver_id)?.name + " " + users.FirstOrDefault(u => u.id == m.receiver_id)?.surname ?? "—",
+                Sender = users.FirstOrDefault(u => u.id == m.sender_id)?.name + " " +
+                          users.FirstOrDefault(u => u.id == m.sender_id)?.surname ?? "—",
+                Receiver = users.FirstOrDefault(u => u.id == m.receiver_id)?.name + " " +
+                           users.FirstOrDefault(u => u.id == m.receiver_id)?.surname ?? "—",
                 Car = m.car_id.HasValue
                     ? (brands.FirstOrDefault(b => b.id == cars.FirstOrDefault(c => c.id == m.car_id)?.brand_id)?.name ?? "") +
                       " " + (models.FirstOrDefault(md => md.id == cars.FirstOrDefault(c => c.id == m.car_id)?.model_id)?.model_name ?? "") +
@@ -129,11 +150,11 @@ namespace Practika
             MainDataGrid.IsReadOnly = true;
 
             MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "ID", Binding = new System.Windows.Data.Binding("id") });
-            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "От кого", Binding = new System.Windows.Data.Binding("sender") });
-            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Кому", Binding = new System.Windows.Data.Binding("receiver") });
-            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Авто", Binding = new System.Windows.Data.Binding("car") });
-            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Сообщение", Binding = new System.Windows.Data.Binding("message") });
-            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Время", Binding = new System.Windows.Data.Binding("sent_at") });
+            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "От кого", Binding = new System.Windows.Data.Binding("Sender") });
+            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Кому", Binding = new System.Windows.Data.Binding("Receiver") });
+            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Авто", Binding = new System.Windows.Data.Binding("Car") });
+            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Сообщение", Binding = new System.Windows.Data.Binding("MessageText") });
+            MainDataGrid.Columns.Add(new DataGridTextColumn { Header = "Время", Binding = new System.Windows.Data.Binding("SentAt") });
 
             MainDataGrid.ItemsSource = displayMessages;
             SectionTitle.Text = "Сообщения";
@@ -141,18 +162,17 @@ namespace Practika
             HighlightButton(Messages);
         }
 
-        private void HighlightButton(System.Windows.Controls.Button activeButton)
+        private void HighlightButton(Button activeButton)
         {
             var buttons = new[] { Clients, Cars, Employees, Messages };
             foreach (var btn in buttons)
-                btn.Background = System.Windows.Media.Brushes.WhiteSmoke;
+                btn.Background = Brushes.WhiteSmoke;
             activeButton.Background = new SolidColorBrush(Colors.LightGray);
         }
 
-        // ✅ ИСПРАВЛЕНО: используется WPF Button (System.Windows.Controls.Button)
         private void NavigationButton_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is System.Windows.Controls.Button btn) // ✅ Button = System.Windows.Controls.Button
+            if (sender is Button btn)
             {
                 switch (btn.Name)
                 {
@@ -166,16 +186,36 @@ namespace Practika
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            if (currentSection == "Clients" || currentSection == "Employees")
+            if (currentSection == "Clients")
             {
                 if (MainDataGrid.SelectedItem is users selectedUser)
                 {
-                    System.Windows.MessageBox.Show(this, $"Данные пользователя {selectedUser.name} обновлены.", "Успех");
+                    MessageBox.Show(this, $"Данные клиента {selectedUser.name} обновлены.", "Успех");
                     return;
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show(this, "Выберите строку с пользователем для редактирования.", "Внимание");
+                    MessageBox.Show(this, "Выберите клиента для редактирования.", "Внимание");
+                    return;
+                }
+            }
+            else if (currentSection == "Employees")
+            {
+                // Только админ (role_id == 1) может редактировать сотрудников
+                if (_currentUserRoleId != 1)
+                {
+                    MessageBox.Show(this, "Только администратор может редактировать сотрудников.", "Доступ запрещён");
+                    return;
+                }
+
+                if (MainDataGrid.SelectedItem is users selectedUser)
+                {
+                    MessageBox.Show(this, $"Данные сотрудника {selectedUser.name} обновлены.", "Успех");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show(this, "Выберите сотрудника для редактирования.", "Внимание");
                     return;
                 }
             }
@@ -183,18 +223,18 @@ namespace Practika
             {
                 if (MainDataGrid.SelectedItem is cars selectedCar)
                 {
-                    System.Windows.MessageBox.Show(this, $"Данные авто ID={selectedCar.id} обновлены.", "Успех");
+                    MessageBox.Show(this, $"Данные авто ID={selectedCar.id} обновлены.", "Успех");
                     return;
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show(this, "Выберите строку с автомобилем для редактирования.", "Внимание");
+                    MessageBox.Show(this, "Выберите авто для редактирования.", "Внимание");
                     return;
                 }
             }
             else
             {
-                System.Windows.MessageBox.Show(this, "Редактирование недоступно в этом разделе.", "Информация");
+                MessageBox.Show(this, "Редактирование недоступно в этом разделе.", "Информация");
             }
         }
 
@@ -204,14 +244,10 @@ namespace Practika
             this.Close();
         }
 
-      
-
         private void Button_Click1(object sender, RoutedEventArgs e)
         {
-            Window6 window6 = new Window6();
-            window6.Show();
+            new Window6().Show();
             this.Close();
         }
     }
-    
 }

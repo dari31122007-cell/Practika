@@ -1,4 +1,5 @@
 ﻿using Practika.Models;
+using Practika.Data;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace Practika.ViewModel
 
         public MainViewModel()
         {
+            // Инициализация всех коллекций
             action_Logs = new ObservableCollection<action_logs>();
             body_type = new ObservableCollection<body_type>();
             brands = new ObservableCollection<brands>();
@@ -45,13 +47,14 @@ namespace Practika.ViewModel
             transmission = new ObservableCollection<transmission>();
             users = new ObservableCollection<users>();
 
-            LoadData();
+            LoadData(); // Загрузка данных
         }
 
         private void LoadData()
         {
-            using (var context = new AppDbContext())
+            using (var context = new DbService())
             {
+                // Очищаем коллекции (на случай повторной загрузки)
                 action_Logs.Clear();
                 body_type.Clear();
                 brands.Clear();
@@ -70,6 +73,7 @@ namespace Practika.ViewModel
                 transmission.Clear();
                 users.Clear();
 
+                // Загружаем данные из базы
                 foreach (var item in context.action_logs) action_Logs.Add(item);
                 foreach (var item in context.body_type) body_type.Add(item);
                 foreach (var item in context.brands) brands.Add(item);
@@ -85,7 +89,7 @@ namespace Practika.ViewModel
                 foreach (var item in context.reviews) reviews.Add(item);
                 foreach (var item in context.roles) roles.Add(item);
                 foreach (var item in context.status) status.Add(item);
-                foreach (var item in context.transmissions) transmission.Add(item);
+                foreach (var item in context.transmissions) transmission.Add(item); // ✅ DbSet называется "transmissions"
                 foreach (var item in context.users) users.Add(item);
             }
         }

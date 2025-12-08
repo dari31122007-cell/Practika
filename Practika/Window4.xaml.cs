@@ -17,9 +17,21 @@ namespace Practika
     /// <summary>
     /// Логика взаимодействия для Window4.xaml
     /// </summary>
-    public partial class Window4 : Window
-    {
-        private const string placeholder = "Задайте ваш вопрос";
+    
+        public partial class Window4 : Window
+        {
+            private readonly int _currentUserId; // ID клиента
+            private const string placeholder = "Задайте ваш вопрос";
+
+            public Window4(int currentUserId)
+            {
+                InitializeComponent();
+                _currentUserId = currentUserId;
+                QuestionBox.Text = placeholder;
+                QuestionBox.Foreground = Brushes.Gray;
+            }
+
+    
 
         public Window4()
         {
@@ -89,7 +101,7 @@ namespace Practika
 
             try
             {
-                using (var context = new Practika.Models.AppDbContext())
+                using (var context = new Practika.Data.DbService())
                 {
                     var newMessage = new Practika.Models.messages
                     {

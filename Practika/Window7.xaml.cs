@@ -1,81 +1,79 @@
-﻿using Practika.Models;
+﻿using Practika.Data;
+using Practika.Models;
 using System;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Practika
 {
     public partial class Window7 : Window
     {
-        private int _userId;
+        private readonly int _currentUserId;
 
-        // Основной конструктор с ID пользователя
-        public Window7(int userId)
+        public Window7(int currentUserId)
         {
             InitializeComponent();
-            _userId = userId;
-            LoadUserData();
+            _currentUserId = currentUserId;
+            LoadUserProfile();
         }
 
-        // Конструктор по умолчанию — для теста (лучше не использовать)
-        public Window7()
-        {
-            InitializeComponent();
-            _userId = 1; // временный ID
-            LoadUserData();
-        }
-
-        private void LoadUserData()
+        private void LoadUserProfile()
         {
             try
             {
-                using (var context = new AppDbContext())
+                using (var context = new DbService())
                 {
-                    var user = context.users.Find(_userId);
+                    var user = context.users.FirstOrDefault(u => u.id == _currentUserId);
                     if (user != null)
                     {
-                        // Обновляем ФИО
-                        var fullNameText = FindName("FullNameTextBlock") as TextBlock;
-                        if (fullNameText != null)
-                            fullNameText.Text = $"{user.surname} {user.name} {user.patronymic}";
+                        // Формат: Фамилия Имя Отчество
+                        FullNameText.Text = $"{user.surname} {user.name} {user.patronymic}".Trim();
 
-                        // Обновляем дату рождения (др/мр/гр → дд.мм.гггг)
-                        var birthText = FindName("BirthDateTextBlock") as TextBlock;
-                        if (birthText != null)
-                            birthText.Text = user.Date_of_birth.ToString("dd.MM.yyyy");
+                        // Дата рождения: ДД.ММ.ГГГГ
+                        BirthDateText.Text = user.Date_of_birth.ToString("dd.MM.yyyy");
+                    }
+                    else
+                    {
+                        FullNameText.Text = "Пользователь не найден";
+                        BirthDateText.Text = "";
                     }
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Ошибка загрузки данных: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ошибка загрузки профиля: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-    
-
-        // Остальные обработчики
-        private void CarButton_Click(object sender, RoutedEventArgs e)
+        private void EditProfileButton_Click(object sender, RoutedEventArgs e)
         {
-            new Window3().Show();
-            this.Close();
-        }
+            // Открываем окно редактирования профиля (создадим его далее)
+            var editWindow = new EditProfileWindow(_currentUserId);
+            editWindow.ShowDialog(); // Modal window
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            new Window8().Show();
-            this.Close();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            new Window9().Show();
-            this.Close();
+            // После закрытия — перезагружаем данные
+            LoadUserProfile();
         }
 
         private void LogoButton_Click(object sender, RoutedEventArgs e)
         {
             new MainWindow().Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            // Избранное
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            // Корзина
+        }
+
+        private void CarButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window3 window = new Window3();
+            window.Show();
             this.Close();
         }
     }

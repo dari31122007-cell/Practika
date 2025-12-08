@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Practika.Data;
+using Practika.Models;
+using System;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 
 namespace Practika
 {
@@ -11,91 +13,113 @@ namespace Practika
             InitializeComponent();
         }
 
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            Window6 window6 = new Window6();
-            window6.Show();
-            this.Close();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            // Клик по логотипу — возврат на главную
+            new MainWindow().Show();
             this.Close();
         }
 
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Переход на форму входа (предположим, что это Window6)
+            new Window6().Show();
+            this.Close();
+        }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            // Валидация
+            // 1. Проверка заполненности полей
             if (string.IsNullOrWhiteSpace(NameBox.Text))
             {
-                System.Windows.MessageBox.Show("Пожалуйста, введите ваше имя.", "Ошибка", MessageBoxButton.OK);
+                MessageBox.Show("Введите имя", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (string.IsNullOrWhiteSpace(ContactBox.Text))
             {
-                System.Windows.MessageBox.Show("Пожалуйста, введите ваш номер телефона или email.", "Ошибка", MessageBoxButton.OK);
+                MessageBox.Show("Введите email или номер телефона", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
             if (BirthDatePicker.SelectedDate == null)
             {
-                System.Windows.MessageBox.Show("Пожалуйста, выберите дату рождения.", "Ошибка", MessageBoxButton.OK);
+                MessageBox.Show("Выберите дату рождения", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(PasswordBox.Password))
+            string password = PasswordBox.Password;
+            if (string.IsNullOrWhiteSpace(password))
             {
-                System.Windows.MessageBox.Show("Пожалуйста, введите пароль.", "Ошибка", MessageBoxButton.OK);
+                MessageBox.Show("Придумайте пароль", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning); // ✅
                 return;
             }
 
+            // 2. Определяем, является ли контакт email или телефон
+            string email = "";
+            string phone = "";
+
+            string contact = ContactBox.Text.Trim();
+            if (contact.Contains("@") && contact.Contains("."))
+            {
+                email = contact;
+                phone = null;
+            }
+            else
+            {
+                // Можно добавить валидацию номера, но для простоты — просто сохраняем
+                phone = contact;
+                email = ""; // или оставить null
+            }
+
+
+
+            // 4. Создаём нового пользователя
+            // Предполагается, что роль "Клиент" = 1 (уточните по вашей таблице roles)
+            var newUser = new users
+            {
+                role_id = 2, // ← клиент
+                name = NameBox.Text.Trim(),
+                surname = "", // вы не просите фамилию — можно оставить пустой или добавить поле
+                patronymic = "",
+                email = email,
+                phone = phone,
+                Date_of_birth = BirthDatePicker.SelectedDate.Value,
+                password_hash = password,
+                created_at = DateTime.Now,
+                username = email // или ContactBox.Text — уникальное имя пользователя
+            };
+
+            // 5. Сохраняем в БД
             try
             {
-                // Определяем email или телефон
-                string contact = ContactBox.Text.Trim();
-                string email = contact.Contains("@") ? contact : "";
-                string phone = contact.Contains("@") ? null : contact;
-
-                // Хешируем пароль (минимальная защита)
-                string passwordHash = BCrypt.Net.BCrypt.HashPassword(PasswordBox.Password);
-
-                // Создаём пользователя
-                var newUser = new Practika.Models.users
+                using (var context = new DbService())
                 {
-                    name = NameBox.Text.Trim(),
-                    surname = "",           // можно оставить пустым или добавить поле в форму
-                    patronymic = "",
-                    username = NameBox.Text.Trim(), // или оставить пустым
-                    email = email,
-                    phone = phone,
-                    Date_of_birth = BirthDatePicker.SelectedDate.Value,
-                    password_hash = passwordHash,
-                    role_id = 1,            // 1 = клиент
-                    created_at = DateTime.Now
-                };
+                    // Проверка: не существует ли уже пользователь с таким email/телефоном
+                    bool exists = context.users.Any(u =>
+                        (!string.IsNullOrEmpty(email) && u.email == email) ||
+                        (!string.IsNullOrEmpty(phone) && u.phone == phone)
+                    );
 
-                // Сохраняем в базу
-                using (var context = new Practika.Models.AppDbContext())
-                {
+                    if (exists)
+                    {
+                        MessageBox.Show("Пользователь с таким email или телефоном уже существует.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
                     context.users.Add(newUser);
                     context.SaveChanges();
                 }
 
-                // Успешно — переходим дальше
+                MessageBox.Show("Регистрация успешно завершена!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                Window7 window7 = new Window7();
-                window7.Show();
+                // Переход на форму входа
+                new Window6().Show();
                 this.Close();
-                // После context.SaveChanges() вы получаете newUser.id
-            
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Ошибка при регистрации: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ошибка при сохранении: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

@@ -32,10 +32,20 @@
                 Margin="752,2,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_3" >
             <Image Source="/akar-icons_basket.png" Stretch="Uniform" Height="27" Width="29"/>
         </Button>
+        <!-- ФИО и дата рождения — с именами для кода -->
+        <TextBlock x:Name="FullNameText" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Margin="112,77,0,0" FontSize="16" FontWeight="Bold"/>
 
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,77,0,0"
-                   FontSize="16" FontWeight="Bold">Фамилия имя отчество</TextBlock>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,97,0,0">др/мр/гр</TextBlock>
+        <TextBlock x:Name="BirthDateText" 
+           HorizontalAlignment="Left" VerticalAlignment="Top" 
+           Margin="112,97,0,0"/>
+        <Button x:Name="EditProfileButton"
+        Content="Редактировать профиль"
+        HorizontalAlignment="Left" VerticalAlignment="Top"
+        Margin="423,78,0,0"
+        Width="150" Height="24"
+        Click="EditProfileButton_Click"/>
 
         <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="57"
                    Margin="44,66,0,0" RadiusX="20" RadiusY="20">
@@ -95,17 +105,9 @@
                 Background="Transparent"
                 BorderBrush="{x:Null}"
                 Foreground="{x:Null}"
-                Click="CarButton_Click"/>
+                />
 
         <!-- === АВТОМОБИЛЬ 3 === -->
-        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="134" Height="150"
-                   Margin="356,183,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
-        <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="124" Height="88"
-                   Margin="361,192,0,0">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="/0 10.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
 
 
 
@@ -113,8 +115,6 @@
                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,308,0,0"/>
         <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="302,308,0,0"/>
-        <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
-               HorizontalAlignment="Left" VerticalAlignment="Top" Margin="458,308,0,0"/>
 
         <Rectangle HorizontalAlignment="Center" VerticalAlignment="Top" Width="720" Height="32"
                    Margin="0,361,0,0" Fill="White" Opacity="0.5" Stroke="#FF2D375E" RadiusX="20" RadiusY="20"/>
