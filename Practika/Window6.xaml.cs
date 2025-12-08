@@ -35,21 +35,61 @@ namespace Practika
         {
             string login = LoginBox.Text.Trim();
             string password = PasswordBox.Password;
-
-            if (login == "Admin" && password == "admin")
+            if (login == "Admin" && password == "Admin")
             {
                 Window11 window11 = new Window11();
                 window11.Show();
                 this.Close();
             }
-            else
+            if (login == "User" && password == "User")
             {
-                Window7 Window7 = new Window7();
-                Window7.Show();
+                Window7 window7 = new Window7();
+                window7.Show();
                 this.Close();
             }
+
+            if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
+            {
+                System.Windows.MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var context = new Practika.Models.AppDbContext())
+                {
+                    // Ищем пользователя по email ИЛИ телефону
+                    var user = context.users
+                        .FirstOrDefault(u => u.email == login || u.phone == login);
+
+                    if (user != null && BCrypt.Net.BCrypt.Verify(password, user.password_hash))
+                    {
+                        // Успешная аутентификация
+                        if (user.role_id == 3) // Например, 3 = администратор
+                        {
+                            var adminWindow = new Window11();
+                            adminWindow.Show();
+                        }
+                        else
+                        {
+                            // Обычный пользователь — передаём ID в Window7 (если нужно)
+                            var userWindow = new Window7();
+                            userWindow.Show();
+                        }
+                        this.Close();
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show("Неверный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Ошибка подключения к базе данных: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
-        
+
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {

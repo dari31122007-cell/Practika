@@ -33,9 +33,6 @@
             <Image Source="/akar-icons_basket.png" Stretch="Uniform" Height="27" Width="29"/>
         </Button>
 
-        <Button Content="Настройки" HorizontalAlignment="Center" VerticalAlignment="Top"
-                Margin="0,85,0,0" Width="114" Height="28" Background="WhiteSmoke" BorderBrush="Black" Click="Button_Click_2"/>
-
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,77,0,0"
                    FontSize="16" FontWeight="Bold">Фамилия имя отчество</TextBlock>
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,97,0,0">др/мр/гр</TextBlock>
@@ -109,20 +106,8 @@
                 <ImageBrush ImageSource="/0 10.png"/>
             </Rectangle.Fill>
         </Rectangle>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,282,0,0"
-                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">BMW 3 серии</TextBlock>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,292,0,0"
-                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black" Opacity="0.5">2014</TextBlock>
-        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="372,301,0,0"
-                   FontFamily="Book Antiqua" FontSize="7" FontWeight="Medium" Foreground="Black">1 699 000 P</TextBlock>
-        <!-- Кликабельная невидимая кнопка -->
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" 
-                Width="134" Height="150"
-                Margin="356,183,0,0"
-                Background="Transparent"
-                BorderBrush="{x:Null}"
-                Foreground="{x:Null}"
-                Click="CarButton_Click"/>
+
+
 
         <Image Source="/mdi_heart (1).png" Stretch="Uniform" Width="16" Height="16"
                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,308,0,0"/>

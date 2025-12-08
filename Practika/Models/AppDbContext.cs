@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practika.Models
 {
-    internal class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<action_logs> action_logs { get; set; }
         public DbSet<body_type> body_type { get; set; }
@@ -31,7 +26,7 @@ namespace Practika.Models
         {
             optionsBuilder.UseSqlServer
             (
-            @"Server=(localdb)\mssqllocaldb;Database=tompsons_stud10;Trusted_Connection=True;"
+            @"Server=(lolek.beget.tech)\mssqllocaldb;Database=lolek_tompsons_stud10;Trusted_Connection=True;"
             );
         }
     }

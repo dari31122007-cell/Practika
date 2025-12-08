@@ -246,7 +246,7 @@
          FontSize="10"
          Foreground="Gray"
          GotFocus="QuestionBox_GotFocus"
-         LostFocus="QuestionBox_LostFocus"/>
+         LostFocus="QuestionBox_LostFocus" TextChanged="QuestionBox_TextChanged"/>
         <Button Content="Отправить" 
         HorizontalAlignment="Left" 
         Margin="566,309,0,0" 

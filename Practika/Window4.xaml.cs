@@ -80,13 +80,45 @@ namespace Practika
         }
         private void SendButton_Click(object sender, RoutedEventArgs e)
         {
-            QuestionBox.Text = "";
-
-            if (string.IsNullOrWhiteSpace(QuestionBox.Text))
+            // Проверяем, что текст не пустой и не placeholder
+            if (string.IsNullOrWhiteSpace(QuestionBox.Text) || QuestionBox.Text == placeholder)
             {
-                QuestionBox.Text = placeholder;
+                System.Windows.MessageBox.Show("Введите ваш вопрос.", "Внимание", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                using (var context = new Practika.Models.AppDbContext())
+                {
+                    var newMessage = new Practika.Models.messages
+                    {
+                        sender_id = 1,           
+                        receiver_id = 3,        
+                        car_id = null,          
+                        message = QuestionBox.Text.Trim(),
+                        sent_at = DateTime.Now
+                    };
+
+                    context.messages.Add(newMessage);
+                    context.SaveChanges();
+                }
+
+                // Очищаем поле и показываем подтверждение
+                System.Windows.MessageBox.Show("Ваш вопрос отправлен! Мы ответим в течение 5 минут.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                QuestionBox.Text = "";
                 QuestionBox.Foreground = new SolidColorBrush(Colors.Gray);
             }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show($"Ошибка отправки: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void QuestionBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

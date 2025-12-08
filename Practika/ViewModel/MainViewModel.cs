@@ -1,10 +1,7 @@
 ﻿using Practika.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Practika.ViewModel
 {
@@ -27,15 +24,69 @@ namespace Practika.ViewModel
         public ObservableCollection<status> status { get; set; }
         public ObservableCollection<transmission> transmission { get; set; }
         public ObservableCollection<users> users { get; set; }
+
         public MainViewModel()
         {
+            action_Logs = new ObservableCollection<action_logs>();
+            body_type = new ObservableCollection<body_type>();
+            brands = new ObservableCollection<brands>();
+            cars = new ObservableCollection<cars>();
+            car_images = new ObservableCollection<car_images>();
+            categories = new ObservableCollection<categories>();
+            color = new ObservableCollection<color>();
+            engine_type = new ObservableCollection<engine_type>();
+            favorites = new ObservableCollection<favorites>();
+            messages = new ObservableCollection<messages>();
+            models = new ObservableCollection<models>();
+            orders = new ObservableCollection<orders>();
+            reviews = new ObservableCollection<reviews>();
+            roles = new ObservableCollection<roles>();
+            status = new ObservableCollection<status>();
+            transmission = new ObservableCollection<transmission>();
+            users = new ObservableCollection<users>();
+
             LoadData();
         }
+
         private void LoadData()
         {
             using (var context = new AppDbContext())
             {
-                
+                action_Logs.Clear();
+                body_type.Clear();
+                brands.Clear();
+                cars.Clear();
+                car_images.Clear();
+                categories.Clear();
+                color.Clear();
+                engine_type.Clear();
+                favorites.Clear();
+                messages.Clear();
+                models.Clear();
+                orders.Clear();
+                reviews.Clear();
+                roles.Clear();
+                status.Clear();
+                transmission.Clear();
+                users.Clear();
+
+                foreach (var item in context.action_logs) action_Logs.Add(item);
+                foreach (var item in context.body_type) body_type.Add(item);
+                foreach (var item in context.brands) brands.Add(item);
+                foreach (var item in context.cars) cars.Add(item);
+                foreach (var item in context.car_images) car_images.Add(item);
+                foreach (var item in context.categories) categories.Add(item);
+                foreach (var item in context.color) color.Add(item);
+                foreach (var item in context.engine_type) engine_type.Add(item);
+                foreach (var item in context.favorites) favorites.Add(item);
+                foreach (var item in context.messages) messages.Add(item);
+                foreach (var item in context.models) models.Add(item);
+                foreach (var item in context.orders) orders.Add(item);
+                foreach (var item in context.reviews) reviews.Add(item);
+                foreach (var item in context.roles) roles.Add(item);
+                foreach (var item in context.status) status.Add(item);
+                foreach (var item in context.transmissions) transmission.Add(item);
+                foreach (var item in context.users) users.Add(item);
             }
         }
     }

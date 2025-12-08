@@ -28,23 +28,15 @@
         <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,20,0,0"
                    FontFamily="Book Antiqua" Text="Официальный дилер в СПБ" FontSize="9" FontWeight="Medium" Foreground="#FFD7DBE8"/>
 
-        <TextBlock x:Name="AdminFullNameText" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,6,30,0"
-                   FontFamily="Book Antiqua" FontSize="10" FontWeight="Medium" Foreground="#FFD7DBE8" Text="Иванов И.И."/>
-        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,17,30,0"
-                   FontFamily="Book Antiqua" FontSize="10" FontWeight="Medium" Foreground="#FFD7DBE8" Text="id_sotr"/>
-
-        <Button Content="Настройки" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,173,0"
-                Width="96" Height="25" Background="WhiteSmoke" BorderBrush="Black" Click="Button_Click"/>
-
         <Button HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,3,7,0"
                 Width="20" Height="20" BorderBrush="{x:Null}" Foreground="{x:Null}" Background="{x:Null}"/>
 
         <!-- Кнопки навигации -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="90,69,0,0">
-            <Button x:Name="BtnClients" Content="Клиенты" Width="96" Height="25" Background="#FFBFBFBF" BorderBrush="Black" Margin="0,0,5,0" Click="NavigationButton_Click"/>
-            <Button x:Name="BtnCars" Content="Авто в наличии" Width="96" Height="25" Background="WhiteSmoke" BorderBrush="Black" Margin="0,0,5,0" Click="NavigationButton_Click"/>
-            <Button x:Name="BtnEmployees" Content="Сотрудники" Width="96" Height="25" Background="WhiteSmoke" BorderBrush="Black" Margin="0,0,5,0" Click="NavigationButton_Click"/>
-            <Button x:Name="BtnMessages" Content="Сообщения" Width="96" Height="25" Background="WhiteSmoke" BorderBrush="Black" Click="NavigationButton_Click"/>
+            <Button x:Name="Clients" Content="Клиенты" Width="96" Height="25" Background="#FFBFBFBF" BorderBrush="Black" Margin="0,0,5,0" Click="NavigationButton_Click"/>
+            <Button x:Name="Cars" Content="Авто в наличии" Width="96" Height="25" Background="WhiteSmoke" BorderBrush="Black" Margin="0,0,5,0" Click="NavigationButton_Click"/>
+            <Button x:Name="Employees" Content="Сотрудники" Width="96" Height="25" Background="WhiteSmoke" BorderBrush="Black" Margin="0,0,5,0" Click="NavigationButton_Click"/>
+            <Button x:Name="Messages" Content="Сообщения" Width="96" Height="25" Background="WhiteSmoke" BorderBrush="Black" Click="NavigationButton_Click"/>
         </StackPanel>
 
         <TextBlock x:Name="SectionTitle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="106,118,0,0"
@@ -54,9 +46,17 @@
         <DataGrid x:Name="MainDataGrid"
                   Margin="91,155,100,100"
                   AutoGenerateColumns="False"
-                  SelectionUnit="FullRow"
-                  CanUserAddRows="False"
-                  IsReadOnly="True"/>
+                  ItemsSource="{Binding users}"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding id}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding surname}"/>
+                <DataGridTextColumn Header="Имя" Binding="{Binding name}"/>
+                <DataGridTextColumn Header="Отчество" Binding="{Binding patronymic}"/>
+                <DataGridTextColumn Header="Номер телефона" Binding="{Binding phone}"/>
+                <DataGridTextColumn Header="Дата рождения" Binding="{Binding Date_of_birth}"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
         <!-- Кнопка "Редактировать" -->
         <Button x:Name="EditButton" 
@@ -69,7 +69,17 @@
                 Background="WhiteSmoke" 
                 BorderBrush="Black"
                 Click="EditButton_Click"/>
-        
-        
+        <Button
+            Content="Выход" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            Margin="686,6,0,0"
+            Width="87" 
+            Height="25" 
+            Background="WhiteSmoke" 
+            BorderBrush="Black"
+            Click="Button_Click1"/>
+
+
     </Grid>
 </Window>
